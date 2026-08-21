@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class 8 Maths - Squares and Square Roots</title>
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Georgia', serif;
+            font-size: 18px;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+            color: #333;
+            line-height: 1.6;
+        }
+        .container {
+            background: #fff;
+            width: 100%;
+            max-width: 900px;
+            min-height: 100vh;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            padding: 40px 60px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+        .header {
+            text-align: center;
+            font-size: 32px;
+            font-weight: bold;
+            margin-bottom: 40px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 15px;
+        }
+        .q-block {
+            margin-bottom: 40px;
+            border-bottom: 1px dashed #eee;
+            padding-bottom: 20px;
+        }
+        .question {
+            color: #2c3e50;
+            font-weight: bold;
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+        .sub-q {
+            color: #34495e;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .solution {
+            color: #1a5276;
+            margin-top: 10px;
+            margin-left: 20px;
+            background-color: #fcfcfc;
+            padding: 15px;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+        .sol-label {
+            font-weight: bold;
+            color: #e74c3c;
+            margin-right: 5px;
+        }
+        mjx-container {
+            font-size: 1.1em;
+        }
+        
+        /* Teach Mode Buttons */
+        .btn-teach {
+            display: block;
+            width: 250px;
+            margin: 30px auto;
+            padding: 15px 20px;
+            background-color: #e74c3c;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .btn-teach:hover {
+            background-color: #c0392b;
+            transform: translateY(-2px);
+        }
+        .btn-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        
+        /* Teach View List */
+        #teach-view ul {
+            list-style: none;
+            padding: 0;
+        }
+        #teach-view li.main-q-li {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 25px;
+            color: #2c3e50;
+        }
+        #teach-view li.clickable-q {
+            font-size: 20px;
+            margin: 15px 0 15px 30px;
+            padding: 15px;
+            background: #ecf0f1;
+            border-left: 4px solid #2980b9;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+        #teach-view li.clickable-q:hover {
+            background: #d4e6f1;
+            transform: translateX(5px);
+        }
+        
+        /* Presentation View */
+        #presentation-view {
+            text-align: center;
+            font-size: 28px;
+            cursor: pointer;
+            min-height: 80vh;
+            user-select: none; /* prevent text selection on rapid click */
+        }
+        .pres-q {
+            font-size: 34px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+        }
+        .pres-step {
+            opacity: 0;
+            margin-bottom: 20px;
+            color: #1a5276;
+            transition: opacity 0.4s ease-in-out;
+        }
+        .controls-hint {
+            position: fixed;
+            bottom: 20px;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 14px;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- NORMAL VIEW -->
+    <div class="container" id="normal-view">
+        <div class="header">Exercise 3: Squares and Square Roots (Detailed Solutions)</div>
+        
+        <div class="q-block">
+            <div class="question">1. Find the value of each of the following.</div>
+            <div class="sub-q">(i) $\left(\frac{11}{13}\right)^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(\frac{11}{13}\right)^2 = \frac{11^2}{13^2} = \frac{121}{169}$</div>
+            <div class="sub-q">(ii) $\left(-1 \frac{7}{11}\right)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(-1 \frac{7}{11}\right)^3 = \left(\frac{-18}{11}\right)^3 = \frac{(-18)^3}{11^3} = \frac{-5832}{1331}$</div>
+            <div class="sub-q">(iii) $(3.5)^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(3.5)^2 = \left(\frac{35}{10}\right)^2 = \frac{1225}{100} = 12.25$</div>
+            <div class="sub-q">(iv) $(0.08)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(0.08)^3 = \left(\frac{8}{100}\right)^3 = \frac{512}{1000000} = 0.000512$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">2. Find the square root of each of the following by prime factorisation.</div>
+            <div class="sub-q">(i) 256</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$256 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 = 2^8$<br>$\sqrt{256} = \sqrt{2^8} = 2^4 = 16$</div>
+            <div class="sub-q">(ii) 324</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$324 = 2 \times 2 \times 3 \times 3 \times 3 \times 3 = 2^2 \times 3^4$<br>$\sqrt{324} = 2 \times 3^2 = 2 \times 9 = 18$</div>
+            <div class="sub-q">(iii) 784</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$784 = 2 \times 2 \times 2 \times 2 \times 7 \times 7 = 2^4 \times 7^2$<br>$\sqrt{784} = 2^2 \times 7 = 4 \times 7 = 28$</div>
+            <div class="sub-q">(iv) 7056</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$7056 = 2^4 \times 3^2 \times 7^2$<br>$\sqrt{7056} = 2^2 \times 3 \times 7 = 4 \times 21 = 84$</div>
+            <div class="sub-q">(v) 28224</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$28224 = 2^6 \times 3^2 \times 7^2$<br>$\sqrt{28224} = 2^3 \times 3 \times 7 = 8 \times 21 = 168$</div>
+            <div class="sub-q">(vi) 60025</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$60025 = 5^2 \times 7^4$<br>$\sqrt{60025} = 5 \times 7^2 = 5 \times 49 = 245$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">3. Find the square root of each of the following by division.</div>
+            <div class="sub-q">(i) 841</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 29 \\ \hline 2 & \overline{8}\overline{41} \\ & -4 \\ \hline 49 & 441 \\ & -441 \\ \hline & 0 \end{array}$$ <br>$\sqrt{841} = 29$</div>
+            <div class="sub-q">(ii) 2304</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 48 \\ \hline 4 & \overline{23}\overline{04} \\ & -16 \\ \hline 88 & 704 \\ & -704 \\ \hline & 0 \end{array}$$ <br>$\sqrt{2304} = 48$</div>
+            <div class="sub-q">(iii) 39204</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 198 \\ \hline 1 & \overline{3}\overline{92}\overline{04} \\ & -1 \\ \hline 29 & 292 \\ & -261 \\ \hline 388 & 3104 \\ & -3104 \\ \hline & 0 \end{array}$$ <br>$\sqrt{39204} = 198$</div>
+            <div class="sub-q">(iv) 55225</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 235 \\ \hline 2 & \overline{5}\overline{52}\overline{25} \\ & -4 \\ \hline 43 & 152 \\ & -129 \\ \hline 465 & 2325 \\ & -2325 \\ \hline & 0 \end{array}$$ <br>$\sqrt{55225} = 235$</div>
+            <div class="sub-q">(v) 177241</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 421 \\ \hline 4 & \overline{17}\overline{72}\overline{41} \\ & -16 \\ \hline 82 & 172 \\ & -164 \\ \hline 841 & 841 \\ & -841 \\ \hline & 0 \end{array}$$ <br>$\sqrt{177241} = 421$</div>
+            <div class="sub-q">(vi) 425104</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\begin{array}{r|l} & 652 \\ \hline 6 & \overline{42}\overline{51}\overline{04} \\ & -36 \\ \hline 125 & 651 \\ & -625 \\ \hline 1302 & 2604 \\ & -2604 \\ \hline & 0 \end{array}$$ <br>$\sqrt{425104} = 652$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">4. Find the square root of each of the following.</div>
+            <div class="sub-q">(i) 13.69</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{13.69} = \sqrt{\frac{1369}{100}} = \frac{37}{10} = 3.7$</div>
+            <div class="sub-q">(ii) 0.002025</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{0.002025} = \sqrt{\frac{2025}{1000000}} = \frac{45}{1000} = 0.045$</div>
+            <div class="sub-q">(iii) 1.5129</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{1.5129} = \sqrt{\frac{15129}{10000}} = \frac{123}{100} = 1.23$</div>
+            <div class="sub-q">(iv) 20.7936</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{20.7936} = \sqrt{\frac{207936}{10000}} = \frac{456}{100} = 4.56$</div>
+            <div class="sub-q">(v) 6146.56</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{6146.56} = \sqrt{\frac{614656}{100}} = \frac{784}{10} = 78.4$</div>
+            <div class="sub-q">(vi) 1.024144</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{1.024144} = \sqrt{\frac{1024144}{1000000}} = \frac{1012}{1000} = 1.012$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">5. Find the square root of each of the following.</div>
+            <div class="sub-q">(i) $\frac{169}{484}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{169}{484}} = \frac{\sqrt{169}}{\sqrt{484}} = \frac{13}{22}$</div>
+            <div class="sub-q">(ii) $5 \frac{580}{729}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{(5 \times 729) + 580}{729}} = \sqrt{\frac{3645 + 580}{729}} = \sqrt{\frac{4225}{729}} = \frac{65}{27}$</div>
+            <div class="sub-q">(iii) $12 \frac{52}{81}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{(12 \times 81) + 52}{81}} = \sqrt{\frac{972 + 52}{81}} = \sqrt{\frac{1024}{81}} = \frac{32}{9}$</div>
+            <div class="sub-q">(iv) 0.0009</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{0.0009} = \sqrt{\frac{9}{10000}} = \frac{3}{100} = 0.03$</div>
+            <div class="sub-q">(v) 4.41</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{4.41} = \sqrt{\frac{441}{100}} = \frac{21}{10} = 2.1$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">6. Find the square root of each of the following correct to two decimal places.</div>
+            <div class="sub-q">(i) 2</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{2} \approx 1.41$</div>
+            <div class="sub-q">(ii) 3</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{3} \approx 1.73$</div>
+            <div class="sub-q">(iii) 8</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{8} \approx 2.83$</div>
+            <div class="sub-q">(iv) 11</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{11} \approx 3.32$</div>
+            <div class="sub-q">(v) 35</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{35} \approx 5.92$</div>
+            <div class="sub-q">(vi) 99</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{99} \approx 9.95$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">7. Find the value of $\sqrt{5}$ correct to two decimal places. Then, find the value of the square root of $\frac{3-\sqrt{5}}{3+\sqrt{5}}$ correct to two decimal places.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{5} \approx 2.24$<br>$\sqrt{\frac{3-\sqrt{5}}{3+\sqrt{5}}} = \sqrt{\frac{(3-\sqrt{5})(3-\sqrt{5})}{(3+\sqrt{5})(3-\sqrt{5})}}$<br>$= \sqrt{\frac{(3-\sqrt{5})^2}{9-5}} = \frac{3-\sqrt{5}}{\sqrt{4}} = \frac{3-\sqrt{5}}{2}$<br>Using $\sqrt{5} = 2.236$ (taking 3 decimal places for calculation accuracy):<br>$\frac{3 - 2.236}{2} = \frac{0.764}{2} = 0.382$<br>Correct to two decimal places: $0.38$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">8. Find the square root of each of the following correct to three decimal places.</div>
+            <div class="sub-q">(i) 2.5</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{2.5} \approx 1.581$</div>
+            <div class="sub-q">(ii) 0.036</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{0.036} \approx 0.190$</div>
+            <div class="sub-q">(iii) 6.4</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{6.4} \approx 2.530$</div>
+            <div class="sub-q">(iv) 0.100</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{0.100} \approx 0.316$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">9. Find the least number by which 10368 should be (i) increased (ii) decreased (iii) multiplied (iv) divided to make it a perfect square.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>We find the square root of 10368. $101^2 = 10201$ and $102^2 = 10404$.<br>So, $101^2 < 10368 < 102^2$<br>(i) Increased: To get the next perfect square ($10404$), we add: $10404 - 10368 = 36$<br>(ii) Decreased: To get the previous perfect square ($10201$), we subtract: $10368 - 10201 = 167$<br>Now, prime factorization of $10368 = 2^7 \times 3^4$<br>(iii) Multiplied: To make all powers even, we need to multiply by $2$. (Result will be $2^8 \times 3^4$)<br>(iv) Divided: To make all powers even, we need to divide by $2$. (Result will be $2^6 \times 3^4$)</div>
+        </div>
+        <div class="q-block">
+            <div class="question">10. Find the following.</div>
+            <div class="sub-q">(i) $55^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$55^2 = 3025$</div>
+            <div class="sub-q">(ii) $98^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$98^2 = 9604$</div>
+            <div class="sub-q">(iii) $\sqrt{38}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{38} \approx 6.164$ (to 3 decimal places)</div>
+            <div class="sub-q">(iv) $\sqrt{89}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{89} \approx 9.43$ (to 2 decimal places)</div>
+            <div class="sub-q">(v) $\sqrt{38.83}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{38.83} \approx 6.23$ (to 2 decimal places)</div>
+            <div class="sub-q">(vi) $\sqrt{64.25}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{64.25} \approx 8.016$ (to 3 decimal places)</div>
+        </div>
+        <div class="q-block">
+            <div class="question">11. Use algebraic methods to find the following.</div>
+            <div class="sub-q">(i) $52^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(50 + 2)^2 = 50^2 + 2(50)(2) + 2^2 = 2500 + 200 + 4 = 2704$</div>
+            <div class="sub-q">(ii) $98^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(100 - 2)^2 = 100^2 - 2(100)(2) + 2^2 = 10000 - 400 + 4 = 9604$</div>
+            <div class="sub-q">(iii) $309^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(300 + 9)^2 = 300^2 + 2(300)(9) + 9^2 = 90000 + 5400 + 81 = 95481$</div>
+            <div class="sub-q">(iv) $495^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(500 - 5)^2 = 500^2 - 2(500)(5) + 5^2 = 250000 - 5000 + 25 = 245025$</div>
+            <div class="sub-q">(v) $96^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(100 - 4)^2 = 100^2 - 2(100)(4) + 4^2 = 10000 - 800 + 16 = 9216$</div>
+            <div class="sub-q">(vi) $305^2$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(300 + 5)^2 = 300^2 + 2(300)(5) + 5^2 = 90000 + 3000 + 25 = 93025$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">12. Find in each case the smallest perfect square divisible by the given numbers.</div>
+            <div class="sub-q">(i) 2, 4 and 5</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>LCM of $2, 4, 5$ is $20$. <br>Prime factors of $20 = 2^2 \times 5$.<br>To make it a perfect square, we need to multiply by $5$.<br>Smallest perfect square = $20 \times 5 = 100$.</div>
+            <div class="sub-q">(ii) 3, 4, 5 and 6</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>LCM of $3, 4, 5, 6$ is $60$. <br>Prime factors of $60 = 2^2 \times 3 \times 5$.<br>To make it a perfect square, we need to multiply by $3 \times 5 = 15$.<br>Smallest perfect square = $60 \times 15 = 900$.</div>
+            <div class="sub-q">(iii) 6, 8, 10 and 12</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>LCM of $6, 8, 10, 12$ is $120$. <br>Prime factors of $120 = 2^3 \times 3 \times 5$.<br>To make it a perfect square, we need to multiply by $2 \times 3 \times 5 = 30$.<br>Smallest perfect square = $120 \times 30 = 3600$.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">13. In an auditorium, the number of rows is equal to the number of chairs in each row. If the capacity of the auditorium is 2304, find the number of chairs in a row.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the number of rows be $x$. <br>Then, the number of chairs in each row is also $x$.<br>Total capacity = $x \times x = x^2$<br>$x^2 = 2304$<br>$x = \sqrt{2304} = 48$<br>Number of chairs in a row is 48.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">14. In a garden, 1089 rose plants are arranged in such a way that there are as many rows as there are plants in each row. Find the number of rows in the garden.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the number of rows be $x$. <br>Then, the number of plants per row is $x$.<br>Total plants = $x \times x = x^2$<br>$x^2 = 1089$<br>$x = \sqrt{1089} = 33$<br>Number of rows in the garden is 33.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">15. An army officer wishes to arrange 4770 soldiers in the form of a square. After arranging he finds that nine soldiers are left out. Find the number of soldiers in each row.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Soldiers placed in the square = $4770 - 9 = 4761$.<br>Let the number of soldiers in each row be $x$.<br>Total soldiers in square = $x^2 = 4761$<br>$x = \sqrt{4761} = 69$<br>Number of soldiers in each row is 69.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.</div>
+            <div class="sub-q">(i) 9845</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{9845} \approx 99.22$<br>The perfect square just below it is $99^2 = 9801$.<br>Least number to subtract = $9845 - 9801 = 44$.<br>Square root of the perfect square is 99.</div>
+            <div class="sub-q">(ii) 7585</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{7585} \approx 87.09$<br>The perfect square just below it is $87^2 = 7569$.<br>Least number to subtract = $7585 - 7569 = 16$.<br>Square root of the perfect square is 87.</div>
+            <div class="sub-q">(iii) 786</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{786} \approx 28.03$<br>The perfect square just below it is $28^2 = 784$.<br>Least number to subtract = $786 - 784 = 2$.<br>Square root of the perfect square is 28.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.</div>
+            <div class="sub-q">(i) 9389</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{9389} \approx 96.89$<br>The perfect square just above it is $97^2 = 9409$.<br>Least number to add = $9409 - 9389 = 20$.<br>Square root of the perfect square is 97.</div>
+            <div class="sub-q">(ii) 5601</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{5601} \approx 74.83$<br>The perfect square just above it is $75^2 = 5625$.<br>Least number to add = $5625 - 5601 = 24$.<br>Square root of the perfect square is 75.</div>
+            <div class="sub-q">(iii) 4725</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{4725} \approx 68.73$<br>The perfect square just above it is $69^2 = 4761$.<br>Least number to add = $4761 - 4725 = 36$.<br>Square root of the perfect square is 69.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">18. Find the greatest six-digit number which is a perfect square.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>The greatest 6-digit number is 999999.<br>$\sqrt{999999} \approx 999.999$<br>So, the greatest 6-digit perfect square is $999^2 = 998001$.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">19. Find the smallest six-digit number which is a perfect square.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>The smallest 6-digit number is 100000.<br>$\sqrt{100000} \approx 316.22$<br>So, the smallest 6-digit perfect square is $317^2 = 100489$.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">20. Find the value of each of the following.</div>
+            <div class="sub-q">(i) $\sqrt{\frac{1.44}{0.49}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{144/100}{49/100}} = \sqrt{\frac{144}{49}} = \frac{12}{7}$</div>
+            <div class="sub-q">(ii) $\sqrt{\frac{32.4}{28.9}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{324/10}{289/10}} = \sqrt{\frac{324}{289}} = \frac{18}{17}$</div>
+            <div class="sub-q">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{25/10000}{196/10000}} = \sqrt{\frac{25}{196}} = \frac{5}{14}$</div>
+            <div class="sub-q">(iv) $\sqrt{1 + \frac{25}{144}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{144 + 25}{144}} = \sqrt{\frac{169}{144}} = \frac{13}{12}$</div>
+            <div class="sub-q">(v) $\sqrt{1 - \frac{64}{289}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{\frac{289 - 64}{289}} = \sqrt{\frac{225}{289}} = \frac{15}{17}$</div>
+            <div class="sub-q">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{8 \times 216 \times 27} = \sqrt{46656} = 216$<br>(Alternative: $\sqrt{2^3 \times (2 \times 3)^3 \times 3^3} = \sqrt{2^6 \times 3^6} = 2^3 \times 3^3 = 8 \times 27 = 216$)</div>
+            <div class="sub-q">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\frac{3}{0.3} + \frac{4}{0.4} + \frac{5}{0.5} = 10 + 10 + 10 = 30$</div>
+            <div class="sub-q">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$20 + 2 + 0.2 + 0.02 = 22.22$</div>
+            <div class="sub-q">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{182 - \sqrt{156 + 13}} = \sqrt{182 - \sqrt{169}} = \sqrt{182 - 13} = \sqrt{169} = 13$</div>
+            <div class="sub-q">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{382 + \sqrt{341 - 17}} = \sqrt{382 + \sqrt{324}} = \sqrt{382 + 18} = \sqrt{400} = 20$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">21. Fill in the blanks.</div>
+            <div class="sub-q">(i) The units digit of the square of a number ending in 2 is ...... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>4</b></div>
+            <div class="sub-q">(ii) The units digit of the square of a number ending in 9 is ...... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>1</b></div>
+            <div class="sub-q">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>4</b> or <b>6</b></div>
+            <div class="sub-q">(iv) There are ...... natural numbers between the squares of 8 and 9.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>16</b> (since $2 \times 8 = 16$)</div>
+            <div class="sub-q">(v) $9^2 - 8^2$ = ...... + 8.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>9</b> (since $a^2 - b^2 = (a-b)(a+b)$, here $(9-8)(9+8) = 1(9+8) = 9+8$)</div>
+            <div class="sub-q">(vi) $19^2$ - ...... = 19 + 18.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>$18^2$</b> (since $19^2 - 18^2 = (19-18)(19+18) = 19+18$)</div>
+            <div class="sub-q">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt{4096} + \sqrt{40.96} = 64 + 6.4 = $ <b>70.4</b></div>
+            <div class="sub-q">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$2 + 0.2 + 0.02 = $ <b>2.22</b></div>
+            <div class="sub-q">(ix) 3, 4 and ...... form a Pythagorean triple.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
+        </div>
+
+        <button class="btn-teach" onclick="enterTeachMode()">👨‍🏫 Teach Mode</button>
+    </div>
+
+    <!-- TEACH VIEW (Question List) -->
+    <div class="container" id="teach-view" style="display: none;">
+        <button class="btn-close" onclick="exitTeachMode()">Back</button>
+        <div class="header">Teach Mode - Select a Question</div>
+        <ul>
+            <li class="main-q-li">1. Find the value of each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-0')">(i) $\left(\frac{11}{13}\right)^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-1')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-2')">(iii) $(3.5)^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-3')">(iv) $(0.08)^3$</li>
+            <li class="main-q-li">2. Find the square root of each of the following by prime factorisation.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-4')">(i) 256</li>
+            <li class="clickable-q" onclick="startPresentation('pres-5')">(ii) 324</li>
+            <li class="clickable-q" onclick="startPresentation('pres-6')">(iii) 784</li>
+            <li class="clickable-q" onclick="startPresentation('pres-7')">(iv) 7056</li>
+            <li class="clickable-q" onclick="startPresentation('pres-8')">(v) 28224</li>
+            <li class="clickable-q" onclick="startPresentation('pres-9')">(vi) 60025</li>
+            <li class="main-q-li">3. Find the square root of each of the following by division.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-10')">(i) 841</li>
+            <li class="clickable-q" onclick="startPresentation('pres-11')">(ii) 2304</li>
+            <li class="clickable-q" onclick="startPresentation('pres-12')">(iii) 39204</li>
+            <li class="clickable-q" onclick="startPresentation('pres-13')">(iv) 55225</li>
+            <li class="clickable-q" onclick="startPresentation('pres-14')">(v) 177241</li>
+            <li class="clickable-q" onclick="startPresentation('pres-15')">(vi) 425104</li>
+            <li class="main-q-li">4. Find the square root of each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-16')">(i) 13.69</li>
+            <li class="clickable-q" onclick="startPresentation('pres-17')">(ii) 0.002025</li>
+            <li class="clickable-q" onclick="startPresentation('pres-18')">(iii) 1.5129</li>
+            <li class="clickable-q" onclick="startPresentation('pres-19')">(iv) 20.7936</li>
+            <li class="clickable-q" onclick="startPresentation('pres-20')">(v) 6146.56</li>
+            <li class="clickable-q" onclick="startPresentation('pres-21')">(vi) 1.024144</li>
+            <li class="main-q-li">5. Find the square root of each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-22')">(i) $\frac{169}{484}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-23')">(ii) $5 \frac{580}{729}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-24')">(iii) $12 \frac{52}{81}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-25')">(iv) 0.0009</li>
+            <li class="clickable-q" onclick="startPresentation('pres-26')">(v) 4.41</li>
+            <li class="main-q-li">6. Find the square root of each of the following correct to two decimal places.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-27')">(i) 2</li>
+            <li class="clickable-q" onclick="startPresentation('pres-28')">(ii) 3</li>
+            <li class="clickable-q" onclick="startPresentation('pres-29')">(iii) 8</li>
+            <li class="clickable-q" onclick="startPresentation('pres-30')">(iv) 11</li>
+            <li class="clickable-q" onclick="startPresentation('pres-31')">(v) 35</li>
+            <li class="clickable-q" onclick="startPresentation('pres-32')">(vi) 99</li>
+            <li class="main-q-li">7. Find the value of $\sqrt{5}$ correct to two decimal places. Then, find the value of the square root of $\frac{3-\sqrt{5}}{3+\sqrt{5}}$ correct to two decimal places.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-33')">Solution</li>
+            <li class="main-q-li">8. Find the square root of each of the following correct to three decimal places.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-34')">(i) 2.5</li>
+            <li class="clickable-q" onclick="startPresentation('pres-35')">(ii) 0.036</li>
+            <li class="clickable-q" onclick="startPresentation('pres-36')">(iii) 6.4</li>
+            <li class="clickable-q" onclick="startPresentation('pres-37')">(iv) 0.100</li>
+            <li class="main-q-li">9. Find the least number by which 10368 should be (i) increased (ii) decreased (iii) multiplied (iv) divided to make it a perfect square.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-38')">Solution</li>
+            <li class="main-q-li">10. Find the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-39')">(i) $55^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-40')">(ii) $98^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-41')">(iii) $\sqrt{38}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-42')">(iv) $\sqrt{89}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-43')">(v) $\sqrt{38.83}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-44')">(vi) $\sqrt{64.25}$</li>
+            <li class="main-q-li">11. Use algebraic methods to find the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-45')">(i) $52^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-46')">(ii) $98^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-47')">(iii) $309^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-48')">(iv) $495^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-49')">(v) $96^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-50')">(vi) $305^2$</li>
+            <li class="main-q-li">12. Find in each case the smallest perfect square divisible by the given numbers.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-51')">(i) 2, 4 and 5</li>
+            <li class="clickable-q" onclick="startPresentation('pres-52')">(ii) 3, 4, 5 and 6</li>
+            <li class="clickable-q" onclick="startPresentation('pres-53')">(iii) 6, 8, 10 and 12</li>
+            <li class="main-q-li">13. In an auditorium, the number of rows is equal to the number of chairs in each row. If the capacity of the auditorium is 2304, find the number of chairs in a row.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-54')">Solution</li>
+            <li class="main-q-li">14. In a garden, 1089 rose plants are arranged in such a way that there are as many rows as there are plants in each row. Find the number of rows in the garden.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-55')">Solution</li>
+            <li class="main-q-li">15. An army officer wishes to arrange 4770 soldiers in the form of a square. After arranging he finds that nine soldiers are left out. Find the number of soldiers in each row.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-56')">Solution</li>
+            <li class="main-q-li">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-57')">(i) 9845</li>
+            <li class="clickable-q" onclick="startPresentation('pres-58')">(ii) 7585</li>
+            <li class="clickable-q" onclick="startPresentation('pres-59')">(iii) 786</li>
+            <li class="main-q-li">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-60')">(i) 9389</li>
+            <li class="clickable-q" onclick="startPresentation('pres-61')">(ii) 5601</li>
+            <li class="clickable-q" onclick="startPresentation('pres-62')">(iii) 4725</li>
+            <li class="main-q-li">18. Find the greatest six-digit number which is a perfect square.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-63')">Solution</li>
+            <li class="main-q-li">19. Find the smallest six-digit number which is a perfect square.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-64')">Solution</li>
+            <li class="main-q-li">20. Find the value of each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-65')">(i) $\sqrt{\frac{1.44}{0.49}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-66')">(ii) $\sqrt{\frac{32.4}{28.9}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-67')">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-68')">(iv) $\sqrt{1 + \frac{25}{144}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-69')">(v) $\sqrt{1 - \frac{64}{289}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-70')">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-71')">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-72')">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-73')">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-74')">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</li>
+            <li class="main-q-li">21. Fill in the blanks.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-75')">(i) The units digit of the square of a number ending in 2 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-76')">(ii) The units digit of the square of a number ending in 9 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-77')">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-78')">(iv) There are ...... natural numbers between the squares of 8 and 9.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-79')">(v) $9^2 - 8^2$ = ...... + 8.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-80')">(vi) $19^2$ - ...... = 19 + 18.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-81')">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-82')">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</li>
+            <li class="clickable-q" onclick="startPresentation('pres-83')">(ix) 3, 4 and ...... form a Pythagorean triple.</li>
+
+        </ul>
+    </div>
+
+    <!-- PRESENTATION VIEW -->
+    <div class="container" id="presentation-view" style="display: none;">
+        <button class="btn-close" style="z-index: 100;" onclick="closePresentation()">X Close</button>
+        <div id="pres-0" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(i) $\left(\frac{11}{13}\right)^2$</div>
+            <div class="pres-step">$\left(\frac{11}{13}\right)^2 = \frac{11^2}{13^2} = \frac{121}{169}$</div>
+        </div>
+        <div id="pres-1" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(ii) $\left(-1 \frac{7}{11}\right)^3$</div>
+            <div class="pres-step">$\left(-1 \frac{7}{11}\right)^3 = \left(\frac{-18}{11}\right)^3 = \frac{(-18)^3}{11^3} = \frac{-5832}{1331}$</div>
+        </div>
+        <div id="pres-2" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(iii) $(3.5)^2$</div>
+            <div class="pres-step">$(3.5)^2 = \left(\frac{35}{10}\right)^2 = \frac{1225}{100} = 12.25$</div>
+        </div>
+        <div id="pres-3" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(iv) $(0.08)^3$</div>
+            <div class="pres-step">$(0.08)^3 = \left(\frac{8}{100}\right)^3 = \frac{512}{1000000} = 0.000512$</div>
+        </div>
+        <div id="pres-4" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(i) 256</div>
+            <div class="pres-step">$256 = 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 \times 2 = 2^8$</div>
+            <div class="pres-step">$\sqrt{256} = \sqrt{2^8} = 2^4 = 16$</div>
+        </div>
+        <div id="pres-5" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(ii) 324</div>
+            <div class="pres-step">$324 = 2 \times 2 \times 3 \times 3 \times 3 \times 3 = 2^2 \times 3^4$</div>
+            <div class="pres-step">$\sqrt{324} = 2 \times 3^2 = 2 \times 9 = 18$</div>
+        </div>
+        <div id="pres-6" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(iii) 784</div>
+            <div class="pres-step">$784 = 2 \times 2 \times 2 \times 2 \times 7 \times 7 = 2^4 \times 7^2$</div>
+            <div class="pres-step">$\sqrt{784} = 2^2 \times 7 = 4 \times 7 = 28$</div>
+        </div>
+        <div id="pres-7" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(iv) 7056</div>
+            <div class="pres-step">$7056 = 2^4 \times 3^2 \times 7^2$</div>
+            <div class="pres-step">$\sqrt{7056} = 2^2 \times 3 \times 7 = 4 \times 21 = 84$</div>
+        </div>
+        <div id="pres-8" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(v) 28224</div>
+            <div class="pres-step">$28224 = 2^6 \times 3^2 \times 7^2$</div>
+            <div class="pres-step">$\sqrt{28224} = 2^3 \times 3 \times 7 = 8 \times 21 = 168$</div>
+        </div>
+        <div id="pres-9" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the square root of each of the following by prime factorisation.<br>(vi) 60025</div>
+            <div class="pres-step">$60025 = 5^2 \times 7^4$</div>
+            <div class="pres-step">$\sqrt{60025} = 5 \times 7^2 = 5 \times 49 = 245$</div>
+        </div>
+        <div id="pres-10" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(i) 841</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 29 \\ \hline 2 & \overline{8}\overline{41} \\ & -4 \\ \hline 49 & 441 \\ & -441 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{841} = 29$</div>
+        </div>
+        <div id="pres-11" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(ii) 2304</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 48 \\ \hline 4 & \overline{23}\overline{04} \\ & -16 \\ \hline 88 & 704 \\ & -704 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{2304} = 48$</div>
+        </div>
+        <div id="pres-12" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(iii) 39204</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 198 \\ \hline 1 & \overline{3}\overline{92}\overline{04} \\ & -1 \\ \hline 29 & 292 \\ & -261 \\ \hline 388 & 3104 \\ & -3104 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{39204} = 198$</div>
+        </div>
+        <div id="pres-13" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(iv) 55225</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 235 \\ \hline 2 & \overline{5}\overline{52}\overline{25} \\ & -4 \\ \hline 43 & 152 \\ & -129 \\ \hline 465 & 2325 \\ & -2325 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{55225} = 235$</div>
+        </div>
+        <div id="pres-14" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(v) 177241</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 421 \\ \hline 4 & \overline{17}\overline{72}\overline{41} \\ & -16 \\ \hline 82 & 172 \\ & -164 \\ \hline 841 & 841 \\ & -841 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{177241} = 421$</div>
+        </div>
+        <div id="pres-15" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Find the square root of each of the following by division.<br>(vi) 425104</div>
+            <div class="pres-step">$$\begin{array}{r|l} & 652 \\ \hline 6 & \overline{42}\overline{51}\overline{04} \\ & -36 \\ \hline 125 & 651 \\ & -625 \\ \hline 1302 & 2604 \\ & -2604 \\ \hline & 0 \end{array}$$</div>
+            <div class="pres-step">$\sqrt{425104} = 652$</div>
+        </div>
+        <div id="pres-16" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(i) 13.69</div>
+            <div class="pres-step">$\sqrt{13.69} = \sqrt{\frac{1369}{100}} = \frac{37}{10} = 3.7$</div>
+        </div>
+        <div id="pres-17" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(ii) 0.002025</div>
+            <div class="pres-step">$\sqrt{0.002025} = \sqrt{\frac{2025}{1000000}} = \frac{45}{1000} = 0.045$</div>
+        </div>
+        <div id="pres-18" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(iii) 1.5129</div>
+            <div class="pres-step">$\sqrt{1.5129} = \sqrt{\frac{15129}{10000}} = \frac{123}{100} = 1.23$</div>
+        </div>
+        <div id="pres-19" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(iv) 20.7936</div>
+            <div class="pres-step">$\sqrt{20.7936} = \sqrt{\frac{207936}{10000}} = \frac{456}{100} = 4.56$</div>
+        </div>
+        <div id="pres-20" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(v) 6146.56</div>
+            <div class="pres-step">$\sqrt{6146.56} = \sqrt{\frac{614656}{100}} = \frac{784}{10} = 78.4$</div>
+        </div>
+        <div id="pres-21" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find the square root of each of the following.<br>(vi) 1.024144</div>
+            <div class="pres-step">$\sqrt{1.024144} = \sqrt{\frac{1024144}{1000000}} = \frac{1012}{1000} = 1.012$</div>
+        </div>
+        <div id="pres-22" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the square root of each of the following.<br>(i) $\frac{169}{484}$</div>
+            <div class="pres-step">$\sqrt{\frac{169}{484}} = \frac{\sqrt{169}}{\sqrt{484}} = \frac{13}{22}$</div>
+        </div>
+        <div id="pres-23" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the square root of each of the following.<br>(ii) $5 \frac{580}{729}$</div>
+            <div class="pres-step">$\sqrt{\frac{(5 \times 729) + 580}{729}} = \sqrt{\frac{3645 + 580}{729}} = \sqrt{\frac{4225}{729}} = \frac{65}{27}$</div>
+        </div>
+        <div id="pres-24" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the square root of each of the following.<br>(iii) $12 \frac{52}{81}$</div>
+            <div class="pres-step">$\sqrt{\frac{(12 \times 81) + 52}{81}} = \sqrt{\frac{972 + 52}{81}} = \sqrt{\frac{1024}{81}} = \frac{32}{9}$</div>
+        </div>
+        <div id="pres-25" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the square root of each of the following.<br>(iv) 0.0009</div>
+            <div class="pres-step">$\sqrt{0.0009} = \sqrt{\frac{9}{10000}} = \frac{3}{100} = 0.03$</div>
+        </div>
+        <div id="pres-26" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the square root of each of the following.<br>(v) 4.41</div>
+            <div class="pres-step">$\sqrt{4.41} = \sqrt{\frac{441}{100}} = \frac{21}{10} = 2.1$</div>
+        </div>
+        <div id="pres-27" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(i) 2</div>
+            <div class="pres-step">$\sqrt{2} \approx 1.41$</div>
+        </div>
+        <div id="pres-28" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(ii) 3</div>
+            <div class="pres-step">$\sqrt{3} \approx 1.73$</div>
+        </div>
+        <div id="pres-29" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(iii) 8</div>
+            <div class="pres-step">$\sqrt{8} \approx 2.83$</div>
+        </div>
+        <div id="pres-30" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(iv) 11</div>
+            <div class="pres-step">$\sqrt{11} \approx 3.32$</div>
+        </div>
+        <div id="pres-31" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(v) 35</div>
+            <div class="pres-step">$\sqrt{35} \approx 5.92$</div>
+        </div>
+        <div id="pres-32" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the square root of each of the following correct to two decimal places.<br>(vi) 99</div>
+            <div class="pres-step">$\sqrt{99} \approx 9.95$</div>
+        </div>
+        <div id="pres-33" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Find the value of $\sqrt{5}$ correct to two decimal places. Then, find the value of the square root of $\frac{3-\sqrt{5}}{3+\sqrt{5}}$ correct to two decimal places.<br></div>
+            <div class="pres-step">$\sqrt{5} \approx 2.24$</div>
+            <div class="pres-step">$\sqrt{\frac{3-\sqrt{5}}{3+\sqrt{5}}} = \sqrt{\frac{(3-\sqrt{5})(3-\sqrt{5})}{(3+\sqrt{5})(3-\sqrt{5})}}$</div>
+            <div class="pres-step">$= \sqrt{\frac{(3-\sqrt{5})^2}{9-5}} = \frac{3-\sqrt{5}}{\sqrt{4}} = \frac{3-\sqrt{5}}{2}$</div>
+            <div class="pres-step">Using $\sqrt{5} = 2.236$ (taking 3 decimal places for calculation accuracy):</div>
+            <div class="pres-step">$\frac{3 - 2.236}{2} = \frac{0.764}{2} = 0.382$</div>
+            <div class="pres-step">Correct to two decimal places: $0.38$</div>
+        </div>
+        <div id="pres-34" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Find the square root of each of the following correct to three decimal places.<br>(i) 2.5</div>
+            <div class="pres-step">$\sqrt{2.5} \approx 1.581$</div>
+        </div>
+        <div id="pres-35" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Find the square root of each of the following correct to three decimal places.<br>(ii) 0.036</div>
+            <div class="pres-step">$\sqrt{0.036} \approx 0.190$</div>
+        </div>
+        <div id="pres-36" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Find the square root of each of the following correct to three decimal places.<br>(iii) 6.4</div>
+            <div class="pres-step">$\sqrt{6.4} \approx 2.530$</div>
+        </div>
+        <div id="pres-37" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Find the square root of each of the following correct to three decimal places.<br>(iv) 0.100</div>
+            <div class="pres-step">$\sqrt{0.100} \approx 0.316$</div>
+        </div>
+        <div id="pres-38" class="pres-container" style="display:none;">
+            <div class="pres-q">9. Find the least number by which 10368 should be (i) increased (ii) decreased (iii) multiplied (iv) divided to make it a perfect square.<br></div>
+            <div class="pres-step">We find the square root of 10368. $101^2 = 10201$ and $102^2 = 10404$.</div>
+            <div class="pres-step">So, $101^2 < 10368 < 102^2$</div>
+            <div class="pres-step">(i) Increased: To get the next perfect square ($10404$), we add: $10404 - 10368 = 36$</div>
+            <div class="pres-step">(ii) Decreased: To get the previous perfect square ($10201$), we subtract: $10368 - 10201 = 167$</div>
+            <div class="pres-step">Now, prime factorization of $10368 = 2^7 \times 3^4$</div>
+            <div class="pres-step">(iii) Multiplied: To make all powers even, we need to multiply by $2$. (Result will be $2^8 \times 3^4$)</div>
+            <div class="pres-step">(iv) Divided: To make all powers even, we need to divide by $2$. (Result will be $2^6 \times 3^4$)</div>
+        </div>
+        <div id="pres-39" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(i) $55^2$</div>
+            <div class="pres-step">$55^2 = 3025$</div>
+        </div>
+        <div id="pres-40" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(ii) $98^2$</div>
+            <div class="pres-step">$98^2 = 9604$</div>
+        </div>
+        <div id="pres-41" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(iii) $\sqrt{38}$</div>
+            <div class="pres-step">$\sqrt{38} \approx 6.164$ (to 3 decimal places)</div>
+        </div>
+        <div id="pres-42" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(iv) $\sqrt{89}$</div>
+            <div class="pres-step">$\sqrt{89} \approx 9.43$ (to 2 decimal places)</div>
+        </div>
+        <div id="pres-43" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(v) $\sqrt{38.83}$</div>
+            <div class="pres-step">$\sqrt{38.83} \approx 6.23$ (to 2 decimal places)</div>
+        </div>
+        <div id="pres-44" class="pres-container" style="display:none;">
+            <div class="pres-q">10. Find the following.<br>(vi) $\sqrt{64.25}$</div>
+            <div class="pres-step">$\sqrt{64.25} \approx 8.016$ (to 3 decimal places)</div>
+        </div>
+        <div id="pres-45" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(i) $52^2$</div>
+            <div class="pres-step">$(50 + 2)^2 = 50^2 + 2(50)(2) + 2^2 = 2500 + 200 + 4 = 2704$</div>
+        </div>
+        <div id="pres-46" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(ii) $98^2$</div>
+            <div class="pres-step">$(100 - 2)^2 = 100^2 - 2(100)(2) + 2^2 = 10000 - 400 + 4 = 9604$</div>
+        </div>
+        <div id="pres-47" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(iii) $309^2$</div>
+            <div class="pres-step">$(300 + 9)^2 = 300^2 + 2(300)(9) + 9^2 = 90000 + 5400 + 81 = 95481$</div>
+        </div>
+        <div id="pres-48" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(iv) $495^2$</div>
+            <div class="pres-step">$(500 - 5)^2 = 500^2 - 2(500)(5) + 5^2 = 250000 - 5000 + 25 = 245025$</div>
+        </div>
+        <div id="pres-49" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(v) $96^2$</div>
+            <div class="pres-step">$(100 - 4)^2 = 100^2 - 2(100)(4) + 4^2 = 10000 - 800 + 16 = 9216$</div>
+        </div>
+        <div id="pres-50" class="pres-container" style="display:none;">
+            <div class="pres-q">11. Use algebraic methods to find the following.<br>(vi) $305^2$</div>
+            <div class="pres-step">$(300 + 5)^2 = 300^2 + 2(300)(5) + 5^2 = 90000 + 3000 + 25 = 93025$</div>
+        </div>
+        <div id="pres-51" class="pres-container" style="display:none;">
+            <div class="pres-q">12. Find in each case the smallest perfect square divisible by the given numbers.<br>(i) 2, 4 and 5</div>
+            <div class="pres-step">LCM of $2, 4, 5$ is $20$.</div>
+            <div class="pres-step">Prime factors of $20 = 2^2 \times 5$.</div>
+            <div class="pres-step">To make it a perfect square, we need to multiply by $5$.</div>
+            <div class="pres-step">Smallest perfect square = $20 \times 5 = 100$.</div>
+        </div>
+        <div id="pres-52" class="pres-container" style="display:none;">
+            <div class="pres-q">12. Find in each case the smallest perfect square divisible by the given numbers.<br>(ii) 3, 4, 5 and 6</div>
+            <div class="pres-step">LCM of $3, 4, 5, 6$ is $60$.</div>
+            <div class="pres-step">Prime factors of $60 = 2^2 \times 3 \times 5$.</div>
+            <div class="pres-step">To make it a perfect square, we need to multiply by $3 \times 5 = 15$.</div>
+            <div class="pres-step">Smallest perfect square = $60 \times 15 = 900$.</div>
+        </div>
+        <div id="pres-53" class="pres-container" style="display:none;">
+            <div class="pres-q">12. Find in each case the smallest perfect square divisible by the given numbers.<br>(iii) 6, 8, 10 and 12</div>
+            <div class="pres-step">LCM of $6, 8, 10, 12$ is $120$.</div>
+            <div class="pres-step">Prime factors of $120 = 2^3 \times 3 \times 5$.</div>
+            <div class="pres-step">To make it a perfect square, we need to multiply by $2 \times 3 \times 5 = 30$.</div>
+            <div class="pres-step">Smallest perfect square = $120 \times 30 = 3600$.</div>
+        </div>
+        <div id="pres-54" class="pres-container" style="display:none;">
+            <div class="pres-q">13. In an auditorium, the number of rows is equal to the number of chairs in each row. If the capacity of the auditorium is 2304, find the number of chairs in a row.<br></div>
+            <div class="pres-step">Let the number of rows be $x$.</div>
+            <div class="pres-step">Then, the number of chairs in each row is also $x$.</div>
+            <div class="pres-step">Total capacity = $x \times x = x^2$</div>
+            <div class="pres-step">$x^2 = 2304$</div>
+            <div class="pres-step">$x = \sqrt{2304} = 48$</div>
+            <div class="pres-step">Number of chairs in a row is 48.</div>
+        </div>
+        <div id="pres-55" class="pres-container" style="display:none;">
+            <div class="pres-q">14. In a garden, 1089 rose plants are arranged in such a way that there are as many rows as there are plants in each row. Find the number of rows in the garden.<br></div>
+            <div class="pres-step">Let the number of rows be $x$.</div>
+            <div class="pres-step">Then, the number of plants per row is $x$.</div>
+            <div class="pres-step">Total plants = $x \times x = x^2$</div>
+            <div class="pres-step">$x^2 = 1089$</div>
+            <div class="pres-step">$x = \sqrt{1089} = 33$</div>
+            <div class="pres-step">Number of rows in the garden is 33.</div>
+        </div>
+        <div id="pres-56" class="pres-container" style="display:none;">
+            <div class="pres-q">15. An army officer wishes to arrange 4770 soldiers in the form of a square. After arranging he finds that nine soldiers are left out. Find the number of soldiers in each row.<br></div>
+            <div class="pres-step">Soldiers placed in the square = $4770 - 9 = 4761$.</div>
+            <div class="pres-step">Let the number of soldiers in each row be $x$.</div>
+            <div class="pres-step">Total soldiers in square = $x^2 = 4761$</div>
+            <div class="pres-step">$x = \sqrt{4761} = 69$</div>
+            <div class="pres-step">Number of soldiers in each row is 69.</div>
+        </div>
+        <div id="pres-57" class="pres-container" style="display:none;">
+            <div class="pres-q">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.<br>(i) 9845</div>
+            <div class="pres-step">$\sqrt{9845} \approx 99.22$</div>
+            <div class="pres-step">The perfect square just below it is $99^2 = 9801$.</div>
+            <div class="pres-step">Least number to subtract = $9845 - 9801 = 44$.</div>
+            <div class="pres-step">Square root of the perfect square is 99.</div>
+        </div>
+        <div id="pres-58" class="pres-container" style="display:none;">
+            <div class="pres-q">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.<br>(ii) 7585</div>
+            <div class="pres-step">$\sqrt{7585} \approx 87.09$</div>
+            <div class="pres-step">The perfect square just below it is $87^2 = 7569$.</div>
+            <div class="pres-step">Least number to subtract = $7585 - 7569 = 16$.</div>
+            <div class="pres-step">Square root of the perfect square is 87.</div>
+        </div>
+        <div id="pres-59" class="pres-container" style="display:none;">
+            <div class="pres-q">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.<br>(iii) 786</div>
+            <div class="pres-step">$\sqrt{786} \approx 28.03$</div>
+            <div class="pres-step">The perfect square just below it is $28^2 = 784$.</div>
+            <div class="pres-step">Least number to subtract = $786 - 784 = 2$.</div>
+            <div class="pres-step">Square root of the perfect square is 28.</div>
+        </div>
+        <div id="pres-60" class="pres-container" style="display:none;">
+            <div class="pres-q">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.<br>(i) 9389</div>
+            <div class="pres-step">$\sqrt{9389} \approx 96.89$</div>
+            <div class="pres-step">The perfect square just above it is $97^2 = 9409$.</div>
+            <div class="pres-step">Least number to add = $9409 - 9389 = 20$.</div>
+            <div class="pres-step">Square root of the perfect square is 97.</div>
+        </div>
+        <div id="pres-61" class="pres-container" style="display:none;">
+            <div class="pres-q">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.<br>(ii) 5601</div>
+            <div class="pres-step">$\sqrt{5601} \approx 74.83$</div>
+            <div class="pres-step">The perfect square just above it is $75^2 = 5625$.</div>
+            <div class="pres-step">Least number to add = $5625 - 5601 = 24$.</div>
+            <div class="pres-step">Square root of the perfect square is 75.</div>
+        </div>
+        <div id="pres-62" class="pres-container" style="display:none;">
+            <div class="pres-q">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.<br>(iii) 4725</div>
+            <div class="pres-step">$\sqrt{4725} \approx 68.73$</div>
+            <div class="pres-step">The perfect square just above it is $69^2 = 4761$.</div>
+            <div class="pres-step">Least number to add = $4761 - 4725 = 36$.</div>
+            <div class="pres-step">Square root of the perfect square is 69.</div>
+        </div>
+        <div id="pres-63" class="pres-container" style="display:none;">
+            <div class="pres-q">18. Find the greatest six-digit number which is a perfect square.<br></div>
+            <div class="pres-step">The greatest 6-digit number is 999999.</div>
+            <div class="pres-step">$\sqrt{999999} \approx 999.999$</div>
+            <div class="pres-step">So, the greatest 6-digit perfect square is $999^2 = 998001$.</div>
+        </div>
+        <div id="pres-64" class="pres-container" style="display:none;">
+            <div class="pres-q">19. Find the smallest six-digit number which is a perfect square.<br></div>
+            <div class="pres-step">The smallest 6-digit number is 100000.</div>
+            <div class="pres-step">$\sqrt{100000} \approx 316.22$</div>
+            <div class="pres-step">So, the smallest 6-digit perfect square is $317^2 = 100489$.</div>
+        </div>
+        <div id="pres-65" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(i) $\sqrt{\frac{1.44}{0.49}}$</div>
+            <div class="pres-step">$\sqrt{\frac{144/100}{49/100}} = \sqrt{\frac{144}{49}} = \frac{12}{7}$</div>
+        </div>
+        <div id="pres-66" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(ii) $\sqrt{\frac{32.4}{28.9}}$</div>
+            <div class="pres-step">$\sqrt{\frac{324/10}{289/10}} = \sqrt{\frac{324}{289}} = \frac{18}{17}$</div>
+        </div>
+        <div id="pres-67" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(iii) $\sqrt{\frac{0.0025}{0.0196}}$</div>
+            <div class="pres-step">$\sqrt{\frac{25/10000}{196/10000}} = \sqrt{\frac{25}{196}} = \frac{5}{14}$</div>
+        </div>
+        <div id="pres-68" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(iv) $\sqrt{1 + \frac{25}{144}}$</div>
+            <div class="pres-step">$\sqrt{\frac{144 + 25}{144}} = \sqrt{\frac{169}{144}} = \frac{13}{12}$</div>
+        </div>
+        <div id="pres-69" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(v) $\sqrt{1 - \frac{64}{289}}$</div>
+            <div class="pres-step">$\sqrt{\frac{289 - 64}{289}} = \sqrt{\frac{225}{289}} = \frac{15}{17}$</div>
+        </div>
+        <div id="pres-70" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(vi) $\sqrt{2^3 \times 6^3 \times 27}$</div>
+            <div class="pres-step">$\sqrt{8 \times 216 \times 27} = \sqrt{46656} = 216$</div>
+            <div class="pres-step">(Alternative: $\sqrt{2^3 \times (2 \times 3)^3 \times 3^3} = \sqrt{2^6 \times 3^6} = 2^3 \times 3^3 = 8 \times 27 = 216$)</div>
+        </div>
+        <div id="pres-71" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</div>
+            <div class="pres-step">$\frac{3}{0.3} + \frac{4}{0.4} + \frac{5}{0.5} = 10 + 10 + 10 = 30$</div>
+        </div>
+        <div id="pres-72" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</div>
+            <div class="pres-step">$20 + 2 + 0.2 + 0.02 = 22.22$</div>
+        </div>
+        <div id="pres-73" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</div>
+            <div class="pres-step">$\sqrt{182 - \sqrt{156 + 13}} = \sqrt{182 - \sqrt{169}} = \sqrt{182 - 13} = \sqrt{169} = 13$</div>
+        </div>
+        <div id="pres-74" class="pres-container" style="display:none;">
+            <div class="pres-q">20. Find the value of each of the following.<br>(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</div>
+            <div class="pres-step">$\sqrt{382 + \sqrt{341 - 17}} = \sqrt{382 + \sqrt{324}} = \sqrt{382 + 18} = \sqrt{400} = 20$</div>
+        </div>
+        <div id="pres-75" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(i) The units digit of the square of a number ending in 2 is ...... </div>
+            <div class="pres-step"><b>4</b></div>
+        </div>
+        <div id="pres-76" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(ii) The units digit of the square of a number ending in 9 is ...... </div>
+            <div class="pres-step"><b>1</b></div>
+        </div>
+        <div id="pres-77" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </div>
+            <div class="pres-step"><b>4</b> or <b>6</b></div>
+        </div>
+        <div id="pres-78" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(iv) There are ...... natural numbers between the squares of 8 and 9.</div>
+            <div class="pres-step"><b>16</b> (since $2 \times 8 = 16$)</div>
+        </div>
+        <div id="pres-79" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(v) $9^2 - 8^2$ = ...... + 8.</div>
+            <div class="pres-step"><b>9</b> (since $a^2 - b^2 = (a-b)(a+b)$, here $(9-8)(9+8) = 1(9+8) = 9+8$)</div>
+        </div>
+        <div id="pres-80" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(vi) $19^2$ - ...... = 19 + 18.</div>
+            <div class="pres-step"><b>$18^2$</b> (since $19^2 - 18^2 = (19-18)(19+18) = 19+18$)</div>
+        </div>
+        <div id="pres-81" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </div>
+            <div class="pres-step">$\sqrt{4096} + \sqrt{40.96} = 64 + 6.4 = $ <b>70.4</b></div>
+        </div>
+        <div id="pres-82" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</div>
+            <div class="pres-step">$2 + 0.2 + 0.02 = $ <b>2.22</b></div>
+        </div>
+        <div id="pres-83" class="pres-container" style="display:none;">
+            <div class="pres-q">21. Fill in the blanks.<br>(ix) 3, 4 and ...... form a Pythagorean triple.</div>
+            <div class="pres-step"><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
+        </div>
+
+        <div class="controls-hint">Left Click / Space / Right Arrow = Next Step &nbsp;|&nbsp; Right Click / Left Arrow = Previous Step &nbsp;|&nbsp; Esc = Close</div>
+    </div>
+
+    <script>
+        let currentSteps = [];
+        let currentStepIndex = -1;
+
+        function enterTeachMode() {
+            document.getElementById('normal-view').style.display = 'none';
+            document.getElementById('teach-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function exitTeachMode() {
+            document.getElementById('teach-view').style.display = 'none';
+            document.getElementById('normal-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function startPresentation(id) {
+            document.getElementById('teach-view').style.display = 'none';
+            document.getElementById('presentation-view').style.display = 'block';
+            
+            // Hide all presentation containers
+            const containers = document.querySelectorAll('.pres-container');
+            containers.forEach(c => c.style.display = 'none');
+            
+            // Show the selected one
+            const target = document.getElementById(id);
+            target.style.display = 'block';
+            
+            // Get all steps in this container
+            currentSteps = target.querySelectorAll('.pres-step');
+            currentSteps.forEach(step => {
+                step.style.opacity = '0';
+            });
+            
+            currentStepIndex = -1;
+            window.scrollTo(0,0);
+        }
+
+        function closePresentation() {
+            document.getElementById('presentation-view').style.display = 'none';
+            document.getElementById('teach-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        // Click handlers for presentation
+        const presView = document.getElementById('presentation-view');
+        
+        presView.addEventListener('click', (e) => {
+            if (e.target.tagName.toLowerCase() === 'button') return;
+            nextStep();
+        });
+
+        presView.addEventListener('contextmenu', (e) => {
+            e.preventDefault();
+            prevStep();
+        });
+
+        function nextStep() {
+            if (currentStepIndex < currentSteps.length - 1) {
+                currentStepIndex++;
+                currentSteps[currentStepIndex].style.opacity = '1';
+            }
+        }
+
+        function prevStep() {
+            if (currentStepIndex >= 0) {
+                currentSteps[currentStepIndex].style.opacity = '0';
+                currentStepIndex--;
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (document.getElementById('presentation-view').style.display === 'block') {
+                if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
+                    e.preventDefault();
+                    nextStep();
+                } else if (e.key === 'ArrowLeft') {
+                    e.preventDefault();
+                    prevStep();
+                } else if (e.key === 'Escape') {
+                    closePresentation();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
