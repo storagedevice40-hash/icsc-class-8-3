@@ -163,23 +163,74 @@
             color: #1a5276;
             transition: opacity 0.4s ease-in-out;
         }
-        .controls-hint {
+        
+        /* Zoom Controls */
+        .zoom-controls {
             position: fixed;
+            right: 20px;
             bottom: 20px;
-            left: 0;
-            width: 100%;
-            text-align: center;
-            color: #7f8c8d;
-            font-size: 14px;
-            pointer-events: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            z-index: 1000;
+        }
+        .zoom-controls button {
+            width: 45px;
+            height: 45px;
+            font-size: 28px;
+            font-weight: bold;
+            border-radius: 50%;
+            border: none;
+            background-color: #2c3e50;
+            color: white;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .zoom-controls button:active {
+            transform: scale(0.9);
+        }
+
+        /* Mobile Portrait Optimization */
+        @media (max-width: 768px) and (orientation: portrait) {
+            body { padding: 10px; font-size: 14px; }
+            .container { padding: 20px; border-radius: 4px; }
+            .header { font-size: 24px; margin-bottom: 20px; }
+            .question { font-size: 17px; }
+            .sub-q { font-size: 16px; margin-top: 15px; }
+            .solution { padding: 10px; margin-left: 0; }
+            .btn-teach { width: 100%; font-size: 18px; margin: 20px 0; }
+            #teach-view li.main-q-li { font-size: 18px; margin-top: 15px; }
+            #teach-view li.clickable-q { font-size: 16px; margin: 10px 0; padding: 10px; }
+            .pres-q { font-size: 22px; margin-bottom: 20px; padding-bottom: 10px; }
+            #presentation-view { font-size: 20px; }
         }
     </style>
 </head>
 <body>
+    <div class="zoom-controls">
+        <button onclick="zoomIn()">+</button>
+        <button onclick="zoomOut()">-</button>
+    </div>
     
+    <script>
+        let currentZoom = 1;
+        function zoomIn() {
+            currentZoom += 0.1;
+            document.body.style.zoom = currentZoom;
+        }
+        function zoomOut() {
+            if (currentZoom > 0.5) {
+                currentZoom -= 0.1;
+                document.body.style.zoom = currentZoom;
+            }
+        }
+    </script>
+
     <!-- NORMAL VIEW -->
     <div class="container" id="normal-view">
         <div class="header">Exercise 3: Squares and Square Roots (Detailed Solutions)</div>
+        <button class="btn-teach" onclick="enterTeachMode()" style="margin-top: 0; margin-bottom: 40px;">👨‍🏫 Teach Mode</button>
         
         <div class="q-block">
             <div class="question">1. Find the value of each of the following.</div>
@@ -406,7 +457,6 @@
             <div class="solution"><span class="sol-label">Solution:</span><br><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
         </div>
 
-        <button class="btn-teach" onclick="enterTeachMode()">👨‍🏫 Teach Mode</button>
     </div>
 
     <!-- TEACH VIEW (Question List) -->
@@ -932,26 +982,29 @@
             <div class="pres-step"><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
         </div>
 
-        <div class="controls-hint">Left Click / Space / Right Arrow = Next Step &nbsp;|&nbsp; Right Click / Left Arrow = Previous Step &nbsp;|&nbsp; Esc = Close</div>
     </div>
 
     <script>
         let currentSteps = [];
         let currentStepIndex = -1;
+        let savedNormalScroll = 0;
+        let savedTeachScroll = 0;
 
         function enterTeachMode() {
+            savedNormalScroll = window.scrollY;
             document.getElementById('normal-view').style.display = 'none';
             document.getElementById('teach-view').style.display = 'block';
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
         }
 
         function exitTeachMode() {
             document.getElementById('teach-view').style.display = 'none';
             document.getElementById('normal-view').style.display = 'block';
-            window.scrollTo(0,0);
+            window.scrollTo(0, savedNormalScroll);
         }
 
         function startPresentation(id) {
+            savedTeachScroll = window.scrollY;
             document.getElementById('teach-view').style.display = 'none';
             document.getElementById('presentation-view').style.display = 'block';
             
@@ -970,13 +1023,13 @@
             });
             
             currentStepIndex = -1;
-            window.scrollTo(0,0);
+            window.scrollTo(0, 0);
         }
 
         function closePresentation() {
             document.getElementById('presentation-view').style.display = 'none';
             document.getElementById('teach-view').style.display = 'block';
-            window.scrollTo(0,0);
+            window.scrollTo(0, savedTeachScroll);
         }
 
         // Click handlers for presentation
