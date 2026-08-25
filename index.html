@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Class 8 Maths - Squares and Square Roots</title>
+    <title>Class 8 Maths Solutions</title>
     <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
     <script>
         window.MathJax = {
@@ -15,37 +15,104 @@
     </script>
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <style>
-        body {
+        * { box-sizing: border-box; }
+        body, html {
+            margin: 0;
+            padding: 0;
             background-color: #f4f6f9;
             font-family: 'Georgia', serif;
-            font-size: 18px;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            justify-content: center;
             color: #333;
             line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
         }
+        
         .container {
             background: #fff;
             width: 100%;
             max-width: 900px;
             min-height: 100vh;
+            margin: 0 auto;
             box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             padding: 40px 60px;
-            border-radius: 8px;
-            border: 1px solid #ddd;
             position: relative;
+            transition: background-color 0.3s, color 0.3s;
         }
+        
         .header {
             text-align: center;
             font-size: 32px;
             font-weight: bold;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             color: #2c3e50;
             border-bottom: 2px solid #3498db;
             padding-bottom: 15px;
         }
+        
+        /* Dark Mode Styles */
+        body.dark-mode {
+            background-color: #1a1a1a;
+            color: #f4f4f4;
+        }
+        body.dark-mode .container {
+            background-color: #2d2d2d;
+            box-shadow: none;
+            border: 1px solid #444;
+        }
+        body.dark-mode .header {
+            color: #66b3ff;
+            border-bottom: 2px solid #66b3ff;
+        }
+        body.dark-mode .question, body.dark-mode .pres-q {
+            color: #e0e0e0;
+        }
+        body.dark-mode .sub-q {
+            color: #cccccc;
+        }
+        body.dark-mode .solution {
+            background-color: #3a3a3a;
+            border-left: 4px solid #66b3ff;
+            color: #b3d4ff;
+        }
+        body.dark-mode .sol-label {
+            color: #ff6666;
+        }
+        body.dark-mode .teach-view li.main-q-li {
+            color: #e0e0e0;
+        }
+        body.dark-mode .teach-view li.clickable-q {
+            background: #333;
+            border-left: 4px solid #66b3ff;
+            color: #ddd;
+        }
+        body.dark-mode .teach-view li.clickable-q:hover {
+            background: #444;
+        }
+        body.dark-mode .pres-step {
+            color: #b3d4ff;
+        }
+
+        /* Home view */
+        .home-btn {
+            display: block;
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+            transition: 0.3s;
+        }
+        .home-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+
         .q-block {
             margin-bottom: 40px;
             border-bottom: 1px dashed #eee;
@@ -85,7 +152,7 @@
         .btn-teach {
             display: block;
             width: 250px;
-            margin: 30px auto;
+            margin: 0 auto 40px auto;
             padding: 15px 20px;
             background-color: #e74c3c;
             color: white;
@@ -102,6 +169,17 @@
             background-color: #c0392b;
             transform: translateY(-2px);
         }
+        .btn-top-back {
+            display: inline-block;
+            background: #7f8c8d;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
         .btn-close {
             position: absolute;
             top: 20px;
@@ -116,17 +194,17 @@
         }
         
         /* Teach View List */
-        #teach-view ul {
+        .teach-view ul {
             list-style: none;
             padding: 0;
         }
-        #teach-view li.main-q-li {
+        .teach-view li.main-q-li {
             font-size: 22px;
             font-weight: bold;
             margin-top: 25px;
             color: #2c3e50;
         }
-        #teach-view li.clickable-q {
+        .teach-view li.clickable-q {
             font-size: 20px;
             margin: 15px 0 15px 30px;
             padding: 15px;
@@ -136,7 +214,7 @@
             border-radius: 4px;
             transition: 0.2s;
         }
-        #teach-view li.clickable-q:hover {
+        .teach-view li.clickable-q:hover {
             background: #d4e6f1;
             transform: translateX(5px);
         }
@@ -146,8 +224,8 @@
             text-align: center;
             font-size: 28px;
             cursor: pointer;
-            min-height: 80vh;
-            user-select: none; /* prevent text selection on rapid click */
+            min-height: 100vh;
+            user-select: none;
         }
         .pres-q {
             font-size: 34px;
@@ -163,9 +241,27 @@
             color: #1a5276;
             transition: opacity 0.4s ease-in-out;
         }
+
+        .nav-q-btn {
+            position: fixed;
+            bottom: 20px;
+            padding: 15px 25px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .nav-q-btn:hover { background-color: #2980b9; }
+        .btn-prev-q { left: 20px; }
+        .btn-next-q { right: 80px; }
         
-        /* Zoom Controls */
-        .zoom-controls {
+        /* Tools Floating Panel */
+        .tools-panel {
             position: fixed;
             right: 20px;
             bottom: 20px;
@@ -174,10 +270,10 @@
             gap: 10px;
             z-index: 1000;
         }
-        .zoom-controls button {
+        .tools-panel button {
             width: 45px;
             height: 45px;
-            font-size: 28px;
+            font-size: 24px;
             font-weight: bold;
             border-radius: 50%;
             border: none;
@@ -187,30 +283,33 @@
             cursor: pointer;
             transition: 0.2s;
         }
-        .zoom-controls button:active {
+        .tools-panel button:active {
             transform: scale(0.9);
         }
 
-        /* Mobile Portrait Optimization */
-        @media (max-width: 768px) and (orientation: portrait) {
-            body { padding: 10px; font-size: 14px; }
-            .container { padding: 20px; border-radius: 4px; }
+        /* Mobile Optimization */
+        @media (max-width: 768px) {
+            body { padding: 0 !important; }
+            .container { padding: 15px !important; border-radius: 0 !important; box-shadow: none !important; border: none !important; min-height: 100vh; }
             .header { font-size: 24px; margin-bottom: 20px; }
             .question { font-size: 17px; }
             .sub-q { font-size: 16px; margin-top: 15px; }
             .solution { padding: 10px; margin-left: 0; }
-            .btn-teach { width: 100%; font-size: 18px; margin: 20px 0; }
-            #teach-view li.main-q-li { font-size: 18px; margin-top: 15px; }
-            #teach-view li.clickable-q { font-size: 16px; margin: 10px 0; padding: 10px; }
+            .btn-teach, .home-btn { width: 100%; font-size: 18px; margin: 20px 0; }
+            .teach-view li.main-q-li { font-size: 18px; margin-top: 15px; }
+            .teach-view li.clickable-q { font-size: 16px; margin: 10px 0; padding: 10px; }
             .pres-q { font-size: 22px; margin-bottom: 20px; padding-bottom: 10px; }
             #presentation-view { font-size: 20px; }
+            .btn-prev-q { left: 10px; bottom: 80px; padding: 10px 15px; font-size: 14px; }
+            .btn-next-q { right: 10px; bottom: 80px; padding: 10px 15px; font-size: 14px; }
         }
     </style>
 </head>
 <body>
-    <div class="zoom-controls">
-        <button onclick="zoomIn()">+</button>
-        <button onclick="zoomOut()">-</button>
+    <div class="tools-panel">
+        <button onclick="toggleDarkMode()" title="Dark Mode">🌙</button>
+        <button onclick="zoomIn()" title="Zoom In">+</button>
+        <button onclick="zoomOut()" title="Zoom Out">-</button>
     </div>
     
     <script>
@@ -225,13 +324,22 @@
                 document.body.style.zoom = currentZoom;
             }
         }
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
     </script>
 
-    <!-- NORMAL VIEW -->
-    <div class="container" id="normal-view">
-        <div class="header">Exercise 3: Squares and Square Roots (Detailed Solutions)</div>
-        <button class="btn-teach" onclick="enterTeachMode()" style="margin-top: 0; margin-bottom: 40px;">👨‍🏫 Teach Mode</button>
-        
+    <!-- HOME VIEW -->
+    <div class="container" id="home-view">
+        <div class="header">Class 8 Mathematics Solutions</div>
+        <button class="home-btn" onclick="openChapter('ch3')">Chapter 3: Squares and Square Roots</button>
+        <button class="home-btn" onclick="openChapter('ch4')">Chapter 4: Cubes and Cube Roots</button>
+
+    </div>
+    <div class="container chapter-view" id="normal-view-ch3" style="display: none;">
+        <button class="btn-top-back" onclick="goHome()">⬅ Back to Home</button>
+        <div class="header">Chapter 3: Squares and Square Roots</div>
+        <button class="btn-teach" onclick="enterTeachMode('ch3')">👨‍🏫 Teach Mode</button>
         <div class="q-block">
             <div class="question">1. Find the value of each of the following.</div>
             <div class="sub-q">(i) $\left(\frac{11}{13}\right)^2$</div>
@@ -456,126 +564,368 @@
             <div class="sub-q">(ix) 3, 4 and ...... form a Pythagorean triple.</div>
             <div class="solution"><span class="sol-label">Solution:</span><br><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
         </div>
-
     </div>
-
-    <!-- TEACH VIEW (Question List) -->
-    <div class="container" id="teach-view" style="display: none;">
-        <button class="btn-close" onclick="exitTeachMode()">Back</button>
-        <div class="header">Teach Mode - Select a Question</div>
+    <div class="container teach-view" id="teach-view-ch3" style="display: none;">
+        <button class="btn-close" onclick="exitTeachMode('ch3')">X Exit Teach</button>
+        <div class="header">Teach Mode - Chapter 3: Squares and Square Roots</div>
         <ul>
             <li class="main-q-li">1. Find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-0')">(i) $\left(\frac{11}{13}\right)^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-1')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-2')">(iii) $(3.5)^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-3')">(iv) $(0.08)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-0', 'ch3')">(i) $\left(\frac{11}{13}\right)^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-1', 'ch3')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-2', 'ch3')">(iii) $(3.5)^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-3', 'ch3')">(iv) $(0.08)^3$</li>
             <li class="main-q-li">2. Find the square root of each of the following by prime factorisation.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-4')">(i) 256</li>
-            <li class="clickable-q" onclick="startPresentation('pres-5')">(ii) 324</li>
-            <li class="clickable-q" onclick="startPresentation('pres-6')">(iii) 784</li>
-            <li class="clickable-q" onclick="startPresentation('pres-7')">(iv) 7056</li>
-            <li class="clickable-q" onclick="startPresentation('pres-8')">(v) 28224</li>
-            <li class="clickable-q" onclick="startPresentation('pres-9')">(vi) 60025</li>
+            <li class="clickable-q" onclick="startPresentation('pres-4', 'ch3')">(i) 256</li>
+            <li class="clickable-q" onclick="startPresentation('pres-5', 'ch3')">(ii) 324</li>
+            <li class="clickable-q" onclick="startPresentation('pres-6', 'ch3')">(iii) 784</li>
+            <li class="clickable-q" onclick="startPresentation('pres-7', 'ch3')">(iv) 7056</li>
+            <li class="clickable-q" onclick="startPresentation('pres-8', 'ch3')">(v) 28224</li>
+            <li class="clickable-q" onclick="startPresentation('pres-9', 'ch3')">(vi) 60025</li>
             <li class="main-q-li">3. Find the square root of each of the following by division.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-10')">(i) 841</li>
-            <li class="clickable-q" onclick="startPresentation('pres-11')">(ii) 2304</li>
-            <li class="clickable-q" onclick="startPresentation('pres-12')">(iii) 39204</li>
-            <li class="clickable-q" onclick="startPresentation('pres-13')">(iv) 55225</li>
-            <li class="clickable-q" onclick="startPresentation('pres-14')">(v) 177241</li>
-            <li class="clickable-q" onclick="startPresentation('pres-15')">(vi) 425104</li>
+            <li class="clickable-q" onclick="startPresentation('pres-10', 'ch3')">(i) 841</li>
+            <li class="clickable-q" onclick="startPresentation('pres-11', 'ch3')">(ii) 2304</li>
+            <li class="clickable-q" onclick="startPresentation('pres-12', 'ch3')">(iii) 39204</li>
+            <li class="clickable-q" onclick="startPresentation('pres-13', 'ch3')">(iv) 55225</li>
+            <li class="clickable-q" onclick="startPresentation('pres-14', 'ch3')">(v) 177241</li>
+            <li class="clickable-q" onclick="startPresentation('pres-15', 'ch3')">(vi) 425104</li>
             <li class="main-q-li">4. Find the square root of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-16')">(i) 13.69</li>
-            <li class="clickable-q" onclick="startPresentation('pres-17')">(ii) 0.002025</li>
-            <li class="clickable-q" onclick="startPresentation('pres-18')">(iii) 1.5129</li>
-            <li class="clickable-q" onclick="startPresentation('pres-19')">(iv) 20.7936</li>
-            <li class="clickable-q" onclick="startPresentation('pres-20')">(v) 6146.56</li>
-            <li class="clickable-q" onclick="startPresentation('pres-21')">(vi) 1.024144</li>
+            <li class="clickable-q" onclick="startPresentation('pres-16', 'ch3')">(i) 13.69</li>
+            <li class="clickable-q" onclick="startPresentation('pres-17', 'ch3')">(ii) 0.002025</li>
+            <li class="clickable-q" onclick="startPresentation('pres-18', 'ch3')">(iii) 1.5129</li>
+            <li class="clickable-q" onclick="startPresentation('pres-19', 'ch3')">(iv) 20.7936</li>
+            <li class="clickable-q" onclick="startPresentation('pres-20', 'ch3')">(v) 6146.56</li>
+            <li class="clickable-q" onclick="startPresentation('pres-21', 'ch3')">(vi) 1.024144</li>
             <li class="main-q-li">5. Find the square root of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-22')">(i) $\frac{169}{484}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-23')">(ii) $5 \frac{580}{729}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-24')">(iii) $12 \frac{52}{81}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-25')">(iv) 0.0009</li>
-            <li class="clickable-q" onclick="startPresentation('pres-26')">(v) 4.41</li>
+            <li class="clickable-q" onclick="startPresentation('pres-22', 'ch3')">(i) $\frac{169}{484}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-23', 'ch3')">(ii) $5 \frac{580}{729}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-24', 'ch3')">(iii) $12 \frac{52}{81}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-25', 'ch3')">(iv) 0.0009</li>
+            <li class="clickable-q" onclick="startPresentation('pres-26', 'ch3')">(v) 4.41</li>
             <li class="main-q-li">6. Find the square root of each of the following correct to two decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-27')">(i) 2</li>
-            <li class="clickable-q" onclick="startPresentation('pres-28')">(ii) 3</li>
-            <li class="clickable-q" onclick="startPresentation('pres-29')">(iii) 8</li>
-            <li class="clickable-q" onclick="startPresentation('pres-30')">(iv) 11</li>
-            <li class="clickable-q" onclick="startPresentation('pres-31')">(v) 35</li>
-            <li class="clickable-q" onclick="startPresentation('pres-32')">(vi) 99</li>
+            <li class="clickable-q" onclick="startPresentation('pres-27', 'ch3')">(i) 2</li>
+            <li class="clickable-q" onclick="startPresentation('pres-28', 'ch3')">(ii) 3</li>
+            <li class="clickable-q" onclick="startPresentation('pres-29', 'ch3')">(iii) 8</li>
+            <li class="clickable-q" onclick="startPresentation('pres-30', 'ch3')">(iv) 11</li>
+            <li class="clickable-q" onclick="startPresentation('pres-31', 'ch3')">(v) 35</li>
+            <li class="clickable-q" onclick="startPresentation('pres-32', 'ch3')">(vi) 99</li>
             <li class="main-q-li">7. Find the value of $\sqrt{5}$ correct to two decimal places. Then, find the value of the square root of $\frac{3-\sqrt{5}}{3+\sqrt{5}}$ correct to two decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-33')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-33', 'ch3')">Solution</li>
             <li class="main-q-li">8. Find the square root of each of the following correct to three decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-34')">(i) 2.5</li>
-            <li class="clickable-q" onclick="startPresentation('pres-35')">(ii) 0.036</li>
-            <li class="clickable-q" onclick="startPresentation('pres-36')">(iii) 6.4</li>
-            <li class="clickable-q" onclick="startPresentation('pres-37')">(iv) 0.100</li>
+            <li class="clickable-q" onclick="startPresentation('pres-34', 'ch3')">(i) 2.5</li>
+            <li class="clickable-q" onclick="startPresentation('pres-35', 'ch3')">(ii) 0.036</li>
+            <li class="clickable-q" onclick="startPresentation('pres-36', 'ch3')">(iii) 6.4</li>
+            <li class="clickable-q" onclick="startPresentation('pres-37', 'ch3')">(iv) 0.100</li>
             <li class="main-q-li">9. Find the least number by which 10368 should be (i) increased (ii) decreased (iii) multiplied (iv) divided to make it a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-38')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-38', 'ch3')">Solution</li>
             <li class="main-q-li">10. Find the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-39')">(i) $55^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-40')">(ii) $98^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-41')">(iii) $\sqrt{38}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-42')">(iv) $\sqrt{89}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-43')">(v) $\sqrt{38.83}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-44')">(vi) $\sqrt{64.25}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-39', 'ch3')">(i) $55^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-40', 'ch3')">(ii) $98^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-41', 'ch3')">(iii) $\sqrt{38}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-42', 'ch3')">(iv) $\sqrt{89}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-43', 'ch3')">(v) $\sqrt{38.83}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-44', 'ch3')">(vi) $\sqrt{64.25}$</li>
             <li class="main-q-li">11. Use algebraic methods to find the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-45')">(i) $52^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-46')">(ii) $98^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-47')">(iii) $309^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-48')">(iv) $495^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-49')">(v) $96^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-50')">(vi) $305^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-45', 'ch3')">(i) $52^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-46', 'ch3')">(ii) $98^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-47', 'ch3')">(iii) $309^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-48', 'ch3')">(iv) $495^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-49', 'ch3')">(v) $96^2$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-50', 'ch3')">(vi) $305^2$</li>
             <li class="main-q-li">12. Find in each case the smallest perfect square divisible by the given numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-51')">(i) 2, 4 and 5</li>
-            <li class="clickable-q" onclick="startPresentation('pres-52')">(ii) 3, 4, 5 and 6</li>
-            <li class="clickable-q" onclick="startPresentation('pres-53')">(iii) 6, 8, 10 and 12</li>
+            <li class="clickable-q" onclick="startPresentation('pres-51', 'ch3')">(i) 2, 4 and 5</li>
+            <li class="clickable-q" onclick="startPresentation('pres-52', 'ch3')">(ii) 3, 4, 5 and 6</li>
+            <li class="clickable-q" onclick="startPresentation('pres-53', 'ch3')">(iii) 6, 8, 10 and 12</li>
             <li class="main-q-li">13. In an auditorium, the number of rows is equal to the number of chairs in each row. If the capacity of the auditorium is 2304, find the number of chairs in a row.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-54')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-54', 'ch3')">Solution</li>
             <li class="main-q-li">14. In a garden, 1089 rose plants are arranged in such a way that there are as many rows as there are plants in each row. Find the number of rows in the garden.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-55')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-55', 'ch3')">Solution</li>
             <li class="main-q-li">15. An army officer wishes to arrange 4770 soldiers in the form of a square. After arranging he finds that nine soldiers are left out. Find the number of soldiers in each row.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-56')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-56', 'ch3')">Solution</li>
             <li class="main-q-li">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-57')">(i) 9845</li>
-            <li class="clickable-q" onclick="startPresentation('pres-58')">(ii) 7585</li>
-            <li class="clickable-q" onclick="startPresentation('pres-59')">(iii) 786</li>
+            <li class="clickable-q" onclick="startPresentation('pres-57', 'ch3')">(i) 9845</li>
+            <li class="clickable-q" onclick="startPresentation('pres-58', 'ch3')">(ii) 7585</li>
+            <li class="clickable-q" onclick="startPresentation('pres-59', 'ch3')">(iii) 786</li>
             <li class="main-q-li">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-60')">(i) 9389</li>
-            <li class="clickable-q" onclick="startPresentation('pres-61')">(ii) 5601</li>
-            <li class="clickable-q" onclick="startPresentation('pres-62')">(iii) 4725</li>
+            <li class="clickable-q" onclick="startPresentation('pres-60', 'ch3')">(i) 9389</li>
+            <li class="clickable-q" onclick="startPresentation('pres-61', 'ch3')">(ii) 5601</li>
+            <li class="clickable-q" onclick="startPresentation('pres-62', 'ch3')">(iii) 4725</li>
             <li class="main-q-li">18. Find the greatest six-digit number which is a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-63')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-63', 'ch3')">Solution</li>
             <li class="main-q-li">19. Find the smallest six-digit number which is a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-64')">Solution</li>
+            <li class="clickable-q" onclick="startPresentation('pres-64', 'ch3')">Solution</li>
             <li class="main-q-li">20. Find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-65')">(i) $\sqrt{\frac{1.44}{0.49}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-66')">(ii) $\sqrt{\frac{32.4}{28.9}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-67')">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-68')">(iv) $\sqrt{1 + \frac{25}{144}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-69')">(v) $\sqrt{1 - \frac{64}{289}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-70')">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-71')">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-72')">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-73')">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-74')">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-65', 'ch3')">(i) $\sqrt{\frac{1.44}{0.49}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-66', 'ch3')">(ii) $\sqrt{\frac{32.4}{28.9}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-67', 'ch3')">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-68', 'ch3')">(iv) $\sqrt{1 + \frac{25}{144}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-69', 'ch3')">(v) $\sqrt{1 - \frac{64}{289}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-70', 'ch3')">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-71', 'ch3')">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-72', 'ch3')">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-73', 'ch3')">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-74', 'ch3')">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</li>
             <li class="main-q-li">21. Fill in the blanks.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-75')">(i) The units digit of the square of a number ending in 2 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-76')">(ii) The units digit of the square of a number ending in 9 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-77')">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-78')">(iv) There are ...... natural numbers between the squares of 8 and 9.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-79')">(v) $9^2 - 8^2$ = ...... + 8.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-80')">(vi) $19^2$ - ...... = 19 + 18.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-81')">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-82')">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</li>
-            <li class="clickable-q" onclick="startPresentation('pres-83')">(ix) 3, 4 and ...... form a Pythagorean triple.</li>
-
+            <li class="clickable-q" onclick="startPresentation('pres-75', 'ch3')">(i) The units digit of the square of a number ending in 2 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-76', 'ch3')">(ii) The units digit of the square of a number ending in 9 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-77', 'ch3')">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-78', 'ch3')">(iv) There are ...... natural numbers between the squares of 8 and 9.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-79', 'ch3')">(v) $9^2 - 8^2$ = ...... + 8.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-80', 'ch3')">(vi) $19^2$ - ...... = 19 + 18.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-81', 'ch3')">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-82', 'ch3')">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</li>
+            <li class="clickable-q" onclick="startPresentation('pres-83', 'ch3')">(ix) 3, 4 and ...... form a Pythagorean triple.</li>
+        </ul>
+    </div>
+    <div class="container chapter-view" id="normal-view-ch4" style="display: none;">
+        <button class="btn-top-back" onclick="goHome()">⬅ Back to Home</button>
+        <div class="header">Chapter 4: Cubes and Cube Roots</div>
+        <button class="btn-teach" onclick="enterTeachMode('ch4')">👨‍🏫 Teach Mode</button>
+        <div class="q-block">
+            <div class="question">1. Find the value of each of the following.</div>
+            <div class="sub-q">(i) $\left(\frac{5}{6}\right)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(\frac{5}{6}\right)^3 = \frac{5^3}{6^3} = \frac{125}{216}$</div>
+            <div class="sub-q">(ii) $\left(-1 \frac{7}{11}\right)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(-1 \frac{7}{11}\right)^3 = \left(\frac{-18}{11}\right)^3 = \frac{(-18)^3}{11^3} = \frac{-5832}{1331} = -4 \frac{508}{1331}$</div>
+            <div class="sub-q">(iii) $(2.5)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(2.5)^3 = \left(\frac{25}{10}\right)^3 = \frac{15625}{1000} = 15.625$</div>
+            <div class="sub-q">(iv) $(0.08)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(0.08)^3 = \left(\frac{8}{100}\right)^3 = \frac{512}{1000000} = 0.000512$</div>
+            <div class="sub-q">(v) $(-1.1)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(-1.1)^3 = \left(\frac{-11}{10}\right)^3 = \frac{-1331}{1000} = -1.331$</div>
+            <div class="sub-q">(vi) $\left(-\frac{7}{3}\right)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(-\frac{7}{3}\right)^3 = \frac{(-7)^3}{3^3} = \frac{-343}{27}$</div>
+            <div class="sub-q">(vii) $(-9)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(-9)^3 = -729$</div>
+            <div class="sub-q">(viii) $(-0.5)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(-0.5)^3 = \left(\frac{-5}{10}\right)^3 = \frac{-125}{1000} = -0.125$</div>
+            <div class="sub-q">(ix) $(-20)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(-20)^3 = -8000$</div>
+            <div class="sub-q">(x) $(-0.013)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(-0.013)^3 = \left(\frac{-13}{1000}\right)^3 = \frac{-2197}{1000000000} = -0.000002197$</div>
+            <div class="sub-q">(xi) $(25)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$(25)^3 = 15625$</div>
+            <div class="sub-q">(xii) $\left(2 \frac{1}{7}\right)^3$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\left(2 \frac{1}{7}\right)^3 = \left(\frac{15}{7}\right)^3 = \frac{15^3}{7^3} = \frac{3375}{343} = 9 \frac{288}{343}$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.</div>
+            <div class="sub-q">(i) 128</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$128 = 2^7$. (Not a perfect cube)</div>
+            <div class="sub-q">(ii) 243</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$243 = 3^5$. (Not a perfect cube)</div>
+            <div class="sub-q">(iii) 343</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$343 = 7^3$. (Perfect cube of 7)</div>
+            <div class="sub-q">(iv) 4000</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$4000 = 2^5 \times 5^3$. (Not a perfect cube)</div>
+            <div class="sub-q">(v) 3456</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$3456 = 2^7 \times 3^3$. (Not a perfect cube)</div>
+            <div class="sub-q">(vi) 2048</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$2048 = 2^{11}$. (Not a perfect cube)</div>
+            <div class="sub-q">(vii) 2197</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$2197 = 13^3$. (Perfect cube of 13)</div>
+            <div class="sub-q">(viii) 1000000</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$1000000 = 100^3$. (Perfect cube of 100)</div>
+            <div class="sub-q">(ix) 2744</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$2744 = 14^3$. (Perfect cube of 14)</div>
+        </div>
+        <div class="q-block">
+            <div class="question">3. Which of the following are cubes of even numbers and which are of odd numbers?</div>
+            <div class="sub-q">(i) 8000</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>8000 is an even number, so it is the cube of an **even** number.</div>
+            <div class="sub-q">(ii) 9261</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>9261 is an odd number, so it is the cube of an **odd** number.</div>
+            <div class="sub-q">(iii) 4096</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>4096 is an even number, so it is the cube of an **even** number.</div>
+            <div class="sub-q">(iv) 6859</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>6859 is an odd number, so it is the cube of an **odd** number.</div>
+            <div class="sub-q">(v) 12167</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>12167 is an odd number, so it is the cube of an **odd** number.</div>
+            <div class="sub-q">(vi) 4913</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>4913 is an odd number, so it is the cube of an **odd** number.</div>
+            <div class="sub-q">(vii) 13824</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>13824 is an even number, so it is the cube of an **even** number.</div>
+            <div class="sub-q">(viii) 17576</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>17576 is an even number, so it is the cube of an **even** number.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">4. Find each of the following.</div>
+            <div class="sub-q">(i) $\sqrt[3]{512}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{512} = \sqrt[3]{8^3} = 8$</div>
+            <div class="sub-q">(ii) $\sqrt[3]{2744}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{2744} = \sqrt[3]{14^3} = 14$</div>
+            <div class="sub-q">(iii) $\sqrt[3]{729}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{729} = \sqrt[3]{9^3} = 9$</div>
+            <div class="sub-q">(iv) $\sqrt[3]{1728}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{1728} = \sqrt[3]{12^3} = 12$</div>
+            <div class="sub-q">(v) $\sqrt[3]{1000}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{1000} = \sqrt[3]{10^3} = 10$</div>
+            <div class="sub-q">(vi) $\sqrt[3]{-8000}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{-8000} = \sqrt[3]{(-20)^3} = -20$</div>
+            <div class="sub-q">(vii) $\sqrt[3]{-4096}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{-4096} = \sqrt[3]{(-16)^3} = -16$</div>
+            <div class="sub-q">(viii) $\sqrt[3]{\frac{27}{125}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{\frac{27}{125}} = \frac{\sqrt[3]{27}}{\sqrt[3]{125}} = \frac{3}{5}$</div>
+            <div class="sub-q">(ix) $\sqrt[3]{\frac{-125}{64}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{\frac{-125}{64}} = \frac{\sqrt[3]{-125}}{\sqrt[3]{64}} = \frac{-5}{4}$</div>
+            <div class="sub-q">(x) $\sqrt[3]{0.001}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{0.001} = \sqrt[3]{\frac{1}{1000}} = \frac{1}{10} = 0.1$</div>
+            <div class="sub-q">(xi) $\sqrt[3]{0.125}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{0.125} = \sqrt[3]{\frac{125}{1000}} = \frac{5}{10} = 0.5$</div>
+            <div class="sub-q">(xii) $\sqrt[3]{\frac{27}{64 \times 125}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\frac{\sqrt[3]{27}}{\sqrt[3]{64} \times \sqrt[3]{125}} = \frac{3}{4 \times 5} = \frac{3}{20}$</div>
+            <div class="sub-q">(xiii) $\sqrt[3]{\frac{729}{125 \times 1000}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\frac{\sqrt[3]{729}}{\sqrt[3]{125} \times \sqrt[3]{1000}} = \frac{9}{5 \times 10} = \frac{9}{50}$</div>
+            <div class="sub-q">(xiv) $\sqrt[3]{125 \times 64 \times 8}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{125} \times \sqrt[3]{64} \times \sqrt[3]{8} = 5 \times 4 \times 2 = 40$</div>
+            <div class="sub-q">(xv) $\sqrt[3]{16 \times 500}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{8000} = 20$</div>
+            <div class="sub-q">(xvi) $\sqrt[3]{625 \times (-1600)}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{-1000000} = -100$</div>
+            <div class="sub-q">(xvii) $\sqrt[3]{\frac{343}{2500 \times 400}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{\frac{343}{1000000}} = \frac{7}{100}$</div>
+            <div class="sub-q">(xviii) $\sqrt[3]{1 - \frac{854}{729}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{\frac{729 - 854}{729}} = \sqrt[3]{\frac{-125}{729}} = \frac{-5}{9}$</div>
+            <div class="sub-q">(xix) $\sqrt[3]{4 + \sqrt[3]{61 + \sqrt[3]{27}}}$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$\sqrt[3]{4 + \sqrt[3]{61 + 3}}$<br>$= \sqrt[3]{4 + \sqrt[3]{64}}$<br>$= \sqrt[3]{4 + 4} = \sqrt[3]{8} = 2$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.</div>
+            <div class="sub-q">(i) 5488</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $5488 = 2^4 \times 7^3$<br>To make the powers multiples of 3, multiply by $2^2 = 4$.<br>Least number = 4<br>New product = $2^6 \times 7^3$<br>Cube root = $2^2 \times 7 = 4 \times 7 = 28$</div>
+            <div class="sub-q">(ii) 34992</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $34992 = 2^4 \times 3^7$<br>To make the powers multiples of 3, multiply by $2^2 \times 3^2 = 4 \times 9 = 36$.<br>Least number = 36<br>New product = $2^6 \times 3^9$<br>Cube root = $2^2 \times 3^3 = 4 \times 27 = 108$</div>
+            <div class="sub-q">(iii) 15552</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $15552 = 2^6 \times 3^5$<br>To make the powers multiples of 3, multiply by $3^1 = 3$.<br>Least number = 3<br>New product = $2^6 \times 3^6$<br>Cube root = $2^2 \times 3^2 = 4 \times 9 = 36$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.</div>
+            <div class="sub-q">(i) 5184</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $5184 = 2^6 \times 3^4$<br>To leave powers as multiples of 3, divide by $3^1 = 3$.<br>Least number = 3<br>New quotient = $2^6 \times 3^3$<br>Cube root = $2^2 \times 3 = 4 \times 3 = 12$</div>
+            <div class="sub-q">(ii) 5488</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $5488 = 2^4 \times 7^3$<br>To leave powers as multiples of 3, divide by $2^1 = 2$.<br>Least number = 2<br>New quotient = $2^3 \times 7^3$<br>Cube root = $2 \times 7 = 14$</div>
+            <div class="sub-q">(iii) 23328</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Prime factorization: $23328 = 2^5 \times 3^6$<br>To leave powers as multiples of 3, divide by $2^2 = 4$.<br>Least number = 4<br>New quotient = $2^3 \times 3^6$<br>Cube root = $2 \times 3^2 = 2 \times 9 = 18$</div>
+        </div>
+        <div class="q-block">
+            <div class="question">7. Fill in the blanks.</div>
+            <div class="sub-q">(i) The units digit in the cube of 1137 is ...... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>3</b> (since $7^3 = 343$, unit digit is 3)</div>
+            <div class="sub-q">(ii) The ones digit in the cube of 1004 is ...... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>4</b> (since $4^3 = 64$, unit digit is 4)</div>
+            <div class="sub-q">(iii) The cube of an odd number is always an ...... number.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>odd</b></div>
+            <div class="sub-q">(iv) The cube of an even number is always an ...... number.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>even</b></div>
+            <div class="sub-q">(v) The least natural number by which 1600 is to be multiplied to make it a perfect cube is ....... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$1600 = 2^6 \times 5^2$. Needs to be multiplied by <b>5</b>.</div>
+            <div class="sub-q">(vi) The least natural number by which 1024 is to be divided to make it a perfect cube is ....... </div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$1024 = 2^{10}$. Needs to be divided by $2^1$ = <b>2</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">8. Identify the false statements only.</div>
+            <div class="sub-q">(i) The cube of an odd number is odd.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>True</div>
+            <div class="sub-q">(ii) The cube of an even number is even.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>True</div>
+            <div class="sub-q">(iii) The cube of a negative number is positive.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>False</b> (It is negative)</div>
+            <div class="sub-q">(iv) The cube roots of 27 are 3 and -3.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>False</b> (The only real cube root is 3)</div>
+            <div class="sub-q">(v) 333 is a perfect cube.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>False</b> (7^3 = 343)</div>
+            <div class="sub-q">(vi) $\sqrt[3]{27+8} = \sqrt[3]{27} + \sqrt[3]{8}$.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>False</b> ($\sqrt[3]{35} \neq 3 + 2$)</div>
+            <div class="sub-q">(vii) There is no cube root of a negative number.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>False</b> (e.g., $\sqrt[3]{-8} = -2$)</div>
+        </div>
+    </div>
+    <div class="container teach-view" id="teach-view-ch4" style="display: none;">
+        <button class="btn-close" onclick="exitTeachMode('ch4')">X Exit Teach</button>
+        <div class="header">Teach Mode - Chapter 4: Cubes and Cube Roots</div>
+        <ul>
+            <li class="main-q-li">1. Find the value of each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-84', 'ch4')">(i) $\left(\frac{5}{6}\right)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-85', 'ch4')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-86', 'ch4')">(iii) $(2.5)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-87', 'ch4')">(iv) $(0.08)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-88', 'ch4')">(v) $(-1.1)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-89', 'ch4')">(vi) $\left(-\frac{7}{3}\right)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-90', 'ch4')">(vii) $(-9)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-91', 'ch4')">(viii) $(-0.5)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-92', 'ch4')">(ix) $(-20)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-93', 'ch4')">(x) $(-0.013)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-94', 'ch4')">(xi) $(25)^3$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-95', 'ch4')">(xii) $\left(2 \frac{1}{7}\right)^3$</li>
+            <li class="main-q-li">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-96', 'ch4')">(i) 128</li>
+            <li class="clickable-q" onclick="startPresentation('pres-97', 'ch4')">(ii) 243</li>
+            <li class="clickable-q" onclick="startPresentation('pres-98', 'ch4')">(iii) 343</li>
+            <li class="clickable-q" onclick="startPresentation('pres-99', 'ch4')">(iv) 4000</li>
+            <li class="clickable-q" onclick="startPresentation('pres-100', 'ch4')">(v) 3456</li>
+            <li class="clickable-q" onclick="startPresentation('pres-101', 'ch4')">(vi) 2048</li>
+            <li class="clickable-q" onclick="startPresentation('pres-102', 'ch4')">(vii) 2197</li>
+            <li class="clickable-q" onclick="startPresentation('pres-103', 'ch4')">(viii) 1000000</li>
+            <li class="clickable-q" onclick="startPresentation('pres-104', 'ch4')">(ix) 2744</li>
+            <li class="main-q-li">3. Which of the following are cubes of even numbers and which are of odd numbers?</li>
+            <li class="clickable-q" onclick="startPresentation('pres-105', 'ch4')">(i) 8000</li>
+            <li class="clickable-q" onclick="startPresentation('pres-106', 'ch4')">(ii) 9261</li>
+            <li class="clickable-q" onclick="startPresentation('pres-107', 'ch4')">(iii) 4096</li>
+            <li class="clickable-q" onclick="startPresentation('pres-108', 'ch4')">(iv) 6859</li>
+            <li class="clickable-q" onclick="startPresentation('pres-109', 'ch4')">(v) 12167</li>
+            <li class="clickable-q" onclick="startPresentation('pres-110', 'ch4')">(vi) 4913</li>
+            <li class="clickable-q" onclick="startPresentation('pres-111', 'ch4')">(vii) 13824</li>
+            <li class="clickable-q" onclick="startPresentation('pres-112', 'ch4')">(viii) 17576</li>
+            <li class="main-q-li">4. Find each of the following.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-113', 'ch4')">(i) $\sqrt[3]{512}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-114', 'ch4')">(ii) $\sqrt[3]{2744}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-115', 'ch4')">(iii) $\sqrt[3]{729}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-116', 'ch4')">(iv) $\sqrt[3]{1728}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-117', 'ch4')">(v) $\sqrt[3]{1000}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-118', 'ch4')">(vi) $\sqrt[3]{-8000}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-119', 'ch4')">(vii) $\sqrt[3]{-4096}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-120', 'ch4')">(viii) $\sqrt[3]{\frac{27}{125}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-121', 'ch4')">(ix) $\sqrt[3]{\frac{-125}{64}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-122', 'ch4')">(x) $\sqrt[3]{0.001}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-123', 'ch4')">(xi) $\sqrt[3]{0.125}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-124', 'ch4')">(xii) $\sqrt[3]{\frac{27}{64 \times 125}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-125', 'ch4')">(xiii) $\sqrt[3]{\frac{729}{125 \times 1000}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-126', 'ch4')">(xiv) $\sqrt[3]{125 \times 64 \times 8}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-127', 'ch4')">(xv) $\sqrt[3]{16 \times 500}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-128', 'ch4')">(xvi) $\sqrt[3]{625 \times (-1600)}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-129', 'ch4')">(xvii) $\sqrt[3]{\frac{343}{2500 \times 400}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-130', 'ch4')">(xviii) $\sqrt[3]{1 - \frac{854}{729}}$</li>
+            <li class="clickable-q" onclick="startPresentation('pres-131', 'ch4')">(xix) $\sqrt[3]{4 + \sqrt[3]{61 + \sqrt[3]{27}}}$</li>
+            <li class="main-q-li">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-132', 'ch4')">(i) 5488</li>
+            <li class="clickable-q" onclick="startPresentation('pres-133', 'ch4')">(ii) 34992</li>
+            <li class="clickable-q" onclick="startPresentation('pres-134', 'ch4')">(iii) 15552</li>
+            <li class="main-q-li">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-135', 'ch4')">(i) 5184</li>
+            <li class="clickable-q" onclick="startPresentation('pres-136', 'ch4')">(ii) 5488</li>
+            <li class="clickable-q" onclick="startPresentation('pres-137', 'ch4')">(iii) 23328</li>
+            <li class="main-q-li">7. Fill in the blanks.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-138', 'ch4')">(i) The units digit in the cube of 1137 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-139', 'ch4')">(ii) The ones digit in the cube of 1004 is ...... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-140', 'ch4')">(iii) The cube of an odd number is always an ...... number.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-141', 'ch4')">(iv) The cube of an even number is always an ...... number.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-142', 'ch4')">(v) The least natural number by which 1600 is to be multiplied to make it a perfect cube is ....... </li>
+            <li class="clickable-q" onclick="startPresentation('pres-143', 'ch4')">(vi) The least natural number by which 1024 is to be divided to make it a perfect cube is ....... </li>
+            <li class="main-q-li">8. Identify the false statements only.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-144', 'ch4')">(i) The cube of an odd number is odd.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-145', 'ch4')">(ii) The cube of an even number is even.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-146', 'ch4')">(iii) The cube of a negative number is positive.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-147', 'ch4')">(iv) The cube roots of 27 are 3 and -3.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-148', 'ch4')">(v) 333 is a perfect cube.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-149', 'ch4')">(vi) $\sqrt[3]{27+8} = \sqrt[3]{27} + \sqrt[3]{8}$.</li>
+            <li class="clickable-q" onclick="startPresentation('pres-150', 'ch4')">(vii) There is no cube root of a negative number.</li>
         </ul>
     </div>
 
     <!-- PRESENTATION VIEW -->
     <div class="container" id="presentation-view" style="display: none;">
         <button class="btn-close" style="z-index: 100;" onclick="closePresentation()">X Close</button>
+        <button class="nav-q-btn btn-prev-q" id="btn-prev-q" onclick="prevQuestion()" style="display:none;">⬅ Prev Q</button>
+        <button class="nav-q-btn btn-next-q" id="btn-next-q" onclick="nextQuestion()" style="display:none;">Next Q ➡</button>
         <div id="pres-0" class="pres-container" style="display:none;">
             <div class="pres-q">1. Find the value of each of the following.<br>(i) $\left(\frac{11}{13}\right)^2$</div>
             <div class="pres-step">$\left(\frac{11}{13}\right)^2 = \frac{11^2}{13^2} = \frac{121}{169}$</div>
@@ -981,42 +1331,353 @@
             <div class="pres-q">21. Fill in the blanks.<br>(ix) 3, 4 and ...... form a Pythagorean triple.</div>
             <div class="pres-step"><b>5</b> (since $3^2 + 4^2 = 5^2$)</div>
         </div>
+        <div id="pres-84" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(i) $\left(\frac{5}{6}\right)^3$</div>
+            <div class="pres-step">$\left(\frac{5}{6}\right)^3 = \frac{5^3}{6^3} = \frac{125}{216}$</div>
+        </div>
+        <div id="pres-85" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(ii) $\left(-1 \frac{7}{11}\right)^3$</div>
+            <div class="pres-step">$\left(-1 \frac{7}{11}\right)^3 = \left(\frac{-18}{11}\right)^3 = \frac{(-18)^3}{11^3} = \frac{-5832}{1331} = -4 \frac{508}{1331}$</div>
+        </div>
+        <div id="pres-86" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(iii) $(2.5)^3$</div>
+            <div class="pres-step">$(2.5)^3 = \left(\frac{25}{10}\right)^3 = \frac{15625}{1000} = 15.625$</div>
+        </div>
+        <div id="pres-87" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(iv) $(0.08)^3$</div>
+            <div class="pres-step">$(0.08)^3 = \left(\frac{8}{100}\right)^3 = \frac{512}{1000000} = 0.000512$</div>
+        </div>
+        <div id="pres-88" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(v) $(-1.1)^3$</div>
+            <div class="pres-step">$(-1.1)^3 = \left(\frac{-11}{10}\right)^3 = \frac{-1331}{1000} = -1.331$</div>
+        </div>
+        <div id="pres-89" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(vi) $\left(-\frac{7}{3}\right)^3$</div>
+            <div class="pres-step">$\left(-\frac{7}{3}\right)^3 = \frac{(-7)^3}{3^3} = \frac{-343}{27}$</div>
+        </div>
+        <div id="pres-90" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(vii) $(-9)^3$</div>
+            <div class="pres-step">$(-9)^3 = -729$</div>
+        </div>
+        <div id="pres-91" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(viii) $(-0.5)^3$</div>
+            <div class="pres-step">$(-0.5)^3 = \left(\frac{-5}{10}\right)^3 = \frac{-125}{1000} = -0.125$</div>
+        </div>
+        <div id="pres-92" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(ix) $(-20)^3$</div>
+            <div class="pres-step">$(-20)^3 = -8000$</div>
+        </div>
+        <div id="pres-93" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(x) $(-0.013)^3$</div>
+            <div class="pres-step">$(-0.013)^3 = \left(\frac{-13}{1000}\right)^3 = \frac{-2197}{1000000000} = -0.000002197$</div>
+        </div>
+        <div id="pres-94" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(xi) $(25)^3$</div>
+            <div class="pres-step">$(25)^3 = 15625$</div>
+        </div>
+        <div id="pres-95" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the value of each of the following.<br>(xii) $\left(2 \frac{1}{7}\right)^3$</div>
+            <div class="pres-step">$\left(2 \frac{1}{7}\right)^3 = \left(\frac{15}{7}\right)^3 = \frac{15^3}{7^3} = \frac{3375}{343} = 9 \frac{288}{343}$</div>
+        </div>
+        <div id="pres-96" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(i) 128</div>
+            <div class="pres-step">$128 = 2^7$. (Not a perfect cube)</div>
+        </div>
+        <div id="pres-97" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(ii) 243</div>
+            <div class="pres-step">$243 = 3^5$. (Not a perfect cube)</div>
+        </div>
+        <div id="pres-98" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(iii) 343</div>
+            <div class="pres-step">$343 = 7^3$. (Perfect cube of 7)</div>
+        </div>
+        <div id="pres-99" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(iv) 4000</div>
+            <div class="pres-step">$4000 = 2^5 \times 5^3$. (Not a perfect cube)</div>
+        </div>
+        <div id="pres-100" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(v) 3456</div>
+            <div class="pres-step">$3456 = 2^7 \times 3^3$. (Not a perfect cube)</div>
+        </div>
+        <div id="pres-101" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(vi) 2048</div>
+            <div class="pres-step">$2048 = 2^{11}$. (Not a perfect cube)</div>
+        </div>
+        <div id="pres-102" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(vii) 2197</div>
+            <div class="pres-step">$2197 = 13^3$. (Perfect cube of 13)</div>
+        </div>
+        <div id="pres-103" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(viii) 1000000</div>
+            <div class="pres-step">$1000000 = 100^3$. (Perfect cube of 100)</div>
+        </div>
+        <div id="pres-104" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.<br>(ix) 2744</div>
+            <div class="pres-step">$2744 = 14^3$. (Perfect cube of 14)</div>
+        </div>
+        <div id="pres-105" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(i) 8000</div>
+            <div class="pres-step">8000 is an even number, so it is the cube of an **even** number.</div>
+        </div>
+        <div id="pres-106" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(ii) 9261</div>
+            <div class="pres-step">9261 is an odd number, so it is the cube of an **odd** number.</div>
+        </div>
+        <div id="pres-107" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(iii) 4096</div>
+            <div class="pres-step">4096 is an even number, so it is the cube of an **even** number.</div>
+        </div>
+        <div id="pres-108" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(iv) 6859</div>
+            <div class="pres-step">6859 is an odd number, so it is the cube of an **odd** number.</div>
+        </div>
+        <div id="pres-109" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(v) 12167</div>
+            <div class="pres-step">12167 is an odd number, so it is the cube of an **odd** number.</div>
+        </div>
+        <div id="pres-110" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(vi) 4913</div>
+            <div class="pres-step">4913 is an odd number, so it is the cube of an **odd** number.</div>
+        </div>
+        <div id="pres-111" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(vii) 13824</div>
+            <div class="pres-step">13824 is an even number, so it is the cube of an **even** number.</div>
+        </div>
+        <div id="pres-112" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Which of the following are cubes of even numbers and which are of odd numbers?<br>(viii) 17576</div>
+            <div class="pres-step">17576 is an even number, so it is the cube of an **even** number.</div>
+        </div>
+        <div id="pres-113" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(i) $\sqrt[3]{512}$</div>
+            <div class="pres-step">$\sqrt[3]{512} = \sqrt[3]{8^3} = 8$</div>
+        </div>
+        <div id="pres-114" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(ii) $\sqrt[3]{2744}$</div>
+            <div class="pres-step">$\sqrt[3]{2744} = \sqrt[3]{14^3} = 14$</div>
+        </div>
+        <div id="pres-115" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(iii) $\sqrt[3]{729}$</div>
+            <div class="pres-step">$\sqrt[3]{729} = \sqrt[3]{9^3} = 9$</div>
+        </div>
+        <div id="pres-116" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(iv) $\sqrt[3]{1728}$</div>
+            <div class="pres-step">$\sqrt[3]{1728} = \sqrt[3]{12^3} = 12$</div>
+        </div>
+        <div id="pres-117" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(v) $\sqrt[3]{1000}$</div>
+            <div class="pres-step">$\sqrt[3]{1000} = \sqrt[3]{10^3} = 10$</div>
+        </div>
+        <div id="pres-118" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(vi) $\sqrt[3]{-8000}$</div>
+            <div class="pres-step">$\sqrt[3]{-8000} = \sqrt[3]{(-20)^3} = -20$</div>
+        </div>
+        <div id="pres-119" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(vii) $\sqrt[3]{-4096}$</div>
+            <div class="pres-step">$\sqrt[3]{-4096} = \sqrt[3]{(-16)^3} = -16$</div>
+        </div>
+        <div id="pres-120" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(viii) $\sqrt[3]{\frac{27}{125}}$</div>
+            <div class="pres-step">$\sqrt[3]{\frac{27}{125}} = \frac{\sqrt[3]{27}}{\sqrt[3]{125}} = \frac{3}{5}$</div>
+        </div>
+        <div id="pres-121" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(ix) $\sqrt[3]{\frac{-125}{64}}$</div>
+            <div class="pres-step">$\sqrt[3]{\frac{-125}{64}} = \frac{\sqrt[3]{-125}}{\sqrt[3]{64}} = \frac{-5}{4}$</div>
+        </div>
+        <div id="pres-122" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(x) $\sqrt[3]{0.001}$</div>
+            <div class="pres-step">$\sqrt[3]{0.001} = \sqrt[3]{\frac{1}{1000}} = \frac{1}{10} = 0.1$</div>
+        </div>
+        <div id="pres-123" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xi) $\sqrt[3]{0.125}$</div>
+            <div class="pres-step">$\sqrt[3]{0.125} = \sqrt[3]{\frac{125}{1000}} = \frac{5}{10} = 0.5$</div>
+        </div>
+        <div id="pres-124" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xii) $\sqrt[3]{\frac{27}{64 \times 125}}$</div>
+            <div class="pres-step">$\frac{\sqrt[3]{27}}{\sqrt[3]{64} \times \sqrt[3]{125}} = \frac{3}{4 \times 5} = \frac{3}{20}$</div>
+        </div>
+        <div id="pres-125" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xiii) $\sqrt[3]{\frac{729}{125 \times 1000}}$</div>
+            <div class="pres-step">$\frac{\sqrt[3]{729}}{\sqrt[3]{125} \times \sqrt[3]{1000}} = \frac{9}{5 \times 10} = \frac{9}{50}$</div>
+        </div>
+        <div id="pres-126" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xiv) $\sqrt[3]{125 \times 64 \times 8}$</div>
+            <div class="pres-step">$\sqrt[3]{125} \times \sqrt[3]{64} \times \sqrt[3]{8} = 5 \times 4 \times 2 = 40$</div>
+        </div>
+        <div id="pres-127" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xv) $\sqrt[3]{16 \times 500}$</div>
+            <div class="pres-step">$\sqrt[3]{8000} = 20$</div>
+        </div>
+        <div id="pres-128" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xvi) $\sqrt[3]{625 \times (-1600)}$</div>
+            <div class="pres-step">$\sqrt[3]{-1000000} = -100$</div>
+        </div>
+        <div id="pres-129" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xvii) $\sqrt[3]{\frac{343}{2500 \times 400}}$</div>
+            <div class="pres-step">$\sqrt[3]{\frac{343}{1000000}} = \frac{7}{100}$</div>
+        </div>
+        <div id="pres-130" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xviii) $\sqrt[3]{1 - \frac{854}{729}}$</div>
+            <div class="pres-step">$\sqrt[3]{\frac{729 - 854}{729}} = \sqrt[3]{\frac{-125}{729}} = \frac{-5}{9}$</div>
+        </div>
+        <div id="pres-131" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Find each of the following.<br>(xix) $\sqrt[3]{4 + \sqrt[3]{61 + \sqrt[3]{27}}}$</div>
+            <div class="pres-step">$\sqrt[3]{4 + \sqrt[3]{61 + 3}}$</div>
+            <div class="pres-step">$= \sqrt[3]{4 + \sqrt[3]{64}}$</div>
+            <div class="pres-step">$= \sqrt[3]{4 + 4} = \sqrt[3]{8} = 2$</div>
+        </div>
+        <div id="pres-132" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.<br>(i) 5488</div>
+            <div class="pres-step">Prime factorization: $5488 = 2^4 \times 7^3$</div>
+            <div class="pres-step">To make the powers multiples of 3, multiply by $2^2 = 4$.</div>
+            <div class="pres-step">Least number = 4</div>
+            <div class="pres-step">New product = $2^6 \times 7^3$</div>
+            <div class="pres-step">Cube root = $2^2 \times 7 = 4 \times 7 = 28$</div>
+        </div>
+        <div id="pres-133" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.<br>(ii) 34992</div>
+            <div class="pres-step">Prime factorization: $34992 = 2^4 \times 3^7$</div>
+            <div class="pres-step">To make the powers multiples of 3, multiply by $2^2 \times 3^2 = 4 \times 9 = 36$.</div>
+            <div class="pres-step">Least number = 36</div>
+            <div class="pres-step">New product = $2^6 \times 3^9$</div>
+            <div class="pres-step">Cube root = $2^2 \times 3^3 = 4 \times 27 = 108$</div>
+        </div>
+        <div id="pres-134" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.<br>(iii) 15552</div>
+            <div class="pres-step">Prime factorization: $15552 = 2^6 \times 3^5$</div>
+            <div class="pres-step">To make the powers multiples of 3, multiply by $3^1 = 3$.</div>
+            <div class="pres-step">Least number = 3</div>
+            <div class="pres-step">New product = $2^6 \times 3^6$</div>
+            <div class="pres-step">Cube root = $2^2 \times 3^2 = 4 \times 9 = 36$</div>
+        </div>
+        <div id="pres-135" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.<br>(i) 5184</div>
+            <div class="pres-step">Prime factorization: $5184 = 2^6 \times 3^4$</div>
+            <div class="pres-step">To leave powers as multiples of 3, divide by $3^1 = 3$.</div>
+            <div class="pres-step">Least number = 3</div>
+            <div class="pres-step">New quotient = $2^6 \times 3^3$</div>
+            <div class="pres-step">Cube root = $2^2 \times 3 = 4 \times 3 = 12$</div>
+        </div>
+        <div id="pres-136" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.<br>(ii) 5488</div>
+            <div class="pres-step">Prime factorization: $5488 = 2^4 \times 7^3$</div>
+            <div class="pres-step">To leave powers as multiples of 3, divide by $2^1 = 2$.</div>
+            <div class="pres-step">Least number = 2</div>
+            <div class="pres-step">New quotient = $2^3 \times 7^3$</div>
+            <div class="pres-step">Cube root = $2 \times 7 = 14$</div>
+        </div>
+        <div id="pres-137" class="pres-container" style="display:none;">
+            <div class="pres-q">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.<br>(iii) 23328</div>
+            <div class="pres-step">Prime factorization: $23328 = 2^5 \times 3^6$</div>
+            <div class="pres-step">To leave powers as multiples of 3, divide by $2^2 = 4$.</div>
+            <div class="pres-step">Least number = 4</div>
+            <div class="pres-step">New quotient = $2^3 \times 3^6$</div>
+            <div class="pres-step">Cube root = $2 \times 3^2 = 2 \times 9 = 18$</div>
+        </div>
+        <div id="pres-138" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(i) The units digit in the cube of 1137 is ...... </div>
+            <div class="pres-step"><b>3</b> (since $7^3 = 343$, unit digit is 3)</div>
+        </div>
+        <div id="pres-139" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(ii) The ones digit in the cube of 1004 is ...... </div>
+            <div class="pres-step"><b>4</b> (since $4^3 = 64$, unit digit is 4)</div>
+        </div>
+        <div id="pres-140" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(iii) The cube of an odd number is always an ...... number.</div>
+            <div class="pres-step"><b>odd</b></div>
+        </div>
+        <div id="pres-141" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(iv) The cube of an even number is always an ...... number.</div>
+            <div class="pres-step"><b>even</b></div>
+        </div>
+        <div id="pres-142" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(v) The least natural number by which 1600 is to be multiplied to make it a perfect cube is ....... </div>
+            <div class="pres-step">$1600 = 2^6 \times 5^2$. Needs to be multiplied by <b>5</b>.</div>
+        </div>
+        <div id="pres-143" class="pres-container" style="display:none;">
+            <div class="pres-q">7. Fill in the blanks.<br>(vi) The least natural number by which 1024 is to be divided to make it a perfect cube is ....... </div>
+            <div class="pres-step">$1024 = 2^{10}$. Needs to be divided by $2^1$ = <b>2</b>.</div>
+        </div>
+        <div id="pres-144" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(i) The cube of an odd number is odd.</div>
+            <div class="pres-step">True</div>
+        </div>
+        <div id="pres-145" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(ii) The cube of an even number is even.</div>
+            <div class="pres-step">True</div>
+        </div>
+        <div id="pres-146" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(iii) The cube of a negative number is positive.</div>
+            <div class="pres-step"><b>False</b> (It is negative)</div>
+        </div>
+        <div id="pres-147" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(iv) The cube roots of 27 are 3 and -3.</div>
+            <div class="pres-step"><b>False</b> (The only real cube root is 3)</div>
+        </div>
+        <div id="pres-148" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(v) 333 is a perfect cube.</div>
+            <div class="pres-step"><b>False</b> (7^3 = 343)</div>
+        </div>
+        <div id="pres-149" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(vi) $\sqrt[3]{27+8} = \sqrt[3]{27} + \sqrt[3]{8}$.</div>
+            <div class="pres-step"><b>False</b> ($\sqrt[3]{35} \neq 3 + 2$)</div>
+        </div>
+        <div id="pres-150" class="pres-container" style="display:none;">
+            <div class="pres-q">8. Identify the false statements only.<br>(vii) There is no cube root of a negative number.</div>
+            <div class="pres-step"><b>False</b> (e.g., $\sqrt[3]{-8} = -2$)</div>
+        </div>
 
     </div>
 
     <script>
+        const chapterPresMap = {"ch3": ["pres-0", "pres-1", "pres-2", "pres-3", "pres-4", "pres-5", "pres-6", "pres-7", "pres-8", "pres-9", "pres-10", "pres-11", "pres-12", "pres-13", "pres-14", "pres-15", "pres-16", "pres-17", "pres-18", "pres-19", "pres-20", "pres-21", "pres-22", "pres-23", "pres-24", "pres-25", "pres-26", "pres-27", "pres-28", "pres-29", "pres-30", "pres-31", "pres-32", "pres-33", "pres-34", "pres-35", "pres-36", "pres-37", "pres-38", "pres-39", "pres-40", "pres-41", "pres-42", "pres-43", "pres-44", "pres-45", "pres-46", "pres-47", "pres-48", "pres-49", "pres-50", "pres-51", "pres-52", "pres-53", "pres-54", "pres-55", "pres-56", "pres-57", "pres-58", "pres-59", "pres-60", "pres-61", "pres-62", "pres-63", "pres-64", "pres-65", "pres-66", "pres-67", "pres-68", "pres-69", "pres-70", "pres-71", "pres-72", "pres-73", "pres-74", "pres-75", "pres-76", "pres-77", "pres-78", "pres-79", "pres-80", "pres-81", "pres-82", "pres-83"], "ch4": ["pres-84", "pres-85", "pres-86", "pres-87", "pres-88", "pres-89", "pres-90", "pres-91", "pres-92", "pres-93", "pres-94", "pres-95", "pres-96", "pres-97", "pres-98", "pres-99", "pres-100", "pres-101", "pres-102", "pres-103", "pres-104", "pres-105", "pres-106", "pres-107", "pres-108", "pres-109", "pres-110", "pres-111", "pres-112", "pres-113", "pres-114", "pres-115", "pres-116", "pres-117", "pres-118", "pres-119", "pres-120", "pres-121", "pres-122", "pres-123", "pres-124", "pres-125", "pres-126", "pres-127", "pres-128", "pres-129", "pres-130", "pres-131", "pres-132", "pres-133", "pres-134", "pres-135", "pres-136", "pres-137", "pres-138", "pres-139", "pres-140", "pres-141", "pres-142", "pres-143", "pres-144", "pres-145", "pres-146", "pres-147", "pres-148", "pres-149", "pres-150"]};
+        
         let currentSteps = [];
         let currentStepIndex = -1;
-        let savedNormalScroll = 0;
-        let savedTeachScroll = 0;
+        let savedNormalScroll = {};
+        let savedTeachScroll = {};
+        let activeTeachCh = null;
+        let activePresId = null;
 
-        function enterTeachMode() {
-            savedNormalScroll = window.scrollY;
-            document.getElementById('normal-view').style.display = 'none';
-            document.getElementById('teach-view').style.display = 'block';
+        function openChapter(chId) {
+            document.getElementById('home-view').style.display = 'none';
+            document.getElementById('normal-view-' + chId).style.display = 'block';
             window.scrollTo(0, 0);
         }
 
-        function exitTeachMode() {
-            document.getElementById('teach-view').style.display = 'none';
-            document.getElementById('normal-view').style.display = 'block';
-            window.scrollTo(0, savedNormalScroll);
+        function goHome() {
+            const views = document.querySelectorAll('.chapter-view');
+            views.forEach(v => v.style.display = 'none');
+            document.getElementById('home-view').style.display = 'block';
+            window.scrollTo(0, 0);
         }
 
-        function startPresentation(id) {
-            savedTeachScroll = window.scrollY;
-            document.getElementById('teach-view').style.display = 'none';
+        function enterTeachMode(chId) {
+            savedNormalScroll[chId] = window.scrollY;
+            document.getElementById('normal-view-' + chId).style.display = 'none';
+            document.getElementById('teach-view-' + chId).style.display = 'block';
+            window.scrollTo(0, 0);
+        }
+
+        function exitTeachMode(chId) {
+            document.getElementById('teach-view-' + chId).style.display = 'none';
+            document.getElementById('normal-view-' + chId).style.display = 'block';
+            window.scrollTo(0, savedNormalScroll[chId] || 0);
+        }
+
+        function startPresentation(id, chId) {
+            activeTeachCh = chId;
+            activePresId = id;
+            savedTeachScroll[chId] = window.scrollY;
+            
+            document.getElementById('teach-view-' + chId).style.display = 'none';
             document.getElementById('presentation-view').style.display = 'block';
             
-            // Hide all presentation containers
             const containers = document.querySelectorAll('.pres-container');
             containers.forEach(c => c.style.display = 'none');
             
-            // Show the selected one
             const target = document.getElementById(id);
             target.style.display = 'block';
             
-            // Get all steps in this container
             currentSteps = target.querySelectorAll('.pres-step');
             currentSteps.forEach(step => {
                 step.style.opacity = '0';
@@ -1024,15 +1685,40 @@
             
             currentStepIndex = -1;
             window.scrollTo(0, 0);
+            updateNavButtons();
         }
 
         function closePresentation() {
+            if (!activeTeachCh) return;
             document.getElementById('presentation-view').style.display = 'none';
-            document.getElementById('teach-view').style.display = 'block';
-            window.scrollTo(0, savedTeachScroll);
+            document.getElementById('teach-view-' + activeTeachCh).style.display = 'block';
+            window.scrollTo(0, savedTeachScroll[activeTeachCh] || 0);
+        }
+        
+        function updateNavButtons() {
+            const list = chapterPresMap[activeTeachCh];
+            const idx = list.indexOf(activePresId);
+            
+            document.getElementById('btn-prev-q').style.display = (idx > 0) ? 'block' : 'none';
+            document.getElementById('btn-next-q').style.display = (idx < list.length - 1) ? 'block' : 'none';
+        }
+        
+        function nextQuestion() {
+            const list = chapterPresMap[activeTeachCh];
+            const idx = list.indexOf(activePresId);
+            if (idx < list.length - 1) {
+                startPresentation(list[idx + 1], activeTeachCh);
+            }
+        }
+        
+        function prevQuestion() {
+            const list = chapterPresMap[activeTeachCh];
+            const idx = list.indexOf(activePresId);
+            if (idx > 0) {
+                startPresentation(list[idx - 1], activeTeachCh);
+            }
         }
 
-        // Click handlers for presentation
         const presView = document.getElementById('presentation-view');
         
         presView.addEventListener('click', (e) => {
@@ -1058,8 +1744,44 @@
                 currentStepIndex--;
             }
         }
+        
+        // Scroll to change questions
+        let wheelTimeout;
+        presView.addEventListener('wheel', (e) => {
+            // Prevent multiple triggers
+            if (wheelTimeout) return;
+            wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
+            
+            if (e.deltaY > 50) {
+                nextQuestion();
+            } else if (e.deltaY < -50) {
+                prevQuestion();
+            }
+        });
+        
+        let touchStartY = 0;
+        let touchEndY = 0;
+        
+        presView.addEventListener('touchstart', e => {
+            touchStartY = e.changedTouches[0].screenY;
+        }, {passive: true});
+        
+        presView.addEventListener('touchend', e => {
+            touchEndY = e.changedTouches[0].screenY;
+            handleSwipe();
+        }, {passive: true});
+        
+        function handleSwipe() {
+            // swipe up -> next question
+            if (touchStartY - touchEndY > 100) {
+                nextQuestion();
+            }
+            // swipe down -> prev question
+            else if (touchEndY - touchStartY > 100) {
+                prevQuestion();
+            }
+        }
 
-        // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             if (document.getElementById('presentation-view').style.display === 'block') {
                 if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'Enter') {
@@ -1068,6 +1790,12 @@
                 } else if (e.key === 'ArrowLeft') {
                     e.preventDefault();
                     prevStep();
+                } else if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    nextQuestion();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    prevQuestion();
                 } else if (e.key === 'Escape') {
                     closePresentation();
                 }
