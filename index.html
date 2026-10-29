@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class 8 Maths Solutions</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
     <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
     <script>
         window.MathJax = {
@@ -13,7 +18,16 @@
             }
         };
     </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="mathjax.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!window.MathJax || !MathJax.typeset) {
+                var s = document.createElement('script');
+                s.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+                document.head.appendChild(s);
+            }
+        });
+    </script>
     <style>
         * { box-sizing: border-box; }
         body, html {
@@ -271,6 +285,254 @@
             transform: scale(0.9);
         }
 
+        
+        /* App Banner Styles */
+        .app-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: white;
+            padding: 16px 22px;
+            margin: 15px auto 25px auto;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(22, 160, 133, 0.35);
+            transition: all 0.3s ease;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        .app-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.45);
+        }
+        .app-banner-icon {
+            font-size: 34px;
+            margin-right: 15px;
+        }
+        .app-banner-text {
+            flex: 1;
+            text-align: left;
+        }
+        .app-banner-title {
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .app-banner-subtitle {
+            font-size: 13px;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+        .app-banner-action-btn {
+            background: white;
+            color: #16a085;
+            font-weight: bold;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            white-space: nowrap;
+            margin-left: 12px;
+            transition: 0.2s;
+        }
+        .app-banner-action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .modal-card {
+            background: white;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            padding: 22px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-sizing: border-box;
+        }
+        body.dark-mode .modal-card {
+            background: #1e293b;
+            color: #f1f5f9;
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        body.dark-mode .modal-header {
+            border-bottom-color: #334155;
+        }
+        .modal-title {
+            font-size: 19px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: left;
+        }
+        body.dark-mode .modal-title {
+            color: #f8fafc;
+        }
+        .modal-subtitle {
+            font-size: 12.5px;
+            color: #7f8c8d;
+            text-align: left;
+        }
+        body.dark-mode .modal-subtitle {
+            color: #94a3b8;
+        }
+        .modal-close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body.dark-mode .modal-close-btn {
+            background: #334155;
+            color: #e2e8f0;
+        }
+        .app-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 14px;
+            position: relative;
+            text-align: left;
+        }
+        body.dark-mode .app-card {
+            background: #0f172a;
+            border-color: #334155;
+        }
+        .app-card-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: #e67e22;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+        .app-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        .app-card-icon {
+            font-size: 20px;
+        }
+        .app-card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        body.dark-mode .app-card-title {
+            color: #f8fafc;
+        }
+        .app-card-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        body.dark-mode .app-card-desc {
+            color: #94a3b8;
+        }
+        .btn-card-action {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #3498db;
+            color: white !important;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+            box-sizing: border-box;
+        }
+        .btn-card-action:hover {
+            background: #2980b9;
+        }
+        .btn-card-action.apk-link {
+            background: #27ae60;
+        }
+        .btn-card-action.apk-link:hover {
+            background: #219150;
+        }
+        .install-guide {
+            background: #edf2f7;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #4a5568;
+            text-align: left;
+        }
+        body.dark-mode .install-guide {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        .guide-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        body.dark-mode .guide-title {
+            color: #e2e8f0;
+        }
+        .guide-item {
+            margin-bottom: 4px;
+        }
+        .btn-app-pill {
+            background: #16a085 !important;
+            font-size: 13px !important;
+            padding: 6px 12px !important;
+            width: auto !important;
+            border-radius: 20px !important;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .app-banner { width: 100%; flex-direction: column; text-align: center; gap: 10px; }
+            .app-banner-text { text-align: center; }
+            .app-banner-icon { margin: 0; }
+            .app-banner-action-btn { margin: 0; width: 100%; }
+        }
+
         /* Mobile Optimization */
         @media (max-width: 768px) {
             body { padding: 0 !important; }
@@ -291,6 +553,7 @@
 <body>
     <div class="tools-panel">
         <button onclick="toggleDarkMode()" title="Dark Mode">🌙</button>
+        <button onclick="openAppModal()" class="btn-app-pill" title="Download / Install App">📲 App</button>
         <button onclick="zoomIn()" title="Zoom In">+</button>
         <button onclick="zoomOut()" title="Zoom Out">-</button>
     </div>
@@ -315,6 +578,16 @@
     <!-- HOME VIEW -->
     <div class="container" id="home-view">
         <div class="header">Class 8 Mathematics Solutions</div>
+        
+        <!-- APP DOWNLOAD BANNER -->
+        <div class="app-banner" onclick="openAppModal()">
+            <div class="app-banner-icon">📱</div>
+            <div class="app-banner-text">
+                <div class="app-banner-title">Download Mobile App / Install</div>
+                <div class="app-banner-subtitle">Install directly on Phone/PC or download Android APK (.apk) for offline use!</div>
+            </div>
+            <button class="app-banner-action-btn">Install / Download ⬇️</button>
+        </div>
         <button class="home-btn" onclick="openChapter('ch1')">Chapter 1: Rational Numbers</button>
         <button class="home-btn" onclick="openChapter('ch3')">Chapter 3: Squares and Square Roots</button>
         <button class="home-btn" onclick="openChapter('ch4')">Chapter 4: Cubes and Cube Roots</button>
@@ -3701,6 +3974,59 @@
         </div>
 
     </div>
+    <!-- APP INSTALL / DOWNLOAD MODAL -->
+    <div id="app-modal" class="modal-overlay" style="display: none;" onclick="closeAppModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="icon-192.png" alt="App Icon" style="width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                    <div>
+                        <div class="modal-title">Class 8 ICSE Maths App</div>
+                        <div class="modal-subtitle">Fast, Offline & Step-by-Step Solutions</div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeAppModal()">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Option 1: PWA Instant Install -->
+                <div class="app-card">
+                    <div class="app-card-badge">RECOMMENDED</div>
+                    <div class="app-card-header">
+                        <span class="app-card-icon">⚡</span>
+                        <div class="app-card-title">Instant App Install (PWA)</div>
+                    </div>
+                    <div class="app-card-desc">Installs directly to your Phone or PC home screen in 1 second. Zero storage needed, launches full-screen and works offline!</div>
+                    <button class="btn-card-action" id="pwa-install-btn" onclick="installPWA()">📲 Install Now to Home Screen</button>
+                </div>
+
+                <!-- Option 2: APK Download -->
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <span class="app-card-icon">📦</span>
+                        <div class="app-card-title">Download Android APK (.apk)</div>
+                    </div>
+                    <div class="app-card-desc">Download standalone <b>Class8_ICSE_Maths.apk</b> (477 KB). You can install it on any Android phone or share it on WhatsApp.</div>
+                    <a href="Class8_ICSE_Maths.apk" download="Class8_ICSE_Maths.apk" class="btn-card-action apk-link">⬇️ Download APK (477 KB)</a>
+                </div>
+
+                <!-- Option 3: Manual Guide -->
+                <div class="install-guide" id="manual-guide-box">
+                    <div class="guide-title">📖 Manual Install Instructions:</div>
+                    <div class="guide-item">
+                        <b>🤖 Android (Chrome):</b> Tap 3 dots <b>(⋮)</b> in top right &rarr; tap <b>"Install app"</b> or <b>"Add to Home screen"</b>.
+                    </div>
+                    <div class="guide-item">
+                        <b>🍎 iPhone (Safari):</b> Tap Share <b>(⎙ / ⬆️)</b> &rarr; scroll down &rarr; tap <b>"Add to Home Screen"</b>.
+                    </div>
+                    <div class="guide-item">
+                        <b>💻 Laptop / PC:</b> Click the <b>Install (🖥️)</b> icon in your Chrome or Edge address bar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         const chapterPresMap = {"ch1": ["pres-0", "pres-1", "pres-2", "pres-3", "pres-4", "pres-5", "pres-6", "pres-7", "pres-8", "pres-9", "pres-10", "pres-11", "pres-12", "pres-13", "pres-14", "pres-15", "pres-16", "pres-17", "pres-18", "pres-19", "pres-20", "pres-21", "pres-22", "pres-23", "pres-24", "pres-25", "pres-26", "pres-27", "pres-28", "pres-29", "pres-30", "pres-31", "pres-32", "pres-33", "pres-34", "pres-35", "pres-36", "pres-37", "pres-38", "pres-39", "pres-40", "pres-41", "pres-42", "pres-43", "pres-44", "pres-45", "pres-46", "pres-47", "pres-48", "pres-49", "pres-50", "pres-51", "pres-52", "pres-53", "pres-54", "pres-55", "pres-56", "pres-57", "pres-58", "pres-59", "pres-60", "pres-61", "pres-62", "pres-63", "pres-64", "pres-65", "pres-66", "pres-67", "pres-68", "pres-69", "pres-70", "pres-71", "pres-72", "pres-73", "pres-74", "pres-75", "pres-76", "pres-77", "pres-78", "pres-79", "pres-80", "pres-81", "pres-82", "pres-83", "pres-84", "pres-85", "pres-86", "pres-87", "pres-88", "pres-89", "pres-90", "pres-91", "pres-92", "pres-93", "pres-94", "pres-95", "pres-96", "pres-97", "pres-98", "pres-99", "pres-100", "pres-101", "pres-102", "pres-103", "pres-104", "pres-105", "pres-106", "pres-107", "pres-108", "pres-109", "pres-110", "pres-111", "pres-112", "pres-113", "pres-114", "pres-115", "pres-116", "pres-117", "pres-118", "pres-119", "pres-120", "pres-121", "pres-122", "pres-123", "pres-124", "pres-125", "pres-126", "pres-127", "pres-128", "pres-129", "pres-130", "pres-131", "pres-132", "pres-133", "pres-134", "pres-135", "pres-136", "pres-137"], "ch3": ["pres-138", "pres-139", "pres-140", "pres-141", "pres-142", "pres-143", "pres-144", "pres-145", "pres-146", "pres-147", "pres-148", "pres-149", "pres-150", "pres-151", "pres-152", "pres-153", "pres-154", "pres-155", "pres-156", "pres-157", "pres-158", "pres-159", "pres-160", "pres-161", "pres-162", "pres-163", "pres-164", "pres-165", "pres-166", "pres-167", "pres-168", "pres-169", "pres-170", "pres-171", "pres-172", "pres-173", "pres-174", "pres-175", "pres-176", "pres-177", "pres-178", "pres-179", "pres-180", "pres-181", "pres-182", "pres-183", "pres-184", "pres-185", "pres-186", "pres-187", "pres-188", "pres-189", "pres-190", "pres-191", "pres-192", "pres-193", "pres-194", "pres-195", "pres-196", "pres-197", "pres-198", "pres-199", "pres-200", "pres-201", "pres-202", "pres-203", "pres-204", "pres-205", "pres-206", "pres-207", "pres-208", "pres-209", "pres-210", "pres-211", "pres-212", "pres-213", "pres-214", "pres-215", "pres-216", "pres-217", "pres-218", "pres-219", "pres-220", "pres-221"], "ch4": ["pres-222", "pres-223", "pres-224", "pres-225", "pres-226", "pres-227", "pres-228", "pres-229", "pres-230", "pres-231", "pres-232", "pres-233", "pres-234", "pres-235", "pres-236", "pres-237", "pres-238", "pres-239", "pres-240", "pres-241", "pres-242", "pres-243", "pres-244", "pres-245", "pres-246", "pres-247", "pres-248", "pres-249", "pres-250", "pres-251", "pres-252", "pres-253", "pres-254", "pres-255", "pres-256", "pres-257", "pres-258", "pres-259", "pres-260", "pres-261", "pres-262", "pres-263", "pres-264", "pres-265", "pres-266", "pres-267", "pres-268", "pres-269", "pres-270", "pres-271", "pres-272", "pres-273", "pres-274", "pres-275", "pres-276", "pres-277", "pres-278", "pres-279", "pres-280", "pres-281", "pres-282", "pres-283", "pres-284", "pres-285", "pres-286", "pres-287", "pres-288"], "ch5": ["pres-289", "pres-290", "pres-291", "pres-292", "pres-293", "pres-294", "pres-295", "pres-296", "pres-297", "pres-298", "pres-299", "pres-300", "pres-301", "pres-302", "pres-303", "pres-304", "pres-305", "pres-306", "pres-307", "pres-308", "pres-309", "pres-310", "pres-311", "pres-312", "pres-313", "pres-314", "pres-315", "pres-316", "pres-317", "pres-318", "pres-319", "pres-320", "pres-321", "pres-322", "pres-323", "pres-324", "pres-325", "pres-326", "pres-327", "pres-328", "pres-329", "pres-330", "pres-331", "pres-332", "pres-333", "pres-334", "pres-335", "pres-336", "pres-337", "pres-338", "pres-339", "pres-340", "pres-341", "pres-342", "pres-343", "pres-344", "pres-345", "pres-346"]};
@@ -3844,6 +4170,57 @@
             // swipe down -> prev question
             else if (touchEndY - touchStartY > 100) {
                 prevQuestion();
+            }
+        }
+
+        
+                        // Service Worker Registration
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./sw.js').catch(err => {
+                    console.log('SW registration error:', err);
+                });
+            });
+        }
+
+        // PWA Install Prompt handling
+        let deferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            const pwaBtn = document.getElementById('pwa-install-btn');
+            if (pwaBtn) pwaBtn.innerText = '📲 One-Click Install to Home Screen';
+        });
+
+        function openAppModal() {
+            document.getElementById('app-modal').style.display = 'flex';
+        }
+
+        function closeAppModal(e) {
+            if (!e || e.target.id === 'app-modal' || e.target.classList.contains('modal-close-btn')) {
+                document.getElementById('app-modal').style.display = 'none';
+            }
+        }
+
+        function installPWA() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        closeAppModal();
+                    }
+                    deferredPrompt = null;
+                });
+            } else {
+                const guide = document.getElementById('manual-guide-box');
+                if (guide) {
+                    guide.scrollIntoView({ behavior: 'smooth' });
+                    guide.style.transition = 'all 0.3s ease';
+                    guide.style.boxShadow = '0 0 15px #e67e22';
+                    setTimeout(() => {
+                        guide.style.boxShadow = 'none';
+                    }, 2500);
+                }
             }
         }
 

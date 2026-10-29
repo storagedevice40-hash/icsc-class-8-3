@@ -930,6 +930,11 @@ html_template = """<!DOCTYPE html>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class 8 Maths Solutions</title>
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#2c3e50">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="apple-touch-icon" href="icon-192.png">
     <link href="https://fonts.googleapis.com/css2?family=Georgia&display=swap" rel="stylesheet">
     <script>
         window.MathJax = {
@@ -939,7 +944,16 @@ html_template = """<!DOCTYPE html>
             }
         };
     </script>
-    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script id="MathJax-script" async src="mathjax.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            if (!window.MathJax || !MathJax.typeset) {
+                var s = document.createElement('script');
+                s.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+                document.head.appendChild(s);
+            }
+        });
+    </script>
     <style>
         * { box-sizing: border-box; }
         body, html {
@@ -1197,6 +1211,254 @@ html_template = """<!DOCTYPE html>
             transform: scale(0.9);
         }
 
+        
+        /* App Banner Styles */
+        .app-banner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(135deg, #1abc9c, #16a085);
+            color: white;
+            padding: 16px 22px;
+            margin: 15px auto 25px auto;
+            border-radius: 12px;
+            cursor: pointer;
+            box-shadow: 0 6px 15px rgba(22, 160, 133, 0.35);
+            transition: all 0.3s ease;
+            width: 80%;
+            box-sizing: border-box;
+        }
+        .app-banner:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(22, 160, 133, 0.45);
+        }
+        .app-banner-icon {
+            font-size: 34px;
+            margin-right: 15px;
+        }
+        .app-banner-text {
+            flex: 1;
+            text-align: left;
+        }
+        .app-banner-title {
+            font-size: 19px;
+            font-weight: bold;
+            margin-bottom: 3px;
+        }
+        .app-banner-subtitle {
+            font-size: 13px;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+        .app-banner-action-btn {
+            background: white;
+            color: #16a085;
+            font-weight: bold;
+            border: none;
+            padding: 9px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            white-space: nowrap;
+            margin-left: 12px;
+            transition: 0.2s;
+        }
+        .app-banner-action-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Modal Styles */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(4px);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+        .modal-card {
+            background: white;
+            border-radius: 16px;
+            max-width: 500px;
+            width: 100%;
+            padding: 22px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            box-sizing: border-box;
+        }
+        body.dark-mode .modal-card {
+            background: #1e293b;
+            color: #f1f5f9;
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+        body.dark-mode .modal-header {
+            border-bottom-color: #334155;
+        }
+        .modal-title {
+            font-size: 19px;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: left;
+        }
+        body.dark-mode .modal-title {
+            color: #f8fafc;
+        }
+        .modal-subtitle {
+            font-size: 12.5px;
+            color: #7f8c8d;
+            text-align: left;
+        }
+        body.dark-mode .modal-subtitle {
+            color: #94a3b8;
+        }
+        .modal-close-btn {
+            background: #e2e8f0;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: 16px;
+            cursor: pointer;
+            color: #475569;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        body.dark-mode .modal-close-btn {
+            background: #334155;
+            color: #e2e8f0;
+        }
+        .app-card {
+            background: #f8fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 14px;
+            position: relative;
+            text-align: left;
+        }
+        body.dark-mode .app-card {
+            background: #0f172a;
+            border-color: #334155;
+        }
+        .app-card-badge {
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: #e67e22;
+            color: white;
+            font-size: 10px;
+            font-weight: bold;
+            padding: 3px 8px;
+            border-radius: 10px;
+        }
+        .app-card-header {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 5px;
+        }
+        .app-card-icon {
+            font-size: 20px;
+        }
+        .app-card-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        body.dark-mode .app-card-title {
+            color: #f8fafc;
+        }
+        .app-card-desc {
+            font-size: 13px;
+            color: #64748b;
+            line-height: 1.4;
+            margin-bottom: 12px;
+        }
+        body.dark-mode .app-card-desc {
+            color: #94a3b8;
+        }
+        .btn-card-action {
+            display: block;
+            width: 100%;
+            text-align: center;
+            background: #3498db;
+            color: white !important;
+            border: none;
+            padding: 10px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.2s;
+            box-sizing: border-box;
+        }
+        .btn-card-action:hover {
+            background: #2980b9;
+        }
+        .btn-card-action.apk-link {
+            background: #27ae60;
+        }
+        .btn-card-action.apk-link:hover {
+            background: #219150;
+        }
+        .install-guide {
+            background: #edf2f7;
+            border-radius: 10px;
+            padding: 12px 14px;
+            font-size: 12px;
+            line-height: 1.5;
+            color: #4a5568;
+            text-align: left;
+        }
+        body.dark-mode .install-guide {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        .guide-title {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #2d3748;
+        }
+        body.dark-mode .guide-title {
+            color: #e2e8f0;
+        }
+        .guide-item {
+            margin-bottom: 4px;
+        }
+        .btn-app-pill {
+            background: #16a085 !important;
+            font-size: 13px !important;
+            padding: 6px 12px !important;
+            width: auto !important;
+            border-radius: 20px !important;
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            .app-banner { width: 100%; flex-direction: column; text-align: center; gap: 10px; }
+            .app-banner-text { text-align: center; }
+            .app-banner-icon { margin: 0; }
+            .app-banner-action-btn { margin: 0; width: 100%; }
+        }
+
         /* Mobile Optimization */
         @media (max-width: 768px) {
             body { padding: 0 !important; }
@@ -1217,6 +1479,7 @@ html_template = """<!DOCTYPE html>
 <body>
     <div class="tools-panel">
         <button onclick="toggleDarkMode()" title="Dark Mode">🌙</button>
+        <button onclick="openAppModal()" class="btn-app-pill" title="Download / Install App">📲 App</button>
         <button onclick="zoomIn()" title="Zoom In">+</button>
         <button onclick="zoomOut()" title="Zoom Out">-</button>
     </div>
@@ -1241,6 +1504,16 @@ html_template = """<!DOCTYPE html>
     <!-- HOME VIEW -->
     <div class="container" id="home-view">
         <div class="header">Class 8 Mathematics Solutions</div>
+        
+        <!-- APP DOWNLOAD BANNER -->
+        <div class="app-banner" onclick="openAppModal()">
+            <div class="app-banner-icon">📱</div>
+            <div class="app-banner-text">
+                <div class="app-banner-title">Download Mobile App / Install</div>
+                <div class="app-banner-subtitle">Install directly on Phone/PC or download Android APK (.apk) for offline use!</div>
+            </div>
+            <button class="app-banner-action-btn">Install / Download ⬇️</button>
+        </div>
 """
 
 for ch in chapters:
@@ -1313,6 +1586,59 @@ html_template += presentation_html
 
 html_template += f"""
     </div>
+    <!-- APP INSTALL / DOWNLOAD MODAL -->
+    <div id="app-modal" class="modal-overlay" style="display: none;" onclick="closeAppModal(event)">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <div style="display: flex; align-items: center; gap: 10px;">
+                    <img src="icon-192.png" alt="App Icon" style="width: 44px; height: 44px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.2);">
+                    <div>
+                        <div class="modal-title">Class 8 ICSE Maths App</div>
+                        <div class="modal-subtitle">Fast, Offline & Step-by-Step Solutions</div>
+                    </div>
+                </div>
+                <button class="modal-close-btn" onclick="closeAppModal()">✕</button>
+            </div>
+            
+            <div class="modal-body">
+                <!-- Option 1: PWA Instant Install -->
+                <div class="app-card">
+                    <div class="app-card-badge">RECOMMENDED</div>
+                    <div class="app-card-header">
+                        <span class="app-card-icon">⚡</span>
+                        <div class="app-card-title">Instant App Install (PWA)</div>
+                    </div>
+                    <div class="app-card-desc">Installs directly to your Phone or PC home screen in 1 second. Zero storage needed, launches full-screen and works offline!</div>
+                    <button class="btn-card-action" id="pwa-install-btn" onclick="installPWA()">📲 Install Now to Home Screen</button>
+                </div>
+
+                <!-- Option 2: APK Download -->
+                <div class="app-card">
+                    <div class="app-card-header">
+                        <span class="app-card-icon">📦</span>
+                        <div class="app-card-title">Download Android APK (.apk)</div>
+                    </div>
+                    <div class="app-card-desc">Download standalone <b>Class8_ICSE_Maths.apk</b> (477 KB). You can install it on any Android phone or share it on WhatsApp.</div>
+                    <a href="Class8_ICSE_Maths.apk" download="Class8_ICSE_Maths.apk" class="btn-card-action apk-link">⬇️ Download APK (477 KB)</a>
+                </div>
+
+                <!-- Option 3: Manual Guide -->
+                <div class="install-guide" id="manual-guide-box">
+                    <div class="guide-title">📖 Manual Install Instructions:</div>
+                    <div class="guide-item">
+                        <b>🤖 Android (Chrome):</b> Tap 3 dots <b>(⋮)</b> in top right &rarr; tap <b>"Install app"</b> or <b>"Add to Home screen"</b>.
+                    </div>
+                    <div class="guide-item">
+                        <b>🍎 iPhone (Safari):</b> Tap Share <b>(⎙ / ⬆️)</b> &rarr; scroll down &rarr; tap <b>"Add to Home Screen"</b>.
+                    </div>
+                    <div class="guide-item">
+                        <b>💻 Laptop / PC:</b> Click the <b>Install (🖥️)</b> icon in your Chrome or Edge address bar.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script>
         const chapterPresMap = {json.dumps(chapter_pres_map)};
@@ -1456,6 +1782,57 @@ html_template += f"""
             // swipe down -> prev question
             else if (touchEndY - touchStartY > 100) {{
                 prevQuestion();
+            }}
+        }}
+
+        
+                        // Service Worker Registration
+        if ('serviceWorker' in navigator) {{
+            window.addEventListener('load', () => {{
+                navigator.serviceWorker.register('./sw.js').catch(err => {{
+                    console.log('SW registration error:', err);
+                }});
+            }});
+        }}
+
+        // PWA Install Prompt handling
+        let deferredPrompt = null;
+        window.addEventListener('beforeinstallprompt', (e) => {{
+            e.preventDefault();
+            deferredPrompt = e;
+            const pwaBtn = document.getElementById('pwa-install-btn');
+            if (pwaBtn) pwaBtn.innerText = '📲 One-Click Install to Home Screen';
+        }});
+
+        function openAppModal() {{
+            document.getElementById('app-modal').style.display = 'flex';
+        }}
+
+        function closeAppModal(e) {{
+            if (!e || e.target.id === 'app-modal' || e.target.classList.contains('modal-close-btn')) {{
+                document.getElementById('app-modal').style.display = 'none';
+            }}
+        }}
+
+        function installPWA() {{
+            if (deferredPrompt) {{
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {{
+                    if (choiceResult.outcome === 'accepted') {{
+                        closeAppModal();
+                    }}
+                    deferredPrompt = null;
+                }});
+            }} else {{
+                const guide = document.getElementById('manual-guide-box');
+                if (guide) {{
+                    guide.scrollIntoView({{ behavior: 'smooth' }});
+                    guide.style.transition = 'all 0.3s ease';
+                    guide.style.boxShadow = '0 0 15px #e67e22';
+                    setTimeout(() => {{
+                        guide.style.boxShadow = 'none';
+                    }}, 2500);
+                }}
             }}
         }}
 
