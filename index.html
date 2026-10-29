@@ -236,13 +236,78 @@
         }
         
         
+        
         /* Hide all tools in teach & presentation mode */
         body.in-teach-mode #tools-panel,
-        body.in-teach-mode .tools-panel {
+        body.in-teach-mode .tools-panel,
+        .in-teach-mode #tools-panel,
+        .in-teach-mode .tools-panel {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
+
         .pres-q {
             padding-right: 85px;
+        }
+
+        /* Presentation Bottom Navigation Bar */
+        .pres-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 16px 10px;
+            border-top: 2px dashed #cbd5e1;
+            position: sticky;
+            bottom: 0;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 50;
+        }
+        body.dark-mode .pres-nav-bar {
+            background: #2d2d2d;
+            border-top-color: #444;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        .btn-pres-nav {
+            flex: 1;
+            max-width: 170px;
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+        .btn-pres-nav:active {
+            transform: scale(0.96);
+        }
+        .btn-pres-nav.btn-pres-next {
+            background: #27ae60;
+        }
+        .btn-pres-nav.btn-pres-next:hover {
+            background: #219150;
+        }
+        .pres-counter-badge {
+            font-size: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 6px 14px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        body.dark-mode .pres-counter-badge {
+            background: #3a3a3a;
+            color: #66b3ff;
         }
 
         /* Presentation View */
@@ -960,165 +1025,165 @@
         <ul>
             <li class="main-q-li">Exercise 1A</li>
             <li class="main-q-li">1. Add each of the following pairs of rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-0', 'ch1')">(i) $\frac{-1}{3}$ and $\frac{2}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-1', 'ch1')">(ii) $\frac{2}{5}$ and $\frac{-3}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-2', 'ch1')">(iii) $\frac{-7}{11}$ and $\frac{-4}{11}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-3', 'ch1')">(iv) $\frac{-13}{17}$ and $\frac{4}{17}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-4', 'ch1')">(v) $\frac{11}{25}$ and $\frac{-7}{25}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-5', 'ch1')">(vi) $\frac{-8}{9}$ and $\frac{-19}{9}$</li>
+            <li class="clickable-q" id="item-pres-0" onclick="startPresentation('pres-0', 'ch1')">(i) $\frac{-1}{3}$ and $\frac{2}{3}$</li>
+            <li class="clickable-q" id="item-pres-1" onclick="startPresentation('pres-1', 'ch1')">(ii) $\frac{2}{5}$ and $\frac{-3}{5}$</li>
+            <li class="clickable-q" id="item-pres-2" onclick="startPresentation('pres-2', 'ch1')">(iii) $\frac{-7}{11}$ and $\frac{-4}{11}$</li>
+            <li class="clickable-q" id="item-pres-3" onclick="startPresentation('pres-3', 'ch1')">(iv) $\frac{-13}{17}$ and $\frac{4}{17}$</li>
+            <li class="clickable-q" id="item-pres-4" onclick="startPresentation('pres-4', 'ch1')">(v) $\frac{11}{25}$ and $\frac{-7}{25}$</li>
+            <li class="clickable-q" id="item-pres-5" onclick="startPresentation('pres-5', 'ch1')">(vi) $\frac{-8}{9}$ and $\frac{-19}{9}$</li>
             <li class="main-q-li">2. Add.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-6', 'ch1')">(i) $\frac{2}{3}$ and $\frac{3}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-7', 'ch1')">(ii) $\frac{-2}{5}$ and $\frac{5}{7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-8', 'ch1')">(iii) $\frac{3}{-8}$ and $\frac{-5}{12}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-9', 'ch1')">(iv) $\frac{-7}{26}$ and $\frac{-5}{39}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-10', 'ch1')">(v) $\frac{5}{-24}$ and $\frac{7}{36}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-11', 'ch1')">(vi) $\frac{3}{16}$ and $\frac{-7}{24}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-12', 'ch1')">(vii) $4 \frac{11}{25}$ and $\frac{13}{-15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-13', 'ch1')">(viii) $-2$ and $1 \frac{7}{11}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-14', 'ch1')">(ix) $-1$ and $2 \frac{3}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-15', 'ch1')">(x) $\frac{-7}{8}$ and $0$</li>
+            <li class="clickable-q" id="item-pres-6" onclick="startPresentation('pres-6', 'ch1')">(i) $\frac{2}{3}$ and $\frac{3}{5}$</li>
+            <li class="clickable-q" id="item-pres-7" onclick="startPresentation('pres-7', 'ch1')">(ii) $\frac{-2}{5}$ and $\frac{5}{7}$</li>
+            <li class="clickable-q" id="item-pres-8" onclick="startPresentation('pres-8', 'ch1')">(iii) $\frac{3}{-8}$ and $\frac{-5}{12}$</li>
+            <li class="clickable-q" id="item-pres-9" onclick="startPresentation('pres-9', 'ch1')">(iv) $\frac{-7}{26}$ and $\frac{-5}{39}$</li>
+            <li class="clickable-q" id="item-pres-10" onclick="startPresentation('pres-10', 'ch1')">(v) $\frac{5}{-24}$ and $\frac{7}{36}$</li>
+            <li class="clickable-q" id="item-pres-11" onclick="startPresentation('pres-11', 'ch1')">(vi) $\frac{3}{16}$ and $\frac{-7}{24}$</li>
+            <li class="clickable-q" id="item-pres-12" onclick="startPresentation('pres-12', 'ch1')">(vii) $4 \frac{11}{25}$ and $\frac{13}{-15}$</li>
+            <li class="clickable-q" id="item-pres-13" onclick="startPresentation('pres-13', 'ch1')">(viii) $-2$ and $1 \frac{7}{11}$</li>
+            <li class="clickable-q" id="item-pres-14" onclick="startPresentation('pres-14', 'ch1')">(ix) $-1$ and $2 \frac{3}{5}$</li>
+            <li class="clickable-q" id="item-pres-15" onclick="startPresentation('pres-15', 'ch1')">(x) $\frac{-7}{8}$ and $0$</li>
             <li class="main-q-li">3. Verify the commutative law of addition for the following pairs of rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-16', 'ch1')">(i) $\frac{-5}{7}$ and $\frac{3}{4}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-17', 'ch1')">(ii) $\frac{-1}{3}$ and $\frac{-2}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-18', 'ch1')">(iii) $\frac{4}{-7}$ and $\frac{-2}{21}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-19', 'ch1')">(iv) $5$ and $\frac{-3}{5}$</li>
+            <li class="clickable-q" id="item-pres-16" onclick="startPresentation('pres-16', 'ch1')">(i) $\frac{-5}{7}$ and $\frac{3}{4}$</li>
+            <li class="clickable-q" id="item-pres-17" onclick="startPresentation('pres-17', 'ch1')">(ii) $\frac{-1}{3}$ and $\frac{-2}{5}$</li>
+            <li class="clickable-q" id="item-pres-18" onclick="startPresentation('pres-18', 'ch1')">(iii) $\frac{4}{-7}$ and $\frac{-2}{21}$</li>
+            <li class="clickable-q" id="item-pres-19" onclick="startPresentation('pres-19', 'ch1')">(iv) $5$ and $\frac{-3}{5}$</li>
             <li class="main-q-li">4. Verify the associative law of addition for the following groups of rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-20', 'ch1')">(i) $\frac{1}{2}, \frac{-2}{3}$ and $\frac{1}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-21', 'ch1')">(ii) $\frac{-3}{5}, \frac{7}{10}$ and $\frac{4}{15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-22', 'ch1')">(iii) $\frac{3}{-7}, \frac{2}{21}$ and $\frac{-5}{14}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-23', 'ch1')">(iv) $1, \frac{5}{-11}$ and $\frac{7}{22}$</li>
+            <li class="clickable-q" id="item-pres-20" onclick="startPresentation('pres-20', 'ch1')">(i) $\frac{1}{2}, \frac{-2}{3}$ and $\frac{1}{5}$</li>
+            <li class="clickable-q" id="item-pres-21" onclick="startPresentation('pres-21', 'ch1')">(ii) $\frac{-3}{5}, \frac{7}{10}$ and $\frac{4}{15}$</li>
+            <li class="clickable-q" id="item-pres-22" onclick="startPresentation('pres-22', 'ch1')">(iii) $\frac{3}{-7}, \frac{2}{21}$ and $\frac{-5}{14}$</li>
+            <li class="clickable-q" id="item-pres-23" onclick="startPresentation('pres-23', 'ch1')">(iv) $1, \frac{5}{-11}$ and $\frac{7}{22}$</li>
             <li class="main-q-li">5. Find the additive inverse of each of the following rationals.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-24', 'ch1')">(i) $0$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-25', 'ch1')">(ii) $1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-26', 'ch1')">(iii) $-5$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-27', 'ch1')">(iv) $\frac{-3}{4}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-28', 'ch1')">(v) $\frac{2}{-9}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-29', 'ch1')">(vi) $\frac{-7}{-15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-30', 'ch1')">(vii) $\frac{-13}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-31', 'ch1')">(viii) $\frac{-25}{-133}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-32', 'ch1')">(ix) $\frac{13}{-27}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-33', 'ch1')">(x) $\frac{17}{8}$</li>
+            <li class="clickable-q" id="item-pres-24" onclick="startPresentation('pres-24', 'ch1')">(i) $0$</li>
+            <li class="clickable-q" id="item-pres-25" onclick="startPresentation('pres-25', 'ch1')">(ii) $1$</li>
+            <li class="clickable-q" id="item-pres-26" onclick="startPresentation('pres-26', 'ch1')">(iii) $-5$</li>
+            <li class="clickable-q" id="item-pres-27" onclick="startPresentation('pres-27', 'ch1')">(iv) $\frac{-3}{4}$</li>
+            <li class="clickable-q" id="item-pres-28" onclick="startPresentation('pres-28', 'ch1')">(v) $\frac{2}{-9}$</li>
+            <li class="clickable-q" id="item-pres-29" onclick="startPresentation('pres-29', 'ch1')">(vi) $\frac{-7}{-15}$</li>
+            <li class="clickable-q" id="item-pres-30" onclick="startPresentation('pres-30', 'ch1')">(vii) $\frac{-13}{2}$</li>
+            <li class="clickable-q" id="item-pres-31" onclick="startPresentation('pres-31', 'ch1')">(viii) $\frac{-25}{-133}$</li>
+            <li class="clickable-q" id="item-pres-32" onclick="startPresentation('pres-32', 'ch1')">(ix) $\frac{13}{-27}$</li>
+            <li class="clickable-q" id="item-pres-33" onclick="startPresentation('pres-33', 'ch1')">(x) $\frac{17}{8}$</li>
             <li class="main-q-li">6. Using the appropriate properties of addition, find the value of each of the following sums.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-34', 'ch1')">(i) $\frac{5}{7} + \frac{-7}{3} + \frac{-3}{7} + \frac{11}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-35', 'ch1')">(ii) $\frac{4}{5} + \frac{3}{10} + \frac{11}{5} + \frac{-13}{10}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-36', 'ch1')">(iii) $\frac{2}{3} + \frac{-11}{8} + \frac{-17}{3} + \frac{3}{8}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-37', 'ch1')">(iv) $\frac{7}{8} + \frac{3}{10} + \frac{-5}{8} + \frac{-7}{20}$</li>
+            <li class="clickable-q" id="item-pres-34" onclick="startPresentation('pres-34', 'ch1')">(i) $\frac{5}{7} + \frac{-7}{3} + \frac{-3}{7} + \frac{11}{3}$</li>
+            <li class="clickable-q" id="item-pres-35" onclick="startPresentation('pres-35', 'ch1')">(ii) $\frac{4}{5} + \frac{3}{10} + \frac{11}{5} + \frac{-13}{10}$</li>
+            <li class="clickable-q" id="item-pres-36" onclick="startPresentation('pres-36', 'ch1')">(iii) $\frac{2}{3} + \frac{-11}{8} + \frac{-17}{3} + \frac{3}{8}$</li>
+            <li class="clickable-q" id="item-pres-37" onclick="startPresentation('pres-37', 'ch1')">(iv) $\frac{7}{8} + \frac{3}{10} + \frac{-5}{8} + \frac{-7}{20}$</li>
             <li class="main-q-li">7. Fill in the blanks.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-38', 'ch1')">(i) $\frac{-2}{15} + \frac{-3}{19} = \frac{-3}{19} + ......$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-39', 'ch1')">(ii) $\frac{23}{12} + \frac{7}{5} = \frac{7}{5} + ......$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-40', 'ch1')">(iii) $\frac{1}{2} + \left(\frac{3}{5} + \frac{-7}{9}\right) = \left(\frac{1}{2} + ......\right) + \frac{-7}{9}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-41', 'ch1')">(iv) \left(\frac{-5}{11} + \frac{-7}{13}\right) + \frac{25}{29} = ...... + \left(\frac{-7}{13} + \frac{25}{29}\right)</li>
-            <li class="clickable-q" onclick="startPresentation('pres-42', 'ch1')">(v) $-3 + \left(\frac{-5}{23} + \frac{7}{31}\right) = \left(...... + \frac{-5}{23}\right) + \frac{7}{31}$</li>
+            <li class="clickable-q" id="item-pres-38" onclick="startPresentation('pres-38', 'ch1')">(i) $\frac{-2}{15} + \frac{-3}{19} = \frac{-3}{19} + ......$</li>
+            <li class="clickable-q" id="item-pres-39" onclick="startPresentation('pres-39', 'ch1')">(ii) $\frac{23}{12} + \frac{7}{5} = \frac{7}{5} + ......$</li>
+            <li class="clickable-q" id="item-pres-40" onclick="startPresentation('pres-40', 'ch1')">(iii) $\frac{1}{2} + \left(\frac{3}{5} + \frac{-7}{9}\right) = \left(\frac{1}{2} + ......\right) + \frac{-7}{9}$</li>
+            <li class="clickable-q" id="item-pres-41" onclick="startPresentation('pres-41', 'ch1')">(iv) \left(\frac{-5}{11} + \frac{-7}{13}\right) + \frac{25}{29} = ...... + \left(\frac{-7}{13} + \frac{25}{29}\right)</li>
+            <li class="clickable-q" id="item-pres-42" onclick="startPresentation('pres-42', 'ch1')">(v) $-3 + \left(\frac{-5}{23} + \frac{7}{31}\right) = \left(...... + \frac{-5}{23}\right) + \frac{7}{31}$</li>
             <li class="main-q-li">8. Subtract.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-43', 'ch1')">(i) $\frac{1}{3}$ from $\frac{2}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-44', 'ch1')">(ii) $\frac{-7}{8}$ from $\frac{1}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-45', 'ch1')">(iii) $\frac{-11}{13}$ from $\frac{-2}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-46', 'ch1')">(iv) $\frac{-13}{11}$ from $-1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-47', 'ch1')">(v) $\frac{-15}{17}$ from $1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-48', 'ch1')">(vi) $\frac{12}{19}$ from $-2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-49', 'ch1')">(vii) $\frac{-19}{31}$ from $0$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-50', 'ch1')">(viii) $-5$ from $\frac{-2}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-51', 'ch1')">(ix) $7$ from $\frac{-7}{17}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-52', 'ch1')">(x) $\frac{-9}{8}$ from $\frac{-13}{7}$</li>
+            <li class="clickable-q" id="item-pres-43" onclick="startPresentation('pres-43', 'ch1')">(i) $\frac{1}{3}$ from $\frac{2}{5}$</li>
+            <li class="clickable-q" id="item-pres-44" onclick="startPresentation('pres-44', 'ch1')">(ii) $\frac{-7}{8}$ from $\frac{1}{2}$</li>
+            <li class="clickable-q" id="item-pres-45" onclick="startPresentation('pres-45', 'ch1')">(iii) $\frac{-11}{13}$ from $\frac{-2}{3}$</li>
+            <li class="clickable-q" id="item-pres-46" onclick="startPresentation('pres-46', 'ch1')">(iv) $\frac{-13}{11}$ from $-1$</li>
+            <li class="clickable-q" id="item-pres-47" onclick="startPresentation('pres-47', 'ch1')">(v) $\frac{-15}{17}$ from $1$</li>
+            <li class="clickable-q" id="item-pres-48" onclick="startPresentation('pres-48', 'ch1')">(vi) $\frac{12}{19}$ from $-2$</li>
+            <li class="clickable-q" id="item-pres-49" onclick="startPresentation('pres-49', 'ch1')">(vii) $\frac{-19}{31}$ from $0$</li>
+            <li class="clickable-q" id="item-pres-50" onclick="startPresentation('pres-50', 'ch1')">(viii) $-5$ from $\frac{-2}{3}$</li>
+            <li class="clickable-q" id="item-pres-51" onclick="startPresentation('pres-51', 'ch1')">(ix) $7$ from $\frac{-7}{17}$</li>
+            <li class="clickable-q" id="item-pres-52" onclick="startPresentation('pres-52', 'ch1')">(x) $\frac{-9}{8}$ from $\frac{-13}{7}$</li>
             <li class="main-q-li">9. Verify.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-53', 'ch1')">(i) $\frac{1}{3} - \frac{1}{4} \neq \frac{1}{4} - \frac{1}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-54', 'ch1')">(ii) $\frac{-2}{7} - \frac{3}{5} \neq \frac{3}{5} - \frac{-2}{7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-55', 'ch1')">(iii) $\frac{1}{2} - \left(\frac{1}{3} - \frac{1}{5}\right) \neq \left(\frac{1}{2} - \frac{1}{3}\right) - \frac{1}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-56', 'ch1')">(iv) $\frac{5}{11} - \left(\frac{-2}{3} - \frac{5}{7}\right) \neq \left\{\frac{5}{11} - \left(\frac{-2}{3}\right)\right\} - \frac{5}{7}$</li>
+            <li class="clickable-q" id="item-pres-53" onclick="startPresentation('pres-53', 'ch1')">(i) $\frac{1}{3} - \frac{1}{4} \neq \frac{1}{4} - \frac{1}{3}$</li>
+            <li class="clickable-q" id="item-pres-54" onclick="startPresentation('pres-54', 'ch1')">(ii) $\frac{-2}{7} - \frac{3}{5} \neq \frac{3}{5} - \frac{-2}{7}$</li>
+            <li class="clickable-q" id="item-pres-55" onclick="startPresentation('pres-55', 'ch1')">(iii) $\frac{1}{2} - \left(\frac{1}{3} - \frac{1}{5}\right) \neq \left(\frac{1}{2} - \frac{1}{3}\right) - \frac{1}{5}$</li>
+            <li class="clickable-q" id="item-pres-56" onclick="startPresentation('pres-56', 'ch1')">(iv) $\frac{5}{11} - \left(\frac{-2}{3} - \frac{5}{7}\right) \neq \left\{\frac{5}{11} - \left(\frac{-2}{3}\right)\right\} - \frac{5}{7}$</li>
             <li class="main-q-li">10. Word Problems.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-57', 'ch1')">(a) The sum of two rational numbers is $\frac{-3}{4}$. If one of the numbers is $\frac{-28}{3}$, find the other.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-58', 'ch1')">(b) The sum of two rational numbers is $-3$. If one of the numbers is $\frac{7}{8}$, find the other.</li>
+            <li class="clickable-q" id="item-pres-57" onclick="startPresentation('pres-57', 'ch1')">(a) The sum of two rational numbers is $\frac{-3}{4}$. If one of the numbers is $\frac{-28}{3}$, find the other.</li>
+            <li class="clickable-q" id="item-pres-58" onclick="startPresentation('pres-58', 'ch1')">(b) The sum of two rational numbers is $-3$. If one of the numbers is $\frac{7}{8}$, find the other.</li>
             <li class="main-q-li">11. Word Problems.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-59', 'ch1')">(a) What number should be added to $\frac{-11}{4}$ to get $\frac{-25}{14}$?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-60', 'ch1')">(b) What number should be added to $-2$ to get $\frac{-5}{8}$?</li>
+            <li class="clickable-q" id="item-pres-59" onclick="startPresentation('pres-59', 'ch1')">(a) What number should be added to $\frac{-11}{4}$ to get $\frac{-25}{14}$?</li>
+            <li class="clickable-q" id="item-pres-60" onclick="startPresentation('pres-60', 'ch1')">(b) What number should be added to $-2$ to get $\frac{-5}{8}$?</li>
             <li class="main-q-li">12. Word Problems.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-61', 'ch1')">(a) What number should be subtracted from $\frac{-7}{8}$ to get $\frac{-5}{12}$?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-62', 'ch1')">(b) What number should be subtracted from $1$ to get $\frac{-7}{17}$?</li>
+            <li class="clickable-q" id="item-pres-61" onclick="startPresentation('pres-61', 'ch1')">(a) What number should be subtracted from $\frac{-7}{8}$ to get $\frac{-5}{12}$?</li>
+            <li class="clickable-q" id="item-pres-62" onclick="startPresentation('pres-62', 'ch1')">(b) What number should be subtracted from $1$ to get $\frac{-7}{17}$?</li>
             <li class="main-q-li">13. Identify the true statements only.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-63', 'ch1')">(i) The sum of two rational numbers is a rational number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-64', 'ch1')">(ii) The difference of two rational numbers is not always a rational number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-65', 'ch1')">(iii) Zero is not a rational number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-66', 'ch1')">(iv) Addition is commutative on rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-67', 'ch1')">(v) Subtraction is commutative on rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-68', 'ch1')">(vi) Addition is associative on rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-69', 'ch1')">(vii) Subtraction is associative on rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-70', 'ch1')">(viii) Zero is the additive inverse of itself.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-71', 'ch1')">(ix) Zero is the additive identity for rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-72', 'ch1')">(x) 1 is the additive inverse of -1.</li>
+            <li class="clickable-q" id="item-pres-63" onclick="startPresentation('pres-63', 'ch1')">(i) The sum of two rational numbers is a rational number.</li>
+            <li class="clickable-q" id="item-pres-64" onclick="startPresentation('pres-64', 'ch1')">(ii) The difference of two rational numbers is not always a rational number.</li>
+            <li class="clickable-q" id="item-pres-65" onclick="startPresentation('pres-65', 'ch1')">(iii) Zero is not a rational number.</li>
+            <li class="clickable-q" id="item-pres-66" onclick="startPresentation('pres-66', 'ch1')">(iv) Addition is commutative on rational numbers.</li>
+            <li class="clickable-q" id="item-pres-67" onclick="startPresentation('pres-67', 'ch1')">(v) Subtraction is commutative on rational numbers.</li>
+            <li class="clickable-q" id="item-pres-68" onclick="startPresentation('pres-68', 'ch1')">(vi) Addition is associative on rational numbers.</li>
+            <li class="clickable-q" id="item-pres-69" onclick="startPresentation('pres-69', 'ch1')">(vii) Subtraction is associative on rational numbers.</li>
+            <li class="clickable-q" id="item-pres-70" onclick="startPresentation('pres-70', 'ch1')">(viii) Zero is the additive inverse of itself.</li>
+            <li class="clickable-q" id="item-pres-71" onclick="startPresentation('pres-71', 'ch1')">(ix) Zero is the additive identity for rational numbers.</li>
+            <li class="clickable-q" id="item-pres-72" onclick="startPresentation('pres-72', 'ch1')">(x) 1 is the additive inverse of -1.</li>
             <li class="main-q-li">Exercise 1B</li>
             <li class="main-q-li">1. Find the value of each of the following products.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-73', 'ch1')">(i) $\frac{3}{7} \times \frac{4}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-74', 'ch1')">(ii) $\frac{-4}{9} \times \frac{10}{7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-75', 'ch1')">(iii) $\frac{-1}{2} \times \frac{-9}{8}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-76', 'ch1')">(iv) $\frac{-3}{4} \times \frac{8}{-15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-77', 'ch1')">(v) $\frac{21}{-2} \times \frac{-4}{7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-78', 'ch1')">(vi) $\frac{-7}{10} \times \frac{6}{-35}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-79', 'ch1')">(vii) $\frac{-14}{15} \times \frac{-25}{42}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-80', 'ch1')">(viii) $\frac{-35}{-18} \times \frac{8}{-15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-81', 'ch1')">(ix) $\frac{-7}{11} \times 22$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-82', 'ch1')">(x) $\frac{14}{25} \times (-100)$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-83', 'ch1')">(xi) $\frac{-13}{-12} \times (-3)$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-84', 'ch1')">(xii) $\frac{-12}{85} \times (-17)$</li>
+            <li class="clickable-q" id="item-pres-73" onclick="startPresentation('pres-73', 'ch1')">(i) $\frac{3}{7} \times \frac{4}{5}$</li>
+            <li class="clickable-q" id="item-pres-74" onclick="startPresentation('pres-74', 'ch1')">(ii) $\frac{-4}{9} \times \frac{10}{7}$</li>
+            <li class="clickable-q" id="item-pres-75" onclick="startPresentation('pres-75', 'ch1')">(iii) $\frac{-1}{2} \times \frac{-9}{8}$</li>
+            <li class="clickable-q" id="item-pres-76" onclick="startPresentation('pres-76', 'ch1')">(iv) $\frac{-3}{4} \times \frac{8}{-15}$</li>
+            <li class="clickable-q" id="item-pres-77" onclick="startPresentation('pres-77', 'ch1')">(v) $\frac{21}{-2} \times \frac{-4}{7}$</li>
+            <li class="clickable-q" id="item-pres-78" onclick="startPresentation('pres-78', 'ch1')">(vi) $\frac{-7}{10} \times \frac{6}{-35}$</li>
+            <li class="clickable-q" id="item-pres-79" onclick="startPresentation('pres-79', 'ch1')">(vii) $\frac{-14}{15} \times \frac{-25}{42}$</li>
+            <li class="clickable-q" id="item-pres-80" onclick="startPresentation('pres-80', 'ch1')">(viii) $\frac{-35}{-18} \times \frac{8}{-15}$</li>
+            <li class="clickable-q" id="item-pres-81" onclick="startPresentation('pres-81', 'ch1')">(ix) $\frac{-7}{11} \times 22$</li>
+            <li class="clickable-q" id="item-pres-82" onclick="startPresentation('pres-82', 'ch1')">(x) $\frac{14}{25} \times (-100)$</li>
+            <li class="clickable-q" id="item-pres-83" onclick="startPresentation('pres-83', 'ch1')">(xi) $\frac{-13}{-12} \times (-3)$</li>
+            <li class="clickable-q" id="item-pres-84" onclick="startPresentation('pres-84', 'ch1')">(xii) $\frac{-12}{85} \times (-17)$</li>
             <li class="main-q-li">2. Verify the commutative law of multiplication for the following pairs of rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-85', 'ch1')">(i) $\frac{2}{3}$ and $\frac{-7}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-86', 'ch1')">(ii) $\frac{-1}{7}$ and $\frac{14}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-87', 'ch1')">(iii) $\frac{3}{-8}$ and $\frac{-16}{15}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-88', 'ch1')">(iv) $\frac{11}{13}$ and $\frac{-26}{-55}$</li>
+            <li class="clickable-q" id="item-pres-85" onclick="startPresentation('pres-85', 'ch1')">(i) $\frac{2}{3}$ and $\frac{-7}{5}$</li>
+            <li class="clickable-q" id="item-pres-86" onclick="startPresentation('pres-86', 'ch1')">(ii) $\frac{-1}{7}$ and $\frac{14}{3}$</li>
+            <li class="clickable-q" id="item-pres-87" onclick="startPresentation('pres-87', 'ch1')">(iii) $\frac{3}{-8}$ and $\frac{-16}{15}$</li>
+            <li class="clickable-q" id="item-pres-88" onclick="startPresentation('pres-88', 'ch1')">(iv) $\frac{11}{13}$ and $\frac{-26}{-55}$</li>
             <li class="main-q-li">3. Verify the associative law of multiplication for the following groups of rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-89', 'ch1')">(i) $\frac{2}{3}, \frac{-1}{5}$ and $\frac{7}{12}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-90', 'ch1')">(ii) $\frac{-5}{7}, \frac{1}{2}$ and $\frac{-21}{20}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-91', 'ch1')">(iii) $\frac{-8}{9}, \frac{-3}{4}$ and $\frac{15}{16}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-92', 'ch1')">(iv) $\frac{-3}{11}, \frac{-7}{4}$ and $\frac{-1}{2}$</li>
+            <li class="clickable-q" id="item-pres-89" onclick="startPresentation('pres-89', 'ch1')">(i) $\frac{2}{3}, \frac{-1}{5}$ and $\frac{7}{12}$</li>
+            <li class="clickable-q" id="item-pres-90" onclick="startPresentation('pres-90', 'ch1')">(ii) $\frac{-5}{7}, \frac{1}{2}$ and $\frac{-21}{20}$</li>
+            <li class="clickable-q" id="item-pres-91" onclick="startPresentation('pres-91', 'ch1')">(iii) $\frac{-8}{9}, \frac{-3}{4}$ and $\frac{15}{16}$</li>
+            <li class="clickable-q" id="item-pres-92" onclick="startPresentation('pres-92', 'ch1')">(iv) $\frac{-3}{11}, \frac{-7}{4}$ and $\frac{-1}{2}$</li>
             <li class="main-q-li">4. Find the multiplicative inverse of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-93', 'ch1')">(i) $1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-94', 'ch1')">(ii) $-1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-95', 'ch1')">(iii) $\frac{3}{4}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-96', 'ch1')">(iv) $\frac{5}{-7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-97', 'ch1')">(v) $\frac{-11}{-13}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-98', 'ch1')">(vi) $\frac{-7}{17}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-99', 'ch1')">(vii) $3 \frac{1}{4}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-100', 'ch1')">(viii) $\frac{-26}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-101', 'ch1')">(ix) $\frac{3}{-4} \times \frac{-8}{9}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-102', 'ch1')">(x) $\frac{5}{13} \times \frac{-26}{-35}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-103', 'ch1')">(xi) $\frac{-13}{-14} \times \frac{70}{-39}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-104', 'ch1')">(xii) $3 \frac{1}{3} \times 1 \frac{1}{2}$</li>
+            <li class="clickable-q" id="item-pres-93" onclick="startPresentation('pres-93', 'ch1')">(i) $1$</li>
+            <li class="clickable-q" id="item-pres-94" onclick="startPresentation('pres-94', 'ch1')">(ii) $-1$</li>
+            <li class="clickable-q" id="item-pres-95" onclick="startPresentation('pres-95', 'ch1')">(iii) $\frac{3}{4}$</li>
+            <li class="clickable-q" id="item-pres-96" onclick="startPresentation('pres-96', 'ch1')">(iv) $\frac{5}{-7}$</li>
+            <li class="clickable-q" id="item-pres-97" onclick="startPresentation('pres-97', 'ch1')">(v) $\frac{-11}{-13}$</li>
+            <li class="clickable-q" id="item-pres-98" onclick="startPresentation('pres-98', 'ch1')">(vi) $\frac{-7}{17}$</li>
+            <li class="clickable-q" id="item-pres-99" onclick="startPresentation('pres-99', 'ch1')">(vii) $3 \frac{1}{4}$</li>
+            <li class="clickable-q" id="item-pres-100" onclick="startPresentation('pres-100', 'ch1')">(viii) $\frac{-26}{5}$</li>
+            <li class="clickable-q" id="item-pres-101" onclick="startPresentation('pres-101', 'ch1')">(ix) $\frac{3}{-4} \times \frac{-8}{9}$</li>
+            <li class="clickable-q" id="item-pres-102" onclick="startPresentation('pres-102', 'ch1')">(x) $\frac{5}{13} \times \frac{-26}{-35}$</li>
+            <li class="clickable-q" id="item-pres-103" onclick="startPresentation('pres-103', 'ch1')">(xi) $\frac{-13}{-14} \times \frac{70}{-39}$</li>
+            <li class="clickable-q" id="item-pres-104" onclick="startPresentation('pres-104', 'ch1')">(xii) $3 \frac{1}{3} \times 1 \frac{1}{2}$</li>
             <li class="main-q-li">5. Verify each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-105', 'ch1')">(i) $\frac{3}{5} \times \left(\frac{7}{12} + \frac{1}{2}\right) = \frac{3}{5} \times \frac{7}{12} + \frac{3}{5} \times \frac{1}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-106', 'ch1')">(ii) $\frac{-2}{3} \times \left(\frac{-5}{4} + \frac{4}{7}\right) = \frac{-2}{3} \times \frac{-5}{4} + \frac{-2}{3} \times \frac{4}{7}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-107', 'ch1')">(iii) $\frac{8}{11} \times \left(\frac{-3}{2} - \frac{1}{5}\right) = \frac{8}{11} \times \frac{-3}{2} - \frac{8}{11} \times \frac{1}{5}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-108', 'ch1')">(iv) $\frac{-3}{2} \times \left(\frac{-5}{7} + \frac{-5}{2}\right) = \frac{-3}{2} \times \frac{-5}{7} + \frac{-3}{2} \times \frac{-5}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-109', 'ch1')">(v) $\left(\frac{7}{5} + \frac{3}{2}\right) \times \frac{2}{3} = \frac{7}{5} \times \frac{2}{3} + \frac{3}{2} \times \frac{2}{3}$</li>
+            <li class="clickable-q" id="item-pres-105" onclick="startPresentation('pres-105', 'ch1')">(i) $\frac{3}{5} \times \left(\frac{7}{12} + \frac{1}{2}\right) = \frac{3}{5} \times \frac{7}{12} + \frac{3}{5} \times \frac{1}{2}$</li>
+            <li class="clickable-q" id="item-pres-106" onclick="startPresentation('pres-106', 'ch1')">(ii) $\frac{-2}{3} \times \left(\frac{-5}{4} + \frac{4}{7}\right) = \frac{-2}{3} \times \frac{-5}{4} + \frac{-2}{3} \times \frac{4}{7}$</li>
+            <li class="clickable-q" id="item-pres-107" onclick="startPresentation('pres-107', 'ch1')">(iii) $\frac{8}{11} \times \left(\frac{-3}{2} - \frac{1}{5}\right) = \frac{8}{11} \times \frac{-3}{2} - \frac{8}{11} \times \frac{1}{5}$</li>
+            <li class="clickable-q" id="item-pres-108" onclick="startPresentation('pres-108', 'ch1')">(iv) $\frac{-3}{2} \times \left(\frac{-5}{7} + \frac{-5}{2}\right) = \frac{-3}{2} \times \frac{-5}{7} + \frac{-3}{2} \times \frac{-5}{2}$</li>
+            <li class="clickable-q" id="item-pres-109" onclick="startPresentation('pres-109', 'ch1')">(v) $\left(\frac{7}{5} + \frac{3}{2}\right) \times \frac{2}{3} = \frac{7}{5} \times \frac{2}{3} + \frac{3}{2} \times \frac{2}{3}$</li>
             <li class="main-q-li">6. Using the distributive property, find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-110', 'ch1')">(i) $\frac{3}{5} \times \frac{-20}{9} + \frac{3}{5} \times \frac{-1}{3}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-111', 'ch1')">(ii) $\frac{7}{15} \times \frac{-50}{49} + \frac{7}{15} \times \frac{1}{49}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-112', 'ch1')">(iii) $\left(\frac{-13}{5} \times \frac{16}{7}\right) + \left(\frac{-13}{5} \times \frac{19}{7}\right)$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-113', 'ch1')">(iv) $\left(\frac{-1}{3} \times \frac{-3}{5}\right) + \left(\frac{-1}{3} \times \frac{7}{11}\right)$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-114', 'ch1')">(v) $\left(\frac{2}{3} \times \frac{9}{10}\right) + \left(\frac{2}{3} \times \frac{-4}{10}\right)$</li>
+            <li class="clickable-q" id="item-pres-110" onclick="startPresentation('pres-110', 'ch1')">(i) $\frac{3}{5} \times \frac{-20}{9} + \frac{3}{5} \times \frac{-1}{3}$</li>
+            <li class="clickable-q" id="item-pres-111" onclick="startPresentation('pres-111', 'ch1')">(ii) $\frac{7}{15} \times \frac{-50}{49} + \frac{7}{15} \times \frac{1}{49}$</li>
+            <li class="clickable-q" id="item-pres-112" onclick="startPresentation('pres-112', 'ch1')">(iii) $\left(\frac{-13}{5} \times \frac{16}{7}\right) + \left(\frac{-13}{5} \times \frac{19}{7}\right)$</li>
+            <li class="clickable-q" id="item-pres-113" onclick="startPresentation('pres-113', 'ch1')">(iv) $\left(\frac{-1}{3} \times \frac{-3}{5}\right) + \left(\frac{-1}{3} \times \frac{7}{11}\right)$</li>
+            <li class="clickable-q" id="item-pres-114" onclick="startPresentation('pres-114', 'ch1')">(v) $\left(\frac{2}{3} \times \frac{9}{10}\right) + \left(\frac{2}{3} \times \frac{-4}{10}\right)$</li>
             <li class="main-q-li">7. Fill in the blanks.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-115', 'ch1')">(i) $\frac{-7}{17} \times \frac{27}{35} = \frac{27}{35} \times \dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-116', 'ch1')">(ii) $\frac{3}{29} \times \left(\frac{-7}{31} \times \frac{-9}{35}\right) = \left(\frac{3}{29} \times \dots\dots\right) \times \frac{-9}{35}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-117', 'ch1')">(iii) $\frac{-11}{13} \times \left(\frac{17}{47} \times \frac{-3}{5}\right) = \left(\frac{-11}{13} \times \frac{17}{47}\right) \times \dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-118', 'ch1')">(iv) $\frac{3}{5} \times \left(\frac{-7}{27} + \frac{49}{\dots\dots}\right) = \frac{3}{5} \times \frac{-7}{27} + \frac{3}{5} \times \frac{49}{23}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-119', 'ch1')">(v) $\frac{13}{15} \times \left(\frac{-3}{2} + \dots\dots\right) = \frac{13}{15} \times \frac{-3}{2} + \frac{13}{15} \times \frac{-5}{6}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-120', 'ch1')">(vi) $\dots\dots \times \left(\frac{7}{3} + \frac{-5}{11}\right) = \frac{2}{3} \times \frac{7}{3} + \frac{2}{3} \times \frac{-5}{11}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-121', 'ch1')">(vii) The reciprocal of $\frac{2}{3}$ is $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-122', 'ch1')">(viii) $\left(\frac{7}{8}\right)^{-1} = \dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-123', 'ch1')">(ix) The reciprocal of $-1$ is $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-124', 'ch1')">(x) $-2$ is the reciprocal of $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-125', 'ch1')">(xi) The product of a nonzero rational number and its reciprocal is $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-126', 'ch1')">(xii) The reciprocal of a positive rational number is $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-127', 'ch1')">(xiii) The reciprocal of a negative rational number is $\dots\dots$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-128', 'ch1')">(xiv) $\dots\dots$ is the only rational number whose reciprocal is not defined.</li>
+            <li class="clickable-q" id="item-pres-115" onclick="startPresentation('pres-115', 'ch1')">(i) $\frac{-7}{17} \times \frac{27}{35} = \frac{27}{35} \times \dots\dots$</li>
+            <li class="clickable-q" id="item-pres-116" onclick="startPresentation('pres-116', 'ch1')">(ii) $\frac{3}{29} \times \left(\frac{-7}{31} \times \frac{-9}{35}\right) = \left(\frac{3}{29} \times \dots\dots\right) \times \frac{-9}{35}$</li>
+            <li class="clickable-q" id="item-pres-117" onclick="startPresentation('pres-117', 'ch1')">(iii) $\frac{-11}{13} \times \left(\frac{17}{47} \times \frac{-3}{5}\right) = \left(\frac{-11}{13} \times \frac{17}{47}\right) \times \dots\dots$</li>
+            <li class="clickable-q" id="item-pres-118" onclick="startPresentation('pres-118', 'ch1')">(iv) $\frac{3}{5} \times \left(\frac{-7}{27} + \frac{49}{\dots\dots}\right) = \frac{3}{5} \times \frac{-7}{27} + \frac{3}{5} \times \frac{49}{23}$</li>
+            <li class="clickable-q" id="item-pres-119" onclick="startPresentation('pres-119', 'ch1')">(v) $\frac{13}{15} \times \left(\frac{-3}{2} + \dots\dots\right) = \frac{13}{15} \times \frac{-3}{2} + \frac{13}{15} \times \frac{-5}{6}$</li>
+            <li class="clickable-q" id="item-pres-120" onclick="startPresentation('pres-120', 'ch1')">(vi) $\dots\dots \times \left(\frac{7}{3} + \frac{-5}{11}\right) = \frac{2}{3} \times \frac{7}{3} + \frac{2}{3} \times \frac{-5}{11}$</li>
+            <li class="clickable-q" id="item-pres-121" onclick="startPresentation('pres-121', 'ch1')">(vii) The reciprocal of $\frac{2}{3}$ is $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-122" onclick="startPresentation('pres-122', 'ch1')">(viii) $\left(\frac{7}{8}\right)^{-1} = \dots\dots$</li>
+            <li class="clickable-q" id="item-pres-123" onclick="startPresentation('pres-123', 'ch1')">(ix) The reciprocal of $-1$ is $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-124" onclick="startPresentation('pres-124', 'ch1')">(x) $-2$ is the reciprocal of $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-125" onclick="startPresentation('pres-125', 'ch1')">(xi) The product of a nonzero rational number and its reciprocal is $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-126" onclick="startPresentation('pres-126', 'ch1')">(xii) The reciprocal of a positive rational number is $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-127" onclick="startPresentation('pres-127', 'ch1')">(xiii) The reciprocal of a negative rational number is $\dots\dots$</li>
+            <li class="clickable-q" id="item-pres-128" onclick="startPresentation('pres-128', 'ch1')">(xiv) $\dots\dots$ is the only rational number whose reciprocal is not defined.</li>
             <li class="main-q-li">8. Identify the false statements only.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-129', 'ch1')">(i) The product of two rational numbers is not necessarily a rational number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-130', 'ch1')">(ii) Multiplication of rational numbers obeys the commutative property.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-131', 'ch1')">(iii) Multiplication of rational numbers obeys the associative property.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-132', 'ch1')">(iv) Zero is the multiplicative identity for rational numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-133', 'ch1')">(v) The product of a rational number and its multiplicative inverse is 1.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-134', 'ch1')">(vi) If $\frac{a}{b}$ is a rational number then $\frac{b}{a} = \left(\frac{a}{b}\right)^{-1}$.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-135', 'ch1')">(vii) The reciprocal of $\frac{5}{-6}$ is $\frac{-5}{6}$.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-136', 'ch1')">(viii) Zero has no reciprocal.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-137', 'ch1')"><b>Answer to Q8:</b> Identify the false statements only.</li>
+            <li class="clickable-q" id="item-pres-129" onclick="startPresentation('pres-129', 'ch1')">(i) The product of two rational numbers is not necessarily a rational number.</li>
+            <li class="clickable-q" id="item-pres-130" onclick="startPresentation('pres-130', 'ch1')">(ii) Multiplication of rational numbers obeys the commutative property.</li>
+            <li class="clickable-q" id="item-pres-131" onclick="startPresentation('pres-131', 'ch1')">(iii) Multiplication of rational numbers obeys the associative property.</li>
+            <li class="clickable-q" id="item-pres-132" onclick="startPresentation('pres-132', 'ch1')">(iv) Zero is the multiplicative identity for rational numbers.</li>
+            <li class="clickable-q" id="item-pres-133" onclick="startPresentation('pres-133', 'ch1')">(v) The product of a rational number and its multiplicative inverse is 1.</li>
+            <li class="clickable-q" id="item-pres-134" onclick="startPresentation('pres-134', 'ch1')">(vi) If $\frac{a}{b}$ is a rational number then $\frac{b}{a} = \left(\frac{a}{b}\right)^{-1}$.</li>
+            <li class="clickable-q" id="item-pres-135" onclick="startPresentation('pres-135', 'ch1')">(vii) The reciprocal of $\frac{5}{-6}$ is $\frac{-5}{6}$.</li>
+            <li class="clickable-q" id="item-pres-136" onclick="startPresentation('pres-136', 'ch1')">(viii) Zero has no reciprocal.</li>
+            <li class="clickable-q" id="item-pres-137" onclick="startPresentation('pres-137', 'ch1')"><b>Answer to Q8:</b> Identify the false statements only.</li>
         </ul>
     </div>
     <div class="container chapter-view" id="normal-view-ch3" style="display: none;">
@@ -1355,110 +1420,110 @@
         <div class="header">Teach Mode - Chapter 3: Squares and Square Roots</div>
         <ul>
             <li class="main-q-li">1. Find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-138', 'ch3')">(i) $\left(\frac{11}{13}\right)^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-139', 'ch3')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-140', 'ch3')">(iii) $(3.5)^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-141', 'ch3')">(iv) $(0.08)^3$</li>
+            <li class="clickable-q" id="item-pres-138" onclick="startPresentation('pres-138', 'ch3')">(i) $\left(\frac{11}{13}\right)^2$</li>
+            <li class="clickable-q" id="item-pres-139" onclick="startPresentation('pres-139', 'ch3')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
+            <li class="clickable-q" id="item-pres-140" onclick="startPresentation('pres-140', 'ch3')">(iii) $(3.5)^2$</li>
+            <li class="clickable-q" id="item-pres-141" onclick="startPresentation('pres-141', 'ch3')">(iv) $(0.08)^3$</li>
             <li class="main-q-li">2. Find the square root of each of the following by prime factorisation.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-142', 'ch3')">(i) 256</li>
-            <li class="clickable-q" onclick="startPresentation('pres-143', 'ch3')">(ii) 324</li>
-            <li class="clickable-q" onclick="startPresentation('pres-144', 'ch3')">(iii) 784</li>
-            <li class="clickable-q" onclick="startPresentation('pres-145', 'ch3')">(iv) 7056</li>
-            <li class="clickable-q" onclick="startPresentation('pres-146', 'ch3')">(v) 28224</li>
-            <li class="clickable-q" onclick="startPresentation('pres-147', 'ch3')">(vi) 60025</li>
+            <li class="clickable-q" id="item-pres-142" onclick="startPresentation('pres-142', 'ch3')">(i) 256</li>
+            <li class="clickable-q" id="item-pres-143" onclick="startPresentation('pres-143', 'ch3')">(ii) 324</li>
+            <li class="clickable-q" id="item-pres-144" onclick="startPresentation('pres-144', 'ch3')">(iii) 784</li>
+            <li class="clickable-q" id="item-pres-145" onclick="startPresentation('pres-145', 'ch3')">(iv) 7056</li>
+            <li class="clickable-q" id="item-pres-146" onclick="startPresentation('pres-146', 'ch3')">(v) 28224</li>
+            <li class="clickable-q" id="item-pres-147" onclick="startPresentation('pres-147', 'ch3')">(vi) 60025</li>
             <li class="main-q-li">3. Find the square root of each of the following by division.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-148', 'ch3')">(i) 841</li>
-            <li class="clickable-q" onclick="startPresentation('pres-149', 'ch3')">(ii) 2304</li>
-            <li class="clickable-q" onclick="startPresentation('pres-150', 'ch3')">(iii) 39204</li>
-            <li class="clickable-q" onclick="startPresentation('pres-151', 'ch3')">(iv) 55225</li>
-            <li class="clickable-q" onclick="startPresentation('pres-152', 'ch3')">(v) 177241</li>
-            <li class="clickable-q" onclick="startPresentation('pres-153', 'ch3')">(vi) 425104</li>
+            <li class="clickable-q" id="item-pres-148" onclick="startPresentation('pres-148', 'ch3')">(i) 841</li>
+            <li class="clickable-q" id="item-pres-149" onclick="startPresentation('pres-149', 'ch3')">(ii) 2304</li>
+            <li class="clickable-q" id="item-pres-150" onclick="startPresentation('pres-150', 'ch3')">(iii) 39204</li>
+            <li class="clickable-q" id="item-pres-151" onclick="startPresentation('pres-151', 'ch3')">(iv) 55225</li>
+            <li class="clickable-q" id="item-pres-152" onclick="startPresentation('pres-152', 'ch3')">(v) 177241</li>
+            <li class="clickable-q" id="item-pres-153" onclick="startPresentation('pres-153', 'ch3')">(vi) 425104</li>
             <li class="main-q-li">4. Find the square root of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-154', 'ch3')">(i) 13.69</li>
-            <li class="clickable-q" onclick="startPresentation('pres-155', 'ch3')">(ii) 0.002025</li>
-            <li class="clickable-q" onclick="startPresentation('pres-156', 'ch3')">(iii) 1.5129</li>
-            <li class="clickable-q" onclick="startPresentation('pres-157', 'ch3')">(iv) 20.7936</li>
-            <li class="clickable-q" onclick="startPresentation('pres-158', 'ch3')">(v) 6146.56</li>
-            <li class="clickable-q" onclick="startPresentation('pres-159', 'ch3')">(vi) 1.024144</li>
+            <li class="clickable-q" id="item-pres-154" onclick="startPresentation('pres-154', 'ch3')">(i) 13.69</li>
+            <li class="clickable-q" id="item-pres-155" onclick="startPresentation('pres-155', 'ch3')">(ii) 0.002025</li>
+            <li class="clickable-q" id="item-pres-156" onclick="startPresentation('pres-156', 'ch3')">(iii) 1.5129</li>
+            <li class="clickable-q" id="item-pres-157" onclick="startPresentation('pres-157', 'ch3')">(iv) 20.7936</li>
+            <li class="clickable-q" id="item-pres-158" onclick="startPresentation('pres-158', 'ch3')">(v) 6146.56</li>
+            <li class="clickable-q" id="item-pres-159" onclick="startPresentation('pres-159', 'ch3')">(vi) 1.024144</li>
             <li class="main-q-li">5. Find the square root of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-160', 'ch3')">(i) $\frac{169}{484}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-161', 'ch3')">(ii) $5 \frac{580}{729}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-162', 'ch3')">(iii) $12 \frac{52}{81}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-163', 'ch3')">(iv) 0.0009</li>
-            <li class="clickable-q" onclick="startPresentation('pres-164', 'ch3')">(v) 4.41</li>
+            <li class="clickable-q" id="item-pres-160" onclick="startPresentation('pres-160', 'ch3')">(i) $\frac{169}{484}$</li>
+            <li class="clickable-q" id="item-pres-161" onclick="startPresentation('pres-161', 'ch3')">(ii) $5 \frac{580}{729}$</li>
+            <li class="clickable-q" id="item-pres-162" onclick="startPresentation('pres-162', 'ch3')">(iii) $12 \frac{52}{81}$</li>
+            <li class="clickable-q" id="item-pres-163" onclick="startPresentation('pres-163', 'ch3')">(iv) 0.0009</li>
+            <li class="clickable-q" id="item-pres-164" onclick="startPresentation('pres-164', 'ch3')">(v) 4.41</li>
             <li class="main-q-li">6. Find the square root of each of the following correct to two decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-165', 'ch3')">(i) 2</li>
-            <li class="clickable-q" onclick="startPresentation('pres-166', 'ch3')">(ii) 3</li>
-            <li class="clickable-q" onclick="startPresentation('pres-167', 'ch3')">(iii) 8</li>
-            <li class="clickable-q" onclick="startPresentation('pres-168', 'ch3')">(iv) 11</li>
-            <li class="clickable-q" onclick="startPresentation('pres-169', 'ch3')">(v) 35</li>
-            <li class="clickable-q" onclick="startPresentation('pres-170', 'ch3')">(vi) 99</li>
+            <li class="clickable-q" id="item-pres-165" onclick="startPresentation('pres-165', 'ch3')">(i) 2</li>
+            <li class="clickable-q" id="item-pres-166" onclick="startPresentation('pres-166', 'ch3')">(ii) 3</li>
+            <li class="clickable-q" id="item-pres-167" onclick="startPresentation('pres-167', 'ch3')">(iii) 8</li>
+            <li class="clickable-q" id="item-pres-168" onclick="startPresentation('pres-168', 'ch3')">(iv) 11</li>
+            <li class="clickable-q" id="item-pres-169" onclick="startPresentation('pres-169', 'ch3')">(v) 35</li>
+            <li class="clickable-q" id="item-pres-170" onclick="startPresentation('pres-170', 'ch3')">(vi) 99</li>
             <li class="main-q-li">7. Find the value of $\sqrt{5}$ correct to two decimal places. Then, find the value of the square root of $\frac{3-\sqrt{5}}{3+\sqrt{5}}$ correct to two decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-171', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-171" onclick="startPresentation('pres-171', 'ch3')">Solution</li>
             <li class="main-q-li">8. Find the square root of each of the following correct to three decimal places.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-172', 'ch3')">(i) 2.5</li>
-            <li class="clickable-q" onclick="startPresentation('pres-173', 'ch3')">(ii) 0.036</li>
-            <li class="clickable-q" onclick="startPresentation('pres-174', 'ch3')">(iii) 6.4</li>
-            <li class="clickable-q" onclick="startPresentation('pres-175', 'ch3')">(iv) 0.100</li>
+            <li class="clickable-q" id="item-pres-172" onclick="startPresentation('pres-172', 'ch3')">(i) 2.5</li>
+            <li class="clickable-q" id="item-pres-173" onclick="startPresentation('pres-173', 'ch3')">(ii) 0.036</li>
+            <li class="clickable-q" id="item-pres-174" onclick="startPresentation('pres-174', 'ch3')">(iii) 6.4</li>
+            <li class="clickable-q" id="item-pres-175" onclick="startPresentation('pres-175', 'ch3')">(iv) 0.100</li>
             <li class="main-q-li">9. Find the least number by which 10368 should be (i) increased (ii) decreased (iii) multiplied (iv) divided to make it a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-176', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-176" onclick="startPresentation('pres-176', 'ch3')">Solution</li>
             <li class="main-q-li">10. Find the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-177', 'ch3')">(i) $55^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-178', 'ch3')">(ii) $98^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-179', 'ch3')">(iii) $\sqrt{38}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-180', 'ch3')">(iv) $\sqrt{89}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-181', 'ch3')">(v) $\sqrt{38.83}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-182', 'ch3')">(vi) $\sqrt{64.25}$</li>
+            <li class="clickable-q" id="item-pres-177" onclick="startPresentation('pres-177', 'ch3')">(i) $55^2$</li>
+            <li class="clickable-q" id="item-pres-178" onclick="startPresentation('pres-178', 'ch3')">(ii) $98^2$</li>
+            <li class="clickable-q" id="item-pres-179" onclick="startPresentation('pres-179', 'ch3')">(iii) $\sqrt{38}$</li>
+            <li class="clickable-q" id="item-pres-180" onclick="startPresentation('pres-180', 'ch3')">(iv) $\sqrt{89}$</li>
+            <li class="clickable-q" id="item-pres-181" onclick="startPresentation('pres-181', 'ch3')">(v) $\sqrt{38.83}$</li>
+            <li class="clickable-q" id="item-pres-182" onclick="startPresentation('pres-182', 'ch3')">(vi) $\sqrt{64.25}$</li>
             <li class="main-q-li">11. Use algebraic methods to find the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-183', 'ch3')">(i) $52^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-184', 'ch3')">(ii) $98^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-185', 'ch3')">(iii) $309^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-186', 'ch3')">(iv) $495^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-187', 'ch3')">(v) $96^2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-188', 'ch3')">(vi) $305^2$</li>
+            <li class="clickable-q" id="item-pres-183" onclick="startPresentation('pres-183', 'ch3')">(i) $52^2$</li>
+            <li class="clickable-q" id="item-pres-184" onclick="startPresentation('pres-184', 'ch3')">(ii) $98^2$</li>
+            <li class="clickable-q" id="item-pres-185" onclick="startPresentation('pres-185', 'ch3')">(iii) $309^2$</li>
+            <li class="clickable-q" id="item-pres-186" onclick="startPresentation('pres-186', 'ch3')">(iv) $495^2$</li>
+            <li class="clickable-q" id="item-pres-187" onclick="startPresentation('pres-187', 'ch3')">(v) $96^2$</li>
+            <li class="clickable-q" id="item-pres-188" onclick="startPresentation('pres-188', 'ch3')">(vi) $305^2$</li>
             <li class="main-q-li">12. Find in each case the smallest perfect square divisible by the given numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-189', 'ch3')">(i) 2, 4 and 5</li>
-            <li class="clickable-q" onclick="startPresentation('pres-190', 'ch3')">(ii) 3, 4, 5 and 6</li>
-            <li class="clickable-q" onclick="startPresentation('pres-191', 'ch3')">(iii) 6, 8, 10 and 12</li>
+            <li class="clickable-q" id="item-pres-189" onclick="startPresentation('pres-189', 'ch3')">(i) 2, 4 and 5</li>
+            <li class="clickable-q" id="item-pres-190" onclick="startPresentation('pres-190', 'ch3')">(ii) 3, 4, 5 and 6</li>
+            <li class="clickable-q" id="item-pres-191" onclick="startPresentation('pres-191', 'ch3')">(iii) 6, 8, 10 and 12</li>
             <li class="main-q-li">13. In an auditorium, the number of rows is equal to the number of chairs in each row. If the capacity of the auditorium is 2304, find the number of chairs in a row.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-192', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-192" onclick="startPresentation('pres-192', 'ch3')">Solution</li>
             <li class="main-q-li">14. In a garden, 1089 rose plants are arranged in such a way that there are as many rows as there are plants in each row. Find the number of rows in the garden.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-193', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-193" onclick="startPresentation('pres-193', 'ch3')">Solution</li>
             <li class="main-q-li">15. An army officer wishes to arrange 4770 soldiers in the form of a square. After arranging he finds that nine soldiers are left out. Find the number of soldiers in each row.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-194', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-194" onclick="startPresentation('pres-194', 'ch3')">Solution</li>
             <li class="main-q-li">16. Find the least number that must be subtracted from each of the following numbers to get a perfect square. Also, find the square root of this perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-195', 'ch3')">(i) 9845</li>
-            <li class="clickable-q" onclick="startPresentation('pres-196', 'ch3')">(ii) 7585</li>
-            <li class="clickable-q" onclick="startPresentation('pres-197', 'ch3')">(iii) 786</li>
+            <li class="clickable-q" id="item-pres-195" onclick="startPresentation('pres-195', 'ch3')">(i) 9845</li>
+            <li class="clickable-q" id="item-pres-196" onclick="startPresentation('pres-196', 'ch3')">(ii) 7585</li>
+            <li class="clickable-q" id="item-pres-197" onclick="startPresentation('pres-197', 'ch3')">(iii) 786</li>
             <li class="main-q-li">17. Find the least number which must be added to each of the following numbers to make it a perfect square. Also, find the square root of this perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-198', 'ch3')">(i) 9389</li>
-            <li class="clickable-q" onclick="startPresentation('pres-199', 'ch3')">(ii) 5601</li>
-            <li class="clickable-q" onclick="startPresentation('pres-200', 'ch3')">(iii) 4725</li>
+            <li class="clickable-q" id="item-pres-198" onclick="startPresentation('pres-198', 'ch3')">(i) 9389</li>
+            <li class="clickable-q" id="item-pres-199" onclick="startPresentation('pres-199', 'ch3')">(ii) 5601</li>
+            <li class="clickable-q" id="item-pres-200" onclick="startPresentation('pres-200', 'ch3')">(iii) 4725</li>
             <li class="main-q-li">18. Find the greatest six-digit number which is a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-201', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-201" onclick="startPresentation('pres-201', 'ch3')">Solution</li>
             <li class="main-q-li">19. Find the smallest six-digit number which is a perfect square.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-202', 'ch3')">Solution</li>
+            <li class="clickable-q" id="item-pres-202" onclick="startPresentation('pres-202', 'ch3')">Solution</li>
             <li class="main-q-li">20. Find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-203', 'ch3')">(i) $\sqrt{\frac{1.44}{0.49}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-204', 'ch3')">(ii) $\sqrt{\frac{32.4}{28.9}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-205', 'ch3')">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-206', 'ch3')">(iv) $\sqrt{1 + \frac{25}{144}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-207', 'ch3')">(v) $\sqrt{1 - \frac{64}{289}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-208', 'ch3')">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-209', 'ch3')">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-210', 'ch3')">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-211', 'ch3')">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-212', 'ch3')">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</li>
+            <li class="clickable-q" id="item-pres-203" onclick="startPresentation('pres-203', 'ch3')">(i) $\sqrt{\frac{1.44}{0.49}}$</li>
+            <li class="clickable-q" id="item-pres-204" onclick="startPresentation('pres-204', 'ch3')">(ii) $\sqrt{\frac{32.4}{28.9}}$</li>
+            <li class="clickable-q" id="item-pres-205" onclick="startPresentation('pres-205', 'ch3')">(iii) $\sqrt{\frac{0.0025}{0.0196}}$</li>
+            <li class="clickable-q" id="item-pres-206" onclick="startPresentation('pres-206', 'ch3')">(iv) $\sqrt{1 + \frac{25}{144}}$</li>
+            <li class="clickable-q" id="item-pres-207" onclick="startPresentation('pres-207', 'ch3')">(v) $\sqrt{1 - \frac{64}{289}}$</li>
+            <li class="clickable-q" id="item-pres-208" onclick="startPresentation('pres-208', 'ch3')">(vi) $\sqrt{2^3 \times 6^3 \times 27}$</li>
+            <li class="clickable-q" id="item-pres-209" onclick="startPresentation('pres-209', 'ch3')">(vii) $\frac{\sqrt{9}}{\sqrt{0.09}} + \frac{\sqrt{16}}{\sqrt{0.16}} + \frac{\sqrt{25}}{\sqrt{0.25}}$</li>
+            <li class="clickable-q" id="item-pres-210" onclick="startPresentation('pres-210', 'ch3')">(viii) $\sqrt{400} + \sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$</li>
+            <li class="clickable-q" id="item-pres-211" onclick="startPresentation('pres-211', 'ch3')">(ix) $\sqrt{182 - \sqrt{156 + \sqrt{169}}}$</li>
+            <li class="clickable-q" id="item-pres-212" onclick="startPresentation('pres-212', 'ch3')">(x) $\sqrt{382 + \sqrt{341 - \sqrt{289}}}$</li>
             <li class="main-q-li">21. Fill in the blanks.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-213', 'ch3')">(i) The units digit of the square of a number ending in 2 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-214', 'ch3')">(ii) The units digit of the square of a number ending in 9 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-215', 'ch3')">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-216', 'ch3')">(iv) There are ...... natural numbers between the squares of 8 and 9.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-217', 'ch3')">(v) $9^2 - 8^2$ = ...... + 8.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-218', 'ch3')">(vi) $19^2$ - ...... = 19 + 18.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-219', 'ch3')">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-220', 'ch3')">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</li>
-            <li class="clickable-q" onclick="startPresentation('pres-221', 'ch3')">(ix) 3, 4 and ...... form a Pythagorean triple.</li>
+            <li class="clickable-q" id="item-pres-213" onclick="startPresentation('pres-213', 'ch3')">(i) The units digit of the square of a number ending in 2 is ...... </li>
+            <li class="clickable-q" id="item-pres-214" onclick="startPresentation('pres-214', 'ch3')">(ii) The units digit of the square of a number ending in 9 is ...... </li>
+            <li class="clickable-q" id="item-pres-215" onclick="startPresentation('pres-215', 'ch3')">(iii) The units digit of the square root of a number ending in 6 is ...... or ...... </li>
+            <li class="clickable-q" id="item-pres-216" onclick="startPresentation('pres-216', 'ch3')">(iv) There are ...... natural numbers between the squares of 8 and 9.</li>
+            <li class="clickable-q" id="item-pres-217" onclick="startPresentation('pres-217', 'ch3')">(v) $9^2 - 8^2$ = ...... + 8.</li>
+            <li class="clickable-q" id="item-pres-218" onclick="startPresentation('pres-218', 'ch3')">(vi) $19^2$ - ...... = 19 + 18.</li>
+            <li class="clickable-q" id="item-pres-219" onclick="startPresentation('pres-219', 'ch3')">(vii) If $\sqrt{4096} = 64$ then $\sqrt{4096} + \sqrt{40.96}$ = ....... </li>
+            <li class="clickable-q" id="item-pres-220" onclick="startPresentation('pres-220', 'ch3')">(viii) $\sqrt{4} + \sqrt{0.04} + \sqrt{0.0004}$ = .......</li>
+            <li class="clickable-q" id="item-pres-221" onclick="startPresentation('pres-221', 'ch3')">(ix) 3, 4 and ...... form a Pythagorean triple.</li>
         </ul>
     </div>
     <div class="container chapter-view" id="normal-view-ch4" style="display: none;">
@@ -1629,80 +1694,80 @@
         <div class="header">Teach Mode - Chapter 4: Cubes and Cube Roots</div>
         <ul>
             <li class="main-q-li">1. Find the value of each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-222', 'ch4')">(i) $\left(\frac{5}{6}\right)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-223', 'ch4')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-224', 'ch4')">(iii) $(2.5)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-225', 'ch4')">(iv) $(0.08)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-226', 'ch4')">(v) $(-1.1)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-227', 'ch4')">(vi) $\left(-\frac{7}{3}\right)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-228', 'ch4')">(vii) $(-9)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-229', 'ch4')">(viii) $(-0.5)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-230', 'ch4')">(ix) $(-20)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-231', 'ch4')">(x) $(-0.013)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-232', 'ch4')">(xi) $(25)^3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-233', 'ch4')">(xii) $\left(2 \frac{1}{7}\right)^3$</li>
+            <li class="clickable-q" id="item-pres-222" onclick="startPresentation('pres-222', 'ch4')">(i) $\left(\frac{5}{6}\right)^3$</li>
+            <li class="clickable-q" id="item-pres-223" onclick="startPresentation('pres-223', 'ch4')">(ii) $\left(-1 \frac{7}{11}\right)^3$</li>
+            <li class="clickable-q" id="item-pres-224" onclick="startPresentation('pres-224', 'ch4')">(iii) $(2.5)^3$</li>
+            <li class="clickable-q" id="item-pres-225" onclick="startPresentation('pres-225', 'ch4')">(iv) $(0.08)^3$</li>
+            <li class="clickable-q" id="item-pres-226" onclick="startPresentation('pres-226', 'ch4')">(v) $(-1.1)^3$</li>
+            <li class="clickable-q" id="item-pres-227" onclick="startPresentation('pres-227', 'ch4')">(vi) $\left(-\frac{7}{3}\right)^3$</li>
+            <li class="clickable-q" id="item-pres-228" onclick="startPresentation('pres-228', 'ch4')">(vii) $(-9)^3$</li>
+            <li class="clickable-q" id="item-pres-229" onclick="startPresentation('pres-229', 'ch4')">(viii) $(-0.5)^3$</li>
+            <li class="clickable-q" id="item-pres-230" onclick="startPresentation('pres-230', 'ch4')">(ix) $(-20)^3$</li>
+            <li class="clickable-q" id="item-pres-231" onclick="startPresentation('pres-231', 'ch4')">(x) $(-0.013)^3$</li>
+            <li class="clickable-q" id="item-pres-232" onclick="startPresentation('pres-232', 'ch4')">(xi) $(25)^3$</li>
+            <li class="clickable-q" id="item-pres-233" onclick="startPresentation('pres-233', 'ch4')">(xii) $\left(2 \frac{1}{7}\right)^3$</li>
             <li class="main-q-li">2. Identify the perfect cubes among the following. Find the number whose cube is the given number in each case of the perfect cubes.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-234', 'ch4')">(i) 128</li>
-            <li class="clickable-q" onclick="startPresentation('pres-235', 'ch4')">(ii) 243</li>
-            <li class="clickable-q" onclick="startPresentation('pres-236', 'ch4')">(iii) 343</li>
-            <li class="clickable-q" onclick="startPresentation('pres-237', 'ch4')">(iv) 4000</li>
-            <li class="clickable-q" onclick="startPresentation('pres-238', 'ch4')">(v) 3456</li>
-            <li class="clickable-q" onclick="startPresentation('pres-239', 'ch4')">(vi) 2048</li>
-            <li class="clickable-q" onclick="startPresentation('pres-240', 'ch4')">(vii) 2197</li>
-            <li class="clickable-q" onclick="startPresentation('pres-241', 'ch4')">(viii) 1000000</li>
-            <li class="clickable-q" onclick="startPresentation('pres-242', 'ch4')">(ix) 2744</li>
+            <li class="clickable-q" id="item-pres-234" onclick="startPresentation('pres-234', 'ch4')">(i) 128</li>
+            <li class="clickable-q" id="item-pres-235" onclick="startPresentation('pres-235', 'ch4')">(ii) 243</li>
+            <li class="clickable-q" id="item-pres-236" onclick="startPresentation('pres-236', 'ch4')">(iii) 343</li>
+            <li class="clickable-q" id="item-pres-237" onclick="startPresentation('pres-237', 'ch4')">(iv) 4000</li>
+            <li class="clickable-q" id="item-pres-238" onclick="startPresentation('pres-238', 'ch4')">(v) 3456</li>
+            <li class="clickable-q" id="item-pres-239" onclick="startPresentation('pres-239', 'ch4')">(vi) 2048</li>
+            <li class="clickable-q" id="item-pres-240" onclick="startPresentation('pres-240', 'ch4')">(vii) 2197</li>
+            <li class="clickable-q" id="item-pres-241" onclick="startPresentation('pres-241', 'ch4')">(viii) 1000000</li>
+            <li class="clickable-q" id="item-pres-242" onclick="startPresentation('pres-242', 'ch4')">(ix) 2744</li>
             <li class="main-q-li">3. Which of the following are cubes of even numbers and which are of odd numbers?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-243', 'ch4')">(i) 8000</li>
-            <li class="clickable-q" onclick="startPresentation('pres-244', 'ch4')">(ii) 9261</li>
-            <li class="clickable-q" onclick="startPresentation('pres-245', 'ch4')">(iii) 4096</li>
-            <li class="clickable-q" onclick="startPresentation('pres-246', 'ch4')">(iv) 6859</li>
-            <li class="clickable-q" onclick="startPresentation('pres-247', 'ch4')">(v) 12167</li>
-            <li class="clickable-q" onclick="startPresentation('pres-248', 'ch4')">(vi) 4913</li>
-            <li class="clickable-q" onclick="startPresentation('pres-249', 'ch4')">(vii) 13824</li>
-            <li class="clickable-q" onclick="startPresentation('pres-250', 'ch4')">(viii) 17576</li>
+            <li class="clickable-q" id="item-pres-243" onclick="startPresentation('pres-243', 'ch4')">(i) 8000</li>
+            <li class="clickable-q" id="item-pres-244" onclick="startPresentation('pres-244', 'ch4')">(ii) 9261</li>
+            <li class="clickable-q" id="item-pres-245" onclick="startPresentation('pres-245', 'ch4')">(iii) 4096</li>
+            <li class="clickable-q" id="item-pres-246" onclick="startPresentation('pres-246', 'ch4')">(iv) 6859</li>
+            <li class="clickable-q" id="item-pres-247" onclick="startPresentation('pres-247', 'ch4')">(v) 12167</li>
+            <li class="clickable-q" id="item-pres-248" onclick="startPresentation('pres-248', 'ch4')">(vi) 4913</li>
+            <li class="clickable-q" id="item-pres-249" onclick="startPresentation('pres-249', 'ch4')">(vii) 13824</li>
+            <li class="clickable-q" id="item-pres-250" onclick="startPresentation('pres-250', 'ch4')">(viii) 17576</li>
             <li class="main-q-li">4. Find each of the following.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-251', 'ch4')">(i) $\sqrt[3]{512}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-252', 'ch4')">(ii) $\sqrt[3]{2744}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-253', 'ch4')">(iii) $\sqrt[3]{729}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-254', 'ch4')">(iv) $\sqrt[3]{1728}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-255', 'ch4')">(v) $\sqrt[3]{1000}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-256', 'ch4')">(vi) $\sqrt[3]{-8000}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-257', 'ch4')">(vii) $\sqrt[3]{-4096}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-258', 'ch4')">(viii) $\sqrt[3]{\frac{27}{125}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-259', 'ch4')">(ix) $\sqrt[3]{\frac{-125}{64}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-260', 'ch4')">(x) $\sqrt[3]{0.001}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-261', 'ch4')">(xi) $\sqrt[3]{0.125}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-262', 'ch4')">(xii) $\sqrt[3]{\frac{27}{64 \times 125}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-263', 'ch4')">(xiii) $\sqrt[3]{\frac{729}{125 \times 1000}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-264', 'ch4')">(xiv) $\sqrt[3]{125 \times 64 \times 8}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-265', 'ch4')">(xv) $\sqrt[3]{16 \times 500}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-266', 'ch4')">(xvi) $\sqrt[3]{625 \times (-1600)}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-267', 'ch4')">(xvii) $\sqrt[3]{\frac{343}{2500 \times 400}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-268', 'ch4')">(xviii) $\sqrt[3]{1 - \frac{854}{729}}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-269', 'ch4')">(xix) $\sqrt[3]{4 + \sqrt[3]{61 + \sqrt[3]{27}}}$</li>
+            <li class="clickable-q" id="item-pres-251" onclick="startPresentation('pres-251', 'ch4')">(i) $\sqrt[3]{512}$</li>
+            <li class="clickable-q" id="item-pres-252" onclick="startPresentation('pres-252', 'ch4')">(ii) $\sqrt[3]{2744}$</li>
+            <li class="clickable-q" id="item-pres-253" onclick="startPresentation('pres-253', 'ch4')">(iii) $\sqrt[3]{729}$</li>
+            <li class="clickable-q" id="item-pres-254" onclick="startPresentation('pres-254', 'ch4')">(iv) $\sqrt[3]{1728}$</li>
+            <li class="clickable-q" id="item-pres-255" onclick="startPresentation('pres-255', 'ch4')">(v) $\sqrt[3]{1000}$</li>
+            <li class="clickable-q" id="item-pres-256" onclick="startPresentation('pres-256', 'ch4')">(vi) $\sqrt[3]{-8000}$</li>
+            <li class="clickable-q" id="item-pres-257" onclick="startPresentation('pres-257', 'ch4')">(vii) $\sqrt[3]{-4096}$</li>
+            <li class="clickable-q" id="item-pres-258" onclick="startPresentation('pres-258', 'ch4')">(viii) $\sqrt[3]{\frac{27}{125}}$</li>
+            <li class="clickable-q" id="item-pres-259" onclick="startPresentation('pres-259', 'ch4')">(ix) $\sqrt[3]{\frac{-125}{64}}$</li>
+            <li class="clickable-q" id="item-pres-260" onclick="startPresentation('pres-260', 'ch4')">(x) $\sqrt[3]{0.001}$</li>
+            <li class="clickable-q" id="item-pres-261" onclick="startPresentation('pres-261', 'ch4')">(xi) $\sqrt[3]{0.125}$</li>
+            <li class="clickable-q" id="item-pres-262" onclick="startPresentation('pres-262', 'ch4')">(xii) $\sqrt[3]{\frac{27}{64 \times 125}}$</li>
+            <li class="clickable-q" id="item-pres-263" onclick="startPresentation('pres-263', 'ch4')">(xiii) $\sqrt[3]{\frac{729}{125 \times 1000}}$</li>
+            <li class="clickable-q" id="item-pres-264" onclick="startPresentation('pres-264', 'ch4')">(xiv) $\sqrt[3]{125 \times 64 \times 8}$</li>
+            <li class="clickable-q" id="item-pres-265" onclick="startPresentation('pres-265', 'ch4')">(xv) $\sqrt[3]{16 \times 500}$</li>
+            <li class="clickable-q" id="item-pres-266" onclick="startPresentation('pres-266', 'ch4')">(xvi) $\sqrt[3]{625 \times (-1600)}$</li>
+            <li class="clickable-q" id="item-pres-267" onclick="startPresentation('pres-267', 'ch4')">(xvii) $\sqrt[3]{\frac{343}{2500 \times 400}}$</li>
+            <li class="clickable-q" id="item-pres-268" onclick="startPresentation('pres-268', 'ch4')">(xviii) $\sqrt[3]{1 - \frac{854}{729}}$</li>
+            <li class="clickable-q" id="item-pres-269" onclick="startPresentation('pres-269', 'ch4')">(xix) $\sqrt[3]{4 + \sqrt[3]{61 + \sqrt[3]{27}}}$</li>
             <li class="main-q-li">5. Find the least number by which each of the following numbers should be multiplied to make it a perfect cube. Also, find the cube root of the product in each case.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-270', 'ch4')">(i) 5488</li>
-            <li class="clickable-q" onclick="startPresentation('pres-271', 'ch4')">(ii) 34992</li>
-            <li class="clickable-q" onclick="startPresentation('pres-272', 'ch4')">(iii) 15552</li>
+            <li class="clickable-q" id="item-pres-270" onclick="startPresentation('pres-270', 'ch4')">(i) 5488</li>
+            <li class="clickable-q" id="item-pres-271" onclick="startPresentation('pres-271', 'ch4')">(ii) 34992</li>
+            <li class="clickable-q" id="item-pres-272" onclick="startPresentation('pres-272', 'ch4')">(iii) 15552</li>
             <li class="main-q-li">6. Find the least number by which each of the following numbers should be divided to make it a perfect cube. Also, find the cube root of each perfect cube.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-273', 'ch4')">(i) 5184</li>
-            <li class="clickable-q" onclick="startPresentation('pres-274', 'ch4')">(ii) 5488</li>
-            <li class="clickable-q" onclick="startPresentation('pres-275', 'ch4')">(iii) 23328</li>
+            <li class="clickable-q" id="item-pres-273" onclick="startPresentation('pres-273', 'ch4')">(i) 5184</li>
+            <li class="clickable-q" id="item-pres-274" onclick="startPresentation('pres-274', 'ch4')">(ii) 5488</li>
+            <li class="clickable-q" id="item-pres-275" onclick="startPresentation('pres-275', 'ch4')">(iii) 23328</li>
             <li class="main-q-li">7. Fill in the blanks.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-276', 'ch4')">(i) The units digit in the cube of 1137 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-277', 'ch4')">(ii) The ones digit in the cube of 1004 is ...... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-278', 'ch4')">(iii) The cube of an odd number is always an ...... number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-279', 'ch4')">(iv) The cube of an even number is always an ...... number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-280', 'ch4')">(v) The least natural number by which 1600 is to be multiplied to make it a perfect cube is ....... </li>
-            <li class="clickable-q" onclick="startPresentation('pres-281', 'ch4')">(vi) The least natural number by which 1024 is to be divided to make it a perfect cube is ....... </li>
+            <li class="clickable-q" id="item-pres-276" onclick="startPresentation('pres-276', 'ch4')">(i) The units digit in the cube of 1137 is ...... </li>
+            <li class="clickable-q" id="item-pres-277" onclick="startPresentation('pres-277', 'ch4')">(ii) The ones digit in the cube of 1004 is ...... </li>
+            <li class="clickable-q" id="item-pres-278" onclick="startPresentation('pres-278', 'ch4')">(iii) The cube of an odd number is always an ...... number.</li>
+            <li class="clickable-q" id="item-pres-279" onclick="startPresentation('pres-279', 'ch4')">(iv) The cube of an even number is always an ...... number.</li>
+            <li class="clickable-q" id="item-pres-280" onclick="startPresentation('pres-280', 'ch4')">(v) The least natural number by which 1600 is to be multiplied to make it a perfect cube is ....... </li>
+            <li class="clickable-q" id="item-pres-281" onclick="startPresentation('pres-281', 'ch4')">(vi) The least natural number by which 1024 is to be divided to make it a perfect cube is ....... </li>
             <li class="main-q-li">8. Identify the false statements only.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-282', 'ch4')">(i) The cube of an odd number is odd.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-283', 'ch4')">(ii) The cube of an even number is even.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-284', 'ch4')">(iii) The cube of a negative number is positive.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-285', 'ch4')">(iv) The cube roots of 27 are 3 and -3.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-286', 'ch4')">(v) 333 is a perfect cube.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-287', 'ch4')">(vi) $\sqrt[3]{27+8} = \sqrt[3]{27} + \sqrt[3]{8}$.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-288', 'ch4')">(vii) There is no cube root of a negative number.</li>
+            <li class="clickable-q" id="item-pres-282" onclick="startPresentation('pres-282', 'ch4')">(i) The cube of an odd number is odd.</li>
+            <li class="clickable-q" id="item-pres-283" onclick="startPresentation('pres-283', 'ch4')">(ii) The cube of an even number is even.</li>
+            <li class="clickable-q" id="item-pres-284" onclick="startPresentation('pres-284', 'ch4')">(iii) The cube of a negative number is positive.</li>
+            <li class="clickable-q" id="item-pres-285" onclick="startPresentation('pres-285', 'ch4')">(iv) The cube roots of 27 are 3 and -3.</li>
+            <li class="clickable-q" id="item-pres-286" onclick="startPresentation('pres-286', 'ch4')">(v) 333 is a perfect cube.</li>
+            <li class="clickable-q" id="item-pres-287" onclick="startPresentation('pres-287', 'ch4')">(vi) $\sqrt[3]{27+8} = \sqrt[3]{27} + \sqrt[3]{8}$.</li>
+            <li class="clickable-q" id="item-pres-288" onclick="startPresentation('pres-288', 'ch4')">(vii) There is no cube root of a negative number.</li>
         </ul>
     </div>
     <div class="container chapter-view" id="normal-view-ch5" style="display: none;">
@@ -1895,87 +1960,87 @@
         <ul>
             <li class="main-q-li">Exercise 5B</li>
             <li class="main-q-li">1. Six more than four times a number is four less than five times the number. Find the number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-289', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-289" onclick="startPresentation('pres-289', 'ch5')">Solution</li>
             <li class="main-q-li">2. Consecutive numbers problems.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-290', 'ch5')">(i) The difference between the squares of two consecutive numbers is 141. Find the numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-291', 'ch5')">(ii) The difference between the squares of two consecutive even numbers is 36. Find the numbers.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-292', 'ch5')">(iii) The difference between the squares of two consecutive odd numbers is 56. Find the numbers.</li>
+            <li class="clickable-q" id="item-pres-290" onclick="startPresentation('pres-290', 'ch5')">(i) The difference between the squares of two consecutive numbers is 141. Find the numbers.</li>
+            <li class="clickable-q" id="item-pres-291" onclick="startPresentation('pres-291', 'ch5')">(ii) The difference between the squares of two consecutive even numbers is 36. Find the numbers.</li>
+            <li class="clickable-q" id="item-pres-292" onclick="startPresentation('pres-292', 'ch5')">(iii) The difference between the squares of two consecutive odd numbers is 56. Find the numbers.</li>
             <li class="main-q-li">3. The sum of two numbers is 90. One third of the larger number is 9 more than twice the smaller one. What are the numbers?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-293', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-293" onclick="startPresentation('pres-293', 'ch5')">Solution</li>
             <li class="main-q-li">4. Proportion and square relations.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-294', 'ch5')">(i) If the same number be added to the numbers 2, 4, 14 and 22 then the resultant numbers are in proportion. Find the number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-295', 'ch5')">(ii) Find a number such that if 25, 7 and 1 are added to it, the product of the first and third results is equal to the square of the second.</li>
+            <li class="clickable-q" id="item-pres-294" onclick="startPresentation('pres-294', 'ch5')">(i) If the same number be added to the numbers 2, 4, 14 and 22 then the resultant numbers are in proportion. Find the number.</li>
+            <li class="clickable-q" id="item-pres-295" onclick="startPresentation('pres-295', 'ch5')">(ii) Find a number such that if 25, 7 and 1 are added to it, the product of the first and third results is equal to the square of the second.</li>
             <li class="main-q-li">5. Problems on fractions.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-296', 'ch5')">(i) What must be added to the numerator and the denominator of the fraction $\frac{5}{12}$ to make it equal to $\frac{2}{3}$?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-297', 'ch5')">(ii) The denominator of a fraction is greater than the numerator by 3. If 7 is added to the numerator, the fraction increases by unity. Find the fraction.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-298', 'ch5')">(iii) If the same integer is added to the numerator of the fraction $\frac{2}{7}$ and subtracted from the denominator, the fraction becomes 2. What is the integer?</li>
+            <li class="clickable-q" id="item-pres-296" onclick="startPresentation('pres-296', 'ch5')">(i) What must be added to the numerator and the denominator of the fraction $\frac{5}{12}$ to make it equal to $\frac{2}{3}$?</li>
+            <li class="clickable-q" id="item-pres-297" onclick="startPresentation('pres-297', 'ch5')">(ii) The denominator of a fraction is greater than the numerator by 3. If 7 is added to the numerator, the fraction increases by unity. Find the fraction.</li>
+            <li class="clickable-q" id="item-pres-298" onclick="startPresentation('pres-298', 'ch5')">(iii) If the same integer is added to the numerator of the fraction $\frac{2}{7}$ and subtracted from the denominator, the fraction becomes 2. What is the integer?</li>
             <li class="main-q-li">6. In a two-digit number, the digit in the tens place is four times the digit in the units place. If the sum of the digits is 10, find the number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-299', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-299" onclick="startPresentation('pres-299', 'ch5')">Solution</li>
             <li class="main-q-li">7. In a two-digit number, the digit in the tens place is three times the digit in the units place. If the digits are reversed, the number decreases by 36. Find the number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-300', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-300" onclick="startPresentation('pres-300', 'ch5')">Solution</li>
             <li class="main-q-li">8. The sum of the digits of a two-digit number is 6. If 18 is subtracted from the number, the digits of the number are interchanged. Find the number.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-301', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-301" onclick="startPresentation('pres-301', 'ch5')">Solution</li>
             <li class="main-q-li">9. Age problems.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-302', 'ch5')">(i) In five years from now, Shyam will be thrice as old as he was 9 years ago. Find his present age.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-303', 'ch5')">(ii) 4 years ago, Lal was twice as old as he was 9 years ago. Find his present age.</li>
+            <li class="clickable-q" id="item-pres-302" onclick="startPresentation('pres-302', 'ch5')">(i) In five years from now, Shyam will be thrice as old as he was 9 years ago. Find his present age.</li>
+            <li class="clickable-q" id="item-pres-303" onclick="startPresentation('pres-303', 'ch5')">(ii) 4 years ago, Lal was twice as old as he was 9 years ago. Find his present age.</li>
             <li class="main-q-li">10. A man's age is seven times that of his son. In 5 years, he will be four times as old as his son. What are the present ages of the man and his son?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-304', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-304" onclick="startPresentation('pres-304', 'ch5')">Solution</li>
             <li class="main-q-li">11. Age comparisons after years.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-305', 'ch5')">(i) A man's age is 42 years and his son's age is 12 years. After how many years will the man be thrice as old as his son?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-306', 'ch5')">(ii) A man's age is 32 years and his son's age is 5 years. In how many years will the man's age be four times that of his son?</li>
+            <li class="clickable-q" id="item-pres-305" onclick="startPresentation('pres-305', 'ch5')">(i) A man's age is 42 years and his son's age is 12 years. After how many years will the man be thrice as old as his son?</li>
+            <li class="clickable-q" id="item-pres-306" onclick="startPresentation('pres-306', 'ch5')">(ii) A man's age is 32 years and his son's age is 5 years. In how many years will the man's age be four times that of his son?</li>
             <li class="main-q-li">12. Problems based on coins.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-307', 'ch5')">(i) A purse contains some coins. Of these, the number of one-rupee coins is three times the number of five-rupee coins and twice the number of two-rupee coins. If the total number of coins is 66, what is the value of the five-rupee coins?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-308', 'ch5')">(ii) Anuj has an equal number of two-rupee and five-rupee coins. He has also some one-rupee coins. If the total number of coins is 40 and their value is ₹120, how many five-rupee and two-rupee coins does he have?</li>
+            <li class="clickable-q" id="item-pres-307" onclick="startPresentation('pres-307', 'ch5')">(i) A purse contains some coins. Of these, the number of one-rupee coins is three times the number of five-rupee coins and twice the number of two-rupee coins. If the total number of coins is 66, what is the value of the five-rupee coins?</li>
+            <li class="clickable-q" id="item-pres-308" onclick="startPresentation('pres-308', 'ch5')">(ii) Anuj has an equal number of two-rupee and five-rupee coins. He has also some one-rupee coins. If the total number of coins is 40 and their value is ₹120, how many five-rupee and two-rupee coins does he have?</li>
             <li class="main-q-li">13. A plane takes 2 hours and 45 minutes to cover the distance between two airports. If it travels 20 km/h slower then it takes 3 hours. Find the speed of the plane. Also, find the distance between the two airports.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-309', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-309" onclick="startPresentation('pres-309', 'ch5')">Solution</li>
             <li class="main-q-li">14. Two cyclists make the same trip. The first one takes 3.5 hours and the second, with a speed that is 1 km/h greater than that of the first, takes 3 hours. Find the speeds of the two cyclists. Also, find the distance covered in the trip.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-310', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-310" onclick="startPresentation('pres-310', 'ch5')">Solution</li>
             <li class="main-q-li">15. The length of a rectangle is 1 m greater than its width. If the length is increased by 2 m and the width is decreased by 6 m, the area decreases by 50 m^2. What are the dimensions of the rectangle?</li>
-            <li class="clickable-q" onclick="startPresentation('pres-311', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-311" onclick="startPresentation('pres-311', 'ch5')">Solution</li>
             <li class="main-q-li">16. The length of a rectangle is 5 m greater than its width. If the perimeter of the rectangle is 50 m, find its length.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-312', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-312" onclick="startPresentation('pres-312', 'ch5')">Solution</li>
             <li class="main-q-li">17. In a right-angled triangle, one of the acute angles is one fifth the other. Find the measure of the smallest angle.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-313', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-313" onclick="startPresentation('pres-313', 'ch5')">Solution</li>
             <li class="main-q-li">18. The base of an isosceles triangle is 3 cm longer than each of the other sides. If the perimeter is 54 cm, find the lengths of the sides.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-314', 'ch5')">Solution</li>
+            <li class="clickable-q" id="item-pres-314" onclick="startPresentation('pres-314', 'ch5')">Solution</li>
             <li class="main-q-li">Exercise 5C</li>
             <li class="main-q-li">1. If the replacement set is {0, 1, 2, 3, 4, 5, 6, 7}, find the solution set for each inequation.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-315', 'ch5')">(i) $x < 2$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-316', 'ch5')">(ii) $x > 0$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-317', 'ch5')">(iii) $x \le 4$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-318', 'ch5')">(iv) $x + 4 \ge 8$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-319', 'ch5')">(v) $4 - x \le -3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-320', 'ch5')">(vi) $12 - x > 16$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-321', 'ch5')">(vii) $3x < 9$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-322', 'ch5')">(viii) $\frac{x}{2} \ge 3$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-323', 'ch5')">(ix) $-2x \le -8$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-324', 'ch5')">(x) $-2x + \frac{7}{2} < \frac{1}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-325', 'ch5')">(xi) $11 - 3x \ge 9$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-326', 'ch5')">(xii) $\frac{15}{2} < 2x + \frac{5}{2}$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-327', 'ch5')">(xiii) $4(x - 2) < 3x + 1$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-328', 'ch5')">(xiv) $n + 2 > \frac{3n - 1}{2}$</li>
+            <li class="clickable-q" id="item-pres-315" onclick="startPresentation('pres-315', 'ch5')">(i) $x < 2$</li>
+            <li class="clickable-q" id="item-pres-316" onclick="startPresentation('pres-316', 'ch5')">(ii) $x > 0$</li>
+            <li class="clickable-q" id="item-pres-317" onclick="startPresentation('pres-317', 'ch5')">(iii) $x \le 4$</li>
+            <li class="clickable-q" id="item-pres-318" onclick="startPresentation('pres-318', 'ch5')">(iv) $x + 4 \ge 8$</li>
+            <li class="clickable-q" id="item-pres-319" onclick="startPresentation('pres-319', 'ch5')">(v) $4 - x \le -3$</li>
+            <li class="clickable-q" id="item-pres-320" onclick="startPresentation('pres-320', 'ch5')">(vi) $12 - x > 16$</li>
+            <li class="clickable-q" id="item-pres-321" onclick="startPresentation('pres-321', 'ch5')">(vii) $3x < 9$</li>
+            <li class="clickable-q" id="item-pres-322" onclick="startPresentation('pres-322', 'ch5')">(viii) $\frac{x}{2} \ge 3$</li>
+            <li class="clickable-q" id="item-pres-323" onclick="startPresentation('pres-323', 'ch5')">(ix) $-2x \le -8$</li>
+            <li class="clickable-q" id="item-pres-324" onclick="startPresentation('pres-324', 'ch5')">(x) $-2x + \frac{7}{2} < \frac{1}{2}$</li>
+            <li class="clickable-q" id="item-pres-325" onclick="startPresentation('pres-325', 'ch5')">(xi) $11 - 3x \ge 9$</li>
+            <li class="clickable-q" id="item-pres-326" onclick="startPresentation('pres-326', 'ch5')">(xii) $\frac{15}{2} < 2x + \frac{5}{2}$</li>
+            <li class="clickable-q" id="item-pres-327" onclick="startPresentation('pres-327', 'ch5')">(xiii) $4(x - 2) < 3x + 1$</li>
+            <li class="clickable-q" id="item-pres-328" onclick="startPresentation('pres-328', 'ch5')">(xiv) $n + 2 > \frac{3n - 1}{2}$</li>
             <li class="main-q-li">2. Represent the solution set graphically.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-329', 'ch5')">(i) $x - 2 < 3$, where $x \in W$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-330', 'ch5')">(ii) $-3 + x \ge \frac{1}{2}$, where $x \in N$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-331', 'ch5')">(iii) $2x < 6$, where $x \in W$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-332', 'ch5')">(iv) $4p > -12$, where $p \in I$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-333', 'ch5')">(v) $-2m \le -8$, where $m \in N$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-334', 'ch5')">(vi) $\frac{5}{2} - 2x \ge \frac{1}{2}$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-329" onclick="startPresentation('pres-329', 'ch5')">(i) $x - 2 < 3$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-330" onclick="startPresentation('pres-330', 'ch5')">(ii) $-3 + x \ge \frac{1}{2}$, where $x \in N$</li>
+            <li class="clickable-q" id="item-pres-331" onclick="startPresentation('pres-331', 'ch5')">(iii) $2x < 6$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-332" onclick="startPresentation('pres-332', 'ch5')">(iv) $4p > -12$, where $p \in I$</li>
+            <li class="clickable-q" id="item-pres-333" onclick="startPresentation('pres-333', 'ch5')">(v) $-2m \le -8$, where $m \in N$</li>
+            <li class="clickable-q" id="item-pres-334" onclick="startPresentation('pres-334', 'ch5')">(vi) $\frac{5}{2} - 2x \ge \frac{1}{2}$, where $x \in W$</li>
             <li class="main-q-li">3. Solve the following inequations.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-335', 'ch5')">(i) $\frac{1}{2}x + 2 \ge x - 1$, where $x \in N$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-336', 'ch5')">(ii) $4(x - 3) < x + 3$, where $x \in W$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-337', 'ch5')">(iii) $3(2x - 1) \ge 2(2x + 3)$, where $x \in I$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-338', 'ch5')">(iv) $2(4 - 3x) \le 4(x - 5)$, where $x \in W$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-339', 'ch5')">(v) $2(4x - 1) < 4(3x + 1)$, where $x \in \{\text{set of all negative integers}\}$</li>
+            <li class="clickable-q" id="item-pres-335" onclick="startPresentation('pres-335', 'ch5')">(i) $\frac{1}{2}x + 2 \ge x - 1$, where $x \in N$</li>
+            <li class="clickable-q" id="item-pres-336" onclick="startPresentation('pres-336', 'ch5')">(ii) $4(x - 3) < x + 3$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-337" onclick="startPresentation('pres-337', 'ch5')">(iii) $3(2x - 1) \ge 2(2x + 3)$, where $x \in I$</li>
+            <li class="clickable-q" id="item-pres-338" onclick="startPresentation('pres-338', 'ch5')">(iv) $2(4 - 3x) \le 4(x - 5)$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-339" onclick="startPresentation('pres-339', 'ch5')">(v) $2(4x - 1) < 4(3x + 1)$, where $x \in \{\text{set of all negative integers}\}$</li>
             <li class="main-q-li">4. Represent the solution set graphically.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-340', 'ch5')">(i) $2x - 3(x - 4) \ge 4 - 2(x - 7)$, where $x \in W$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-341', 'ch5')">(ii) $5(x - 2) > 9x - 3(2x - 4)$, where $x \in N$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-342', 'ch5')">(iii) $3\{4(n - 2) - (1 - n)\} \le n + 1$, where $n \in W$</li>
+            <li class="clickable-q" id="item-pres-340" onclick="startPresentation('pres-340', 'ch5')">(i) $2x - 3(x - 4) \ge 4 - 2(x - 7)$, where $x \in W$</li>
+            <li class="clickable-q" id="item-pres-341" onclick="startPresentation('pres-341', 'ch5')">(ii) $5(x - 2) > 9x - 3(2x - 4)$, where $x \in N$</li>
+            <li class="clickable-q" id="item-pres-342" onclick="startPresentation('pres-342', 'ch5')">(iii) $3\{4(n - 2) - (1 - n)\} \le n + 1$, where $n \in W$</li>
             <li class="main-q-li">5. Find the solution set and represent graphically.</li>
-            <li class="clickable-q" onclick="startPresentation('pres-343', 'ch5')">(i) $4 < -(x + 2) < 9$, where $x \in I$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-344', 'ch5')">(ii) $15 > 2x - 7 > 7$, where $x \in R$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-345', 'ch5')">(iii) $0 \le \frac{4 - x}{2} < 2$, where $x \in R$</li>
-            <li class="clickable-q" onclick="startPresentation('pres-346', 'ch5')">(iv) $-4 \le -2(x + 8) < 8$, where $x \in R$</li>
+            <li class="clickable-q" id="item-pres-343" onclick="startPresentation('pres-343', 'ch5')">(i) $4 < -(x + 2) < 9$, where $x \in I$</li>
+            <li class="clickable-q" id="item-pres-344" onclick="startPresentation('pres-344', 'ch5')">(ii) $15 > 2x - 7 > 7$, where $x \in R$</li>
+            <li class="clickable-q" id="item-pres-345" onclick="startPresentation('pres-345', 'ch5')">(iii) $0 \le \frac{4 - x}{2} < 2$, where $x \in R$</li>
+            <li class="clickable-q" id="item-pres-346" onclick="startPresentation('pres-346', 'ch5')">(iv) $-4 \le -2(x + 8) < 8$, where $x \in R$</li>
         </ul>
     </div>
 
@@ -3983,6 +4048,12 @@
             <div class="pres-step"><svg width="380" height="50" viewBox="0 0 380 50" style="background:#ffffff;border:1px solid #ddd;border-radius:6px;display:block;margin:10px 0;padding:2px;"><line x1="12" y1="25" x2="368" y2="25" stroke="#333" stroke-width="2"/><polygon points="8,25 16,21 16,29" fill="#333"/><polygon points="372,25 364,21 364,29" fill="#333"/><line x1="35.0" y1="21" x2="35.0" y2="29" stroke="#777" stroke-width="1"/><text x="35.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-14</text><line x1="66.0" y1="21" x2="66.0" y2="29" stroke="#777" stroke-width="1"/><text x="66.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-13</text><line x1="97.0" y1="21" x2="97.0" y2="29" stroke="#777" stroke-width="1"/><text x="97.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-12</text><line x1="128.0" y1="21" x2="128.0" y2="29" stroke="#777" stroke-width="1"/><text x="128.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-11</text><line x1="159.0" y1="21" x2="159.0" y2="29" stroke="#777" stroke-width="1"/><text x="159.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-10</text><line x1="190.0" y1="21" x2="190.0" y2="29" stroke="#777" stroke-width="1"/><text x="190.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-9</text><line x1="221.0" y1="21" x2="221.0" y2="29" stroke="#777" stroke-width="1"/><text x="221.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-8</text><line x1="252.0" y1="21" x2="252.0" y2="29" stroke="#777" stroke-width="1"/><text x="252.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-7</text><line x1="283.0" y1="21" x2="283.0" y2="29" stroke="#777" stroke-width="1"/><text x="283.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-6</text><line x1="314.0" y1="21" x2="314.0" y2="29" stroke="#777" stroke-width="1"/><text x="314.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-5</text><line x1="345.0" y1="21" x2="345.0" y2="29" stroke="#777" stroke-width="1"/><text x="345.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-4</text><line x1="97.0" y1="25" x2="283.0" y2="25" stroke="#e74c3c" stroke-width="4"/><circle cx="97.0" cy="25" r="5" fill="#ffffff" stroke="#e74c3c" stroke-width="2"/><circle cx="283.0" cy="25" r="5" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"/></svg></div>
         </div>
 
+        <!-- Bottom question navigation bar -->
+        <div class="pres-nav-bar" id="pres-nav-bar">
+            <button class="btn-pres-nav" id="btn-pres-prev" onclick="prevQuestion(event)">⏮ Prev Question</button>
+            <div class="pres-counter-badge" id="pres-counter-badge">Question 1</div>
+            <button class="btn-pres-nav btn-pres-next" id="btn-pres-next" onclick="nextQuestion(event)">Next Question ⏭</button>
+        </div>
     </div>
     <!-- APP INSTALL / DOWNLOAD MODAL -->
     <div id="app-modal" class="modal-overlay" style="display: none;" onclick="closeAppModal(event)">
@@ -4051,7 +4122,7 @@
         function openChapter(chId) {
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('normal-view-' + chId).style.display = 'block';
             window.scrollTo(0, 0);
@@ -4060,7 +4131,7 @@
         function goHome() {
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             const views = document.querySelectorAll('.chapter-view');
             views.forEach(v => v.style.display = 'none');
             document.getElementById('home-view').style.display = 'block';
@@ -4068,10 +4139,10 @@
         }
 
         function enterTeachMode(chId) {
-            savedNormalScroll[chId] = window.scrollY;
+            savedNormalScroll[chId] = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
             document.getElementById('normal-view-' + chId).style.display = 'none';
             document.getElementById('teach-view-' + chId).style.display = 'block';
             window.scrollTo(0, 0);
@@ -4080,58 +4151,121 @@
         function exitTeachMode(chId) {
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             document.getElementById('teach-view-' + chId).style.display = 'none';
             document.getElementById('normal-view-' + chId).style.display = 'block';
-            window.scrollTo(0, savedNormalScroll[chId] || 0);
+            
+            // Restore scroll position in normal view smoothly
+            const targetPos = savedNormalScroll[chId] || 0;
+            window.scrollTo(0, targetPos);
+            requestAnimationFrame(() => {
+                window.scrollTo(0, targetPos);
+                setTimeout(() => {
+                    window.scrollTo(0, targetPos);
+                }, 60);
+            });
         }
 
         function startPresentation(id, chId) {
             activeTeachCh = chId;
             activePresId = id;
-            savedTeachScroll[chId] = window.scrollY;
+            
+            // Save scroll position of teach-view before opening presentation
+            savedTeachScroll[chId] = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
             
             document.getElementById('teach-view-' + chId).style.display = 'none';
-            document.getElementById('presentation-view').style.display = 'block';
+            const presView = document.getElementById('presentation-view');
+            presView.style.display = 'block';
             
             const containers = document.querySelectorAll('.pres-container');
             containers.forEach(c => c.style.display = 'none');
             
             const target = document.getElementById(id);
-            target.style.display = 'block';
-            
-            currentSteps = target.querySelectorAll('.pres-step');
-            currentSteps.forEach(step => {
-                step.style.opacity = '0';
-            });
+            if (target) {
+                target.style.display = 'block';
+                currentSteps = target.querySelectorAll('.pres-step');
+                currentSteps.forEach(step => {
+                    step.style.opacity = '0';
+                });
+            }
             
             currentStepIndex = -1;
             window.scrollTo(0, 0);
+            updatePresNav();
         }
 
         function closePresentation() {
             if (!activeTeachCh) return;
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
+            
             document.getElementById('presentation-view').style.display = 'none';
-            document.getElementById('teach-view-' + activeTeachCh).style.display = 'block';
-            window.scrollTo(0, savedTeachScroll[activeTeachCh] || 0);
+            const teachView = document.getElementById('teach-view-' + activeTeachCh);
+            teachView.style.display = 'block';
+            
+            // Restore scroll position to the exact question in teach-view!
+            const targetLi = document.getElementById('item-' + activePresId);
+            if (targetLi) {
+                requestAnimationFrame(() => {
+                    targetLi.scrollIntoView({ block: 'center', behavior: 'auto' });
+                    setTimeout(() => {
+                        targetLi.scrollIntoView({ block: 'center', behavior: 'auto' });
+                    }, 60);
+                });
+            } else {
+                const targetPos = savedTeachScroll[activeTeachCh] || 0;
+                window.scrollTo(0, targetPos);
+                requestAnimationFrame(() => {
+                    window.scrollTo(0, targetPos);
+                    setTimeout(() => {
+                        window.scrollTo(0, targetPos);
+                    }, 60);
+                });
+            }
+        }
+
+        function updatePresNav() {
+            if (!activeTeachCh || !activePresId) return;
+            const list = chapterPresMap[activeTeachCh] || [];
+            const idx = list.indexOf(activePresId);
+            const counter = document.getElementById('pres-counter-badge');
+            const btnPrev = document.getElementById('btn-pres-prev');
+            const btnNext = document.getElementById('btn-pres-next');
+            
+            if (counter) {
+                counter.innerText = 'Q ' + (idx + 1) + ' of ' + list.length;
+            }
+            if (btnPrev) {
+                btnPrev.disabled = (idx <= 0);
+                btnPrev.style.opacity = (idx <= 0) ? '0.35' : '1';
+                btnPrev.style.cursor = (idx <= 0) ? 'not-allowed' : 'pointer';
+            }
+            if (btnNext) {
+                btnNext.disabled = (idx >= list.length - 1);
+                btnNext.style.opacity = (idx >= list.length - 1) ? '0.35' : '1';
+                btnNext.style.cursor = (idx >= list.length - 1) ? 'not-allowed' : 'pointer';
+            }
         }
         
-        function nextQuestion() {
+        function nextQuestion(e) {
+            if (e) e.stopPropagation();
             const list = chapterPresMap[activeTeachCh];
+            if (!list) return;
             const idx = list.indexOf(activePresId);
             if (idx < list.length - 1) {
                 startPresentation(list[idx + 1], activeTeachCh);
             }
         }
         
-        function prevQuestion() {
+        function prevQuestion(e) {
+            if (e) e.stopPropagation();
             const list = chapterPresMap[activeTeachCh];
+            if (!list) return;
             const idx = list.indexOf(activePresId);
             if (idx > 0) {
                 startPresentation(list[idx - 1], activeTeachCh);
@@ -4141,7 +4275,7 @@
         const presView = document.getElementById('presentation-view');
         
         presView.addEventListener('click', (e) => {
-            if (e.target.tagName.toLowerCase() === 'button') return;
+            if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
             nextStep();
         });
 
@@ -4163,46 +4297,8 @@
                 currentStepIndex--;
             }
         }
-        
-        // Scroll to change questions
-        let wheelTimeout;
-        presView.addEventListener('wheel', (e) => {
-            // Prevent multiple triggers
-            if (wheelTimeout) return;
-            wheelTimeout = setTimeout(() => { wheelTimeout = null; }, 800);
-            
-            if (e.deltaY > 50) {
-                nextQuestion();
-            } else if (e.deltaY < -50) {
-                prevQuestion();
-            }
-        });
-        
-        let touchStartY = 0;
-        let touchEndY = 0;
-        
-        presView.addEventListener('touchstart', e => {
-            touchStartY = e.changedTouches[0].screenY;
-        }, {passive: true});
-        
-        presView.addEventListener('touchend', e => {
-            touchEndY = e.changedTouches[0].screenY;
-            handleSwipe();
-        }, {passive: true});
-        
-        function handleSwipe() {
-            // swipe up -> next question
-            if (touchStartY - touchEndY > 100) {
-                nextQuestion();
-            }
-            // swipe down -> prev question
-            else if (touchEndY - touchStartY > 100) {
-                prevQuestion();
-            }
-        }
 
-        
-                        // Service Worker Registration
+        // Service Worker Registration
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js').catch(err => {

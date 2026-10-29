@@ -1162,13 +1162,78 @@ html_template = """<!DOCTYPE html>
         }
         
         
+        
         /* Hide all tools in teach & presentation mode */
         body.in-teach-mode #tools-panel,
-        body.in-teach-mode .tools-panel {
+        body.in-teach-mode .tools-panel,
+        .in-teach-mode #tools-panel,
+        .in-teach-mode .tools-panel {
             display: none !important;
+            visibility: hidden !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
         }
+
         .pres-q {
             padding-right: 85px;
+        }
+
+        /* Presentation Bottom Navigation Bar */
+        .pres-nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+            margin-top: 40px;
+            padding: 16px 10px;
+            border-top: 2px dashed #cbd5e1;
+            position: sticky;
+            bottom: 0;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+            z-index: 50;
+        }
+        body.dark-mode .pres-nav-bar {
+            background: #2d2d2d;
+            border-top-color: #444;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.3);
+        }
+        .btn-pres-nav {
+            flex: 1;
+            max-width: 170px;
+            background: #34495e;
+            color: white;
+            border: none;
+            padding: 11px 16px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+        .btn-pres-nav:active {
+            transform: scale(0.96);
+        }
+        .btn-pres-nav.btn-pres-next {
+            background: #27ae60;
+        }
+        .btn-pres-nav.btn-pres-next:hover {
+            background: #219150;
+        }
+        .pres-counter-badge {
+            font-size: 15px;
+            font-weight: bold;
+            color: #2c3e50;
+            padding: 6px 14px;
+            background: #e2e8f0;
+            border-radius: 20px;
+            white-space: nowrap;
+        }
+        body.dark-mode .pres-counter-badge {
+            background: #3a3a3a;
+            color: #66b3ff;
         }
 
         /* Presentation View */
@@ -1572,7 +1637,7 @@ for ch in chapters:
             pres_id_counter += 1
             
             display_text = sub["q"] if sub["q"] else "Solution"
-            html_template += f'            <li class="clickable-q" onclick="startPresentation(\'{pres_id}\', \'{ch["id"]}\')">{display_text}</li>\n'
+            html_template += f'            <li class="clickable-q" id="item-{pres_id}" onclick="startPresentation(\'{pres_id}\', \'{ch["id"]}\')">{display_text}</li>\n'
             
             presentation_html += f'        <div id="{pres_id}" class="pres-container" style="display:none;">\n'
             presentation_html += f'            <div class="pres-q">{item["q"]}<br>{sub["q"]}</div>\n'
@@ -1595,6 +1660,12 @@ html_template += """
 html_template += presentation_html
 
 html_template += f"""
+        <!-- Bottom question navigation bar -->
+        <div class="pres-nav-bar" id="pres-nav-bar">
+            <button class="btn-pres-nav" id="btn-pres-prev" onclick="prevQuestion(event)">⏮ Prev Question</button>
+            <div class="pres-counter-badge" id="pres-counter-badge">Question 1</div>
+            <button class="btn-pres-nav btn-pres-next" id="btn-pres-next" onclick="nextQuestion(event)">Next Question ⏭</button>
+        </div>
     </div>
     <!-- APP INSTALL / DOWNLOAD MODAL -->
     <div id="app-modal" class="modal-overlay" style="display: none;" onclick="closeAppModal(event)">
@@ -1663,7 +1734,7 @@ html_template += f"""
         function openChapter(chId) {{
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             document.getElementById('home-view').style.display = 'none';
             document.getElementById('normal-view-' + chId).style.display = 'block';
             window.scrollTo(0, 0);
@@ -1672,7 +1743,7 @@ html_template += f"""
         function goHome() {{
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             const views = document.querySelectorAll('.chapter-view');
             views.forEach(v => v.style.display = 'none');
             document.getElementById('home-view').style.display = 'block';
@@ -1680,10 +1751,10 @@ html_template += f"""
         }}
 
         function enterTeachMode(chId) {{
-            savedNormalScroll[chId] = window.scrollY;
+            savedNormalScroll[chId] = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
             document.getElementById('normal-view-' + chId).style.display = 'none';
             document.getElementById('teach-view-' + chId).style.display = 'block';
             window.scrollTo(0, 0);
@@ -1692,58 +1763,121 @@ html_template += f"""
         function exitTeachMode(chId) {{
             document.body.classList.remove('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'flex';
+            if (tp) tp.style.setProperty('display', 'flex');
             document.getElementById('teach-view-' + chId).style.display = 'none';
             document.getElementById('normal-view-' + chId).style.display = 'block';
-            window.scrollTo(0, savedNormalScroll[chId] || 0);
+            
+            // Restore scroll position in normal view smoothly
+            const targetPos = savedNormalScroll[chId] || 0;
+            window.scrollTo(0, targetPos);
+            requestAnimationFrame(() => {{
+                window.scrollTo(0, targetPos);
+                setTimeout(() => {{
+                    window.scrollTo(0, targetPos);
+                }}, 60);
+            }});
         }}
 
         function startPresentation(id, chId) {{
             activeTeachCh = chId;
             activePresId = id;
-            savedTeachScroll[chId] = window.scrollY;
+            
+            // Save scroll position of teach-view before opening presentation
+            savedTeachScroll[chId] = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+            
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
             
             document.getElementById('teach-view-' + chId).style.display = 'none';
-            document.getElementById('presentation-view').style.display = 'block';
+            const presView = document.getElementById('presentation-view');
+            presView.style.display = 'block';
             
             const containers = document.querySelectorAll('.pres-container');
             containers.forEach(c => c.style.display = 'none');
             
             const target = document.getElementById(id);
-            target.style.display = 'block';
-            
-            currentSteps = target.querySelectorAll('.pres-step');
-            currentSteps.forEach(step => {{
-                step.style.opacity = '0';
-            }});
+            if (target) {{
+                target.style.display = 'block';
+                currentSteps = target.querySelectorAll('.pres-step');
+                currentSteps.forEach(step => {{
+                    step.style.opacity = '0';
+                }});
+            }}
             
             currentStepIndex = -1;
             window.scrollTo(0, 0);
+            updatePresNav();
         }}
 
         function closePresentation() {{
             if (!activeTeachCh) return;
             document.body.classList.add('in-teach-mode');
             const tp = document.getElementById('tools-panel');
-            if (tp) tp.style.display = 'none';
+            if (tp) tp.style.setProperty('display', 'none', 'important');
+            
             document.getElementById('presentation-view').style.display = 'none';
-            document.getElementById('teach-view-' + activeTeachCh).style.display = 'block';
-            window.scrollTo(0, savedTeachScroll[activeTeachCh] || 0);
+            const teachView = document.getElementById('teach-view-' + activeTeachCh);
+            teachView.style.display = 'block';
+            
+            // Restore scroll position to the exact question in teach-view!
+            const targetLi = document.getElementById('item-' + activePresId);
+            if (targetLi) {{
+                requestAnimationFrame(() => {{
+                    targetLi.scrollIntoView({{ block: 'center', behavior: 'auto' }});
+                    setTimeout(() => {{
+                        targetLi.scrollIntoView({{ block: 'center', behavior: 'auto' }});
+                    }}, 60);
+                }});
+            }} else {{
+                const targetPos = savedTeachScroll[activeTeachCh] || 0;
+                window.scrollTo(0, targetPos);
+                requestAnimationFrame(() => {{
+                    window.scrollTo(0, targetPos);
+                    setTimeout(() => {{
+                        window.scrollTo(0, targetPos);
+                    }}, 60);
+                }});
+            }}
+        }}
+
+        function updatePresNav() {{
+            if (!activeTeachCh || !activePresId) return;
+            const list = chapterPresMap[activeTeachCh] || [];
+            const idx = list.indexOf(activePresId);
+            const counter = document.getElementById('pres-counter-badge');
+            const btnPrev = document.getElementById('btn-pres-prev');
+            const btnNext = document.getElementById('btn-pres-next');
+            
+            if (counter) {{
+                counter.innerText = 'Q ' + (idx + 1) + ' of ' + list.length;
+            }}
+            if (btnPrev) {{
+                btnPrev.disabled = (idx <= 0);
+                btnPrev.style.opacity = (idx <= 0) ? '0.35' : '1';
+                btnPrev.style.cursor = (idx <= 0) ? 'not-allowed' : 'pointer';
+            }}
+            if (btnNext) {{
+                btnNext.disabled = (idx >= list.length - 1);
+                btnNext.style.opacity = (idx >= list.length - 1) ? '0.35' : '1';
+                btnNext.style.cursor = (idx >= list.length - 1) ? 'not-allowed' : 'pointer';
+            }}
         }}
         
-        function nextQuestion() {{
+        function nextQuestion(e) {{
+            if (e) e.stopPropagation();
             const list = chapterPresMap[activeTeachCh];
+            if (!list) return;
             const idx = list.indexOf(activePresId);
             if (idx < list.length - 1) {{
                 startPresentation(list[idx + 1], activeTeachCh);
             }}
         }}
         
-        function prevQuestion() {{
+        function prevQuestion(e) {{
+            if (e) e.stopPropagation();
             const list = chapterPresMap[activeTeachCh];
+            if (!list) return;
             const idx = list.indexOf(activePresId);
             if (idx > 0) {{
                 startPresentation(list[idx - 1], activeTeachCh);
@@ -1753,7 +1887,7 @@ html_template += f"""
         const presView = document.getElementById('presentation-view');
         
         presView.addEventListener('click', (e) => {{
-            if (e.target.tagName.toLowerCase() === 'button') return;
+            if (e.target.tagName.toLowerCase() === 'button' || e.target.closest('button')) return;
             nextStep();
         }});
 
@@ -1775,46 +1909,8 @@ html_template += f"""
                 currentStepIndex--;
             }}
         }}
-        
-        // Scroll to change questions
-        let wheelTimeout;
-        presView.addEventListener('wheel', (e) => {{
-            // Prevent multiple triggers
-            if (wheelTimeout) return;
-            wheelTimeout = setTimeout(() => {{ wheelTimeout = null; }}, 800);
-            
-            if (e.deltaY > 50) {{
-                nextQuestion();
-            }} else if (e.deltaY < -50) {{
-                prevQuestion();
-            }}
-        }});
-        
-        let touchStartY = 0;
-        let touchEndY = 0;
-        
-        presView.addEventListener('touchstart', e => {{
-            touchStartY = e.changedTouches[0].screenY;
-        }}, {{passive: true}});
-        
-        presView.addEventListener('touchend', e => {{
-            touchEndY = e.changedTouches[0].screenY;
-            handleSwipe();
-        }}, {{passive: true}});
-        
-        function handleSwipe() {{
-            // swipe up -> next question
-            if (touchStartY - touchEndY > 100) {{
-                nextQuestion();
-            }}
-            // swipe down -> prev question
-            else if (touchEndY - touchStartY > 100) {{
-                prevQuestion();
-            }}
-        }}
 
-        
-                        // Service Worker Registration
+        // Service Worker Registration
         if ('serviceWorker' in navigator) {{
             window.addEventListener('load', () => {{
                 navigator.serviceWorker.register('./sw.js').catch(err => {{
