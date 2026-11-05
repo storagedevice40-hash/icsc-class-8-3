@@ -2062,6 +2062,9 @@ html_template = """<!DOCTYPE html>
     <!-- HOME VIEW -->
     <div class="container" id="home-view">
         <div class="header">Class 8 Mathematics Solutions</div>
+        <div style="text-align: center; margin-top: -15px; margin-bottom: 25px;">
+            <span style="display: inline-block; background: #eafaf1; color: #27ae60; border: 1px solid #a3e4d7; font-weight: bold; font-size: 13px; padding: 5px 14px; border-radius: 20px; box-shadow: 0 2px 5px rgba(39, 174, 96, 0.15);">✨ Updated: Includes Chapter 4 (Profit &amp; Loss)</span>
+        </div>
         
         <!-- APP DOWNLOAD BANNER -->
         <div class="app-banner" onclick="openAppModal()">
@@ -2396,9 +2399,18 @@ html_template += f"""
         // Service Worker Registration
         if ('serviceWorker' in navigator) {{
             window.addEventListener('load', () => {{
-                navigator.serviceWorker.register('./sw.js').catch(err => {{
+                navigator.serviceWorker.register('./sw.js').then((reg) => {{
+                    reg.update();
+                }}).catch(err => {{
                     console.log('SW registration error:', err);
                 }});
+            }});
+            let refreshing = false;
+            navigator.serviceWorker.addEventListener('controllerchange', () => {{
+                if (!refreshing) {{
+                    refreshing = true;
+                    window.location.reload();
+                }}
             }});
         }}
 
