@@ -667,6 +667,7 @@
         <button class="home-btn" onclick="openChapter('ch3')">Chapter 3: Squares and Square Roots</button>
         <button class="home-btn" onclick="openChapter('ch4')">Chapter 4: Cubes and Cube Roots</button>
         <button class="home-btn" onclick="openChapter('ch5')">Chapter 5: Linear Equations and Inequations</button>
+        <button class="home-btn" onclick="openChapter('ch_profit_loss')">Chapter 4: Profit and Loss</button>
 
     </div>
     <div class="container chapter-view" id="normal-view-ch1" style="display: none;">
@@ -2041,6 +2042,347 @@
             <li class="clickable-q" id="item-pres-344" onclick="startPresentation('pres-344', 'ch5')">(ii) $15 > 2x - 7 > 7$, where $x \in R$</li>
             <li class="clickable-q" id="item-pres-345" onclick="startPresentation('pres-345', 'ch5')">(iii) $0 \le \frac{4 - x}{2} < 2$, where $x \in R$</li>
             <li class="clickable-q" id="item-pres-346" onclick="startPresentation('pres-346', 'ch5')">(iv) $-4 \le -2(x + 8) < 8$, where $x \in R$</li>
+        </ul>
+    </div>
+    <div class="container chapter-view" id="normal-view-ch_profit_loss" style="display: none;">
+        <button class="btn-top-back" onclick="goHome()">⬅ Back to Home</button>
+        <div class="header">Chapter 4: Profit and Loss</div>
+        <button class="btn-teach" onclick="enterTeachMode('ch_profit_loss')">👨‍🏫 Teach Mode</button>
+        <div class="q-block">
+            <div class="question">Exercise 4A</div>
+        </div>
+        <div class="q-block">
+            <div class="question">1. Profit and profit percentage calculations.</div>
+            <div class="sub-q">(i) Find the profit and the profit percentage when a toy is bought for ₹800 and sold for ₹848.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹800<br>Selling Price (SP) = ₹848<br>Since SP > CP, there is a profit.<br>$$\text{Profit} = \text{SP} - \text{CP} = ₹848 - ₹800 = ₹48$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{48}{800} \times 100\right)\% = \frac{48}{8}\% = 6\%$$<br>Therefore, <b>Profit = ₹48</b> and <b>Profit Percentage = 6%</b>.</div>
+            <div class="sub-q">(ii) A cellphone is bought for ₹6250 and sold for ₹6750. Find the profit and the profit percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹6250<br>Selling Price (SP) = ₹6750<br>Since SP > CP, there is a profit.<br>$$\text{Profit} = \text{SP} - \text{CP} = ₹6750 - ₹6250 = ₹500$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{500}{6250} \times 100\right)\% = \frac{50000}{6250}\% = 8\%$$<br>Therefore, <b>Profit = ₹500</b> and <b>Profit Percentage = 8%</b>.</div>
+            <div class="sub-q">(iii) A camera is bought for ₹5400 and sold for ₹5850. Find the profit per cent.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹5400<br>Selling Price (SP) = ₹5850<br>$$\text{Profit} = \text{SP} - \text{CP} = ₹5850 - ₹5400 = ₹450$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{450}{5400} \times 100\right)\% = \frac{450}{54}\% = \frac{25}{3}\% = 8\frac{1}{3}\%$$<br>Therefore, <b>Profit Percentage = $8\frac{1}{3}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">2. Loss and loss percentage calculations.</div>
+            <div class="sub-q">(i) An article costing ₹240 is sold for ₹210. Find the loss and the loss percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹240<br>Selling Price (SP) = ₹210<br>Since CP > SP, there is a loss.<br>$$\text{Loss} = \text{CP} - \text{SP} = ₹240 - ₹210 = ₹30$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{30}{240} \times 100\right)\% = \frac{1}{8} \times 100\% = \frac{25}{2}\% = 12\frac{1}{2}\%$$<br>Therefore, <b>Loss = ₹30</b> and <b>Loss Percentage = $12\frac{1}{2}\%$</b>.</div>
+            <div class="sub-q">(ii) A computer costing ₹28 560 is sold for ₹24 276. Find the loss per cent.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹28,560<br>Selling Price (SP) = ₹24,276<br>$$\text{Loss} = \text{CP} - \text{SP} = ₹28,560 - ₹24,276 = ₹4284$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{4284}{28560} \times 100\right)\% = \frac{42840}{2856}\% = 15\%$$<br>Therefore, <b>Loss Percentage = 15%</b>.</div>
+            <div class="sub-q">(iii) A book costing ₹320 is sold for ₹284. Find the loss and the loss per cent.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹320<br>Selling Price (SP) = ₹284<br>$$\text{Loss} = \text{CP} - \text{SP} = ₹320 - ₹284 = ₹36$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$<br>$$= \left(\frac{36}{320} \times 100\right)\% = \frac{360}{32}\% = \frac{45}{4}\% = 11\frac{1}{4}\%$$<br>Therefore, <b>Loss = ₹36</b> and <b>Loss Percentage = $11\frac{1}{4}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">3. Shanti bought lemons at 7 for ₹6 and sold them at 6 for ₹7.</div>
+            <div class="sub-q">(i) Find her profit percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost price of 7 lemons = ₹6<br>$$\text{CP of 1 lemon} = ₹\frac{6}{7}$$<br>Selling price of 6 lemons = ₹7<br>$$\text{SP of 1 lemon} = ₹\frac{7}{6}$$<br>Since $\text{SP} > \text{CP}$ $\left(\frac{7}{6} > \frac{6}{7}\right)$, there is a profit.<br>$$\text{Profit on 1 lemon} = \text{SP} - \text{CP} = \frac{7}{6} - \frac{6}{7} = \frac{49 - 36}{42} = ₹\frac{13}{42}$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{13}{42}}{\frac{6}{7}} \times 100\right)\%$$<br>$$= \left(\frac{13}{42} \times \frac{7}{6} \times 100\right)\% = \left(\frac{13}{36} \times 100\right)\% = \frac{325}{9}\% = 36\frac{1}{9}\%$$<br>Therefore, her <b>Profit Percentage = $36\frac{1}{9}\%$</b>.</div>
+            <div class="sub-q">(ii) How many lemons would she have to sell to earn a profit of ₹65?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Profit earned on selling 1 lemon = $₹\frac{13}{42}$<br>Total profit required = ₹65<br>$$\text{Number of lemons} = \frac{\text{Total Profit}}{\text{Profit on 1 lemon}} = \frac{65}{\frac{13}{42}}$$<br>$$= 65 \times \frac{42}{13} = 5 \times 42 = 210$$<br>Therefore, she would have to sell <b>210 lemons</b> to earn a profit of ₹65.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">4. If the selling price of 10 mangoes is equal to the cost price of 12 mangoes, find the profit percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price (CP) of 1 mango be $₹x$.<br>Then, CP of 12 mangoes = $₹12x$<br>According to the question:<br>Selling price (SP) of 10 mangoes = CP of 12 mangoes = $₹12x$<br>$$\text{SP of 1 mango} = ₹\frac{12x}{10} = ₹\frac{6}{5}x = ₹1.2x$$<br>Since SP > CP, there is a profit.<br>$$\text{Profit on 1 mango} = \text{SP} - \text{CP} = \frac{6}{5}x - x = \frac{x}{5}$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{x}{5}}{x} \times 100\right)\% = \frac{1}{5} \times 100\% = 20\%$$<br>Therefore, the <b>Profit Percentage = 20%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">5. If the selling price of 25 balls is equal to the cost price of 15 balls, find the profit or loss percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price (CP) of 1 ball be $₹x$.<br>Then, CP of 15 balls = $₹15x$<br>Given:<br>Selling price (SP) of 25 balls = CP of 15 balls = $₹15x$<br>$$\text{SP of 1 ball} = ₹\frac{15x}{25} = ₹\frac{3}{5}x = ₹0.6x$$<br>Since SP < CP $\left(\frac{3}{5}x < x\right)$, there is a loss.<br>$$\text{Loss on 1 ball} = \text{CP} - \text{SP} = x - \frac{3}{5}x = \frac{2}{5}x$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{2}{5}x}{x} \times 100\right)\% = \frac{2}{5} \times 100\% = 40\%$$<br>Therefore, there is a <b>Loss of 40%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">6. A trader bought some eggs at the rate of ₹36 per dozen and sold them at a profit of 40%. Find the selling price of an egg.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost price of 1 dozen (12 eggs) = ₹36<br>$$\text{CP of 1 egg} = ₹\frac{36}{12} = ₹3$$<br>Profit percentage = $40\%$<br>$$\text{Profit on 1 egg} = 40\% \text{ of } ₹3 = \frac{40}{100} \times 3 = ₹1.20$$<br>$$\text{Selling Price (SP) of 1 egg} = \text{CP} + \text{Profit} = 3 + 1.20 = ₹4.20$$<br>Therefore, the <b>selling price of an egg is ₹4.20</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">7. A trader sold 40 erasers and earned a profit equal to the selling price of 12 erasers. Find his profit percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the selling price (SP) of 1 eraser be $₹y$.<br>Then, SP of 40 erasers = $₹40y$<br>Profit earned = SP of 12 erasers = $₹12y$<br>We know that:<br>$$\text{Profit} = \text{SP} - \text{CP}$$<br>$$12y = 40y - \text{CP of 40 erasers}$$<br>$$\text{CP of 40 erasers} = 40y - 12y = ₹28y$$<br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{12y}{28y} \times 100\right)\%$$<br>$$= \frac{3}{7} \times 100\% = \frac{300}{7}\% = 42\frac{6}{7}\%$$<br>Therefore, his <b>Profit Percentage = $42\frac{6}{7}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">8. A dealer bought an air conditioner for ₹25 000. What was the selling price if he sold it at:</div>
+            <div class="sub-q">(i) A profit of 15%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹25,000<br>Profit rate ($r$) = $15\%$<br>$$\text{SP} = \text{CP} \times \left(1 + \frac{r}{100}\right)$$<br>$$= 25000 \times \left(1 + \frac{15}{100}\right) = 25000 \times \frac{115}{100} = 250 \times 115 = ₹28,750$$<br>Therefore, the selling price at 15% profit is <b>₹28,750</b>.</div>
+            <div class="sub-q">(ii) A loss of 4%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹25,000<br>Loss rate ($r$) = $4\%$<br>$$\text{SP} = \text{CP} \times \left(1 - \frac{r}{100}\right)$$<br>$$= 25000 \times \left(1 - \frac{4}{100}\right) = 25000 \times \frac{96}{100} = 250 \times 96 = ₹24,000$$<br>Therefore, the selling price at 4% loss is <b>₹24,000</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">9. Cost price calculations from selling price.</div>
+            <div class="sub-q">(i) A man sold an article for ₹540 and incurred a loss of 10%. Find the cost price of the article.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Selling Price (SP) = ₹540<br>Loss percentage = $10\%$<br>Formula:<br>$$\text{SP} = \text{CP} \times \left(1 - \frac{\text{Loss \%}}{100}\right)$$<br>$$540 = \text{CP} \times \left(1 - \frac{10}{100}\right) = \text{CP} \times \frac{90}{100} = \text{CP} \times \frac{9}{10}$$<br>$$\text{CP} = 540 \times \frac{10}{9} = 60 \times 10 = ₹600$$<br>Therefore, the <b>Cost Price of the article is ₹600</b>.</div>
+            <div class="sub-q">(ii) A shopkeeper sold a dressing table for ₹7512.75 at a profit of $19\frac{1}{4}\%$. What was the cost price?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Selling Price (SP) = ₹7512.75<br>Profit percentage = $19\frac{1}{4}\% = \frac{77}{4}\%$<br>Formula:<br>$$\text{SP} = \text{CP} \times \left(1 + \frac{\text{Profit \%}}{100}\right)$$<br>$$7512.75 = \text{CP} \times \left(1 + \frac{77}{400}\right) = \text{CP} \times \frac{477}{400}$$<br>$$\text{CP} = \frac{7512.75 \times 400}{477} = \frac{3005100}{477} = ₹6300$$<br>Therefore, the <b>Cost Price of the dressing table is ₹6300</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">10. A dealer sold two books for ₹700 each. On one of the books, he made a profit of 25% and on the other he incurred a loss of 20%. Find his profit or loss, and also determine the profit or loss percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>For the first book:</b><br>$\text{SP}_1 = ₹700$, $\text{Profit} = 25\%$<br>$$\text{CP}_1 = \frac{\text{SP}_1}{1 + \frac{25}{100}} = \frac{700}{\frac{125}{100}} = \frac{700 \times 4}{5} = ₹560$$<br><b>For the second book:</b><br>$\text{SP}_2 = ₹700$, $\text{Loss} = 20\%$<br>$$\text{CP}_2 = \frac{\text{SP}_2}{1 - \frac{20}{100}} = \frac{700}{\frac{80}{100}} = \frac{700 \times 5}{4} = ₹875$$<br><b>Total Transaction:</b><br>$$\text{Total SP} = 700 + 700 = ₹1400$$<br>$$\text{Total CP} = 560 + 875 = ₹1435$$<br>Since $\text{Total CP} > \text{Total SP}$, there is an overall loss.<br>$$\text{Loss} = \text{Total CP} - \text{Total SP} = 1435 - 1400 = ₹35$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{Total CP}} \times 100\right)\% = \left(\frac{35}{1435} \times 100\right)\%$$<br>$$= \frac{1}{41} \times 100\% = \frac{100}{41}\% = 2\frac{18}{41}\%$$<br>Therefore, there is an overall <b>Loss of ₹35</b> and <b>Loss Percentage = $2\frac{18}{41}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">11. A man bought two articles for ₹3500 and ₹2500. He sold the first article at a profit of 20% and sold the second at a loss of 4%. Find the profit or loss percentage on the total transaction.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br><b>For the first article:</b><br>$\text{CP}_1 = ₹3500$, $\text{Profit} = 20\%$<br>$$\text{Profit}_1 = 20\% \text{ of } 3500 = \frac{20}{100} \times 3500 = ₹700$$<br>$$\text{SP}_1 = 3500 + 700 = ₹4200$$<br><b>For the second article:</b><br>$\text{CP}_2 = ₹2500$, $\text{Loss} = 4\%$<br>$$\text{Loss}_2 = 4\% \text{ of } 2500 = \frac{4}{100} \times 2500 = ₹100$$<br>$$\text{SP}_2 = 2500 - 100 = ₹2400$$<br><b>Total Transaction:</b><br>$$\text{Total CP} = 3500 + 2500 = ₹6000$$<br>$$\text{Total SP} = 4200 + 2400 = ₹6600$$<br>Since $\text{Total SP} > \text{Total CP}$, there is a net profit:<br>$$\text{Net Profit} = \text{Total SP} - \text{Total CP} = 6600 - 6000 = ₹600$$<br>$$\text{Net Profit \%} = \left(\frac{\text{Net Profit}}{\text{Total CP}} \times 100\right)\% = \left(\frac{600}{6000} \times 100\right)\% = 10\%$$<br>Therefore, there is a <b>10% profit</b> on the total transaction.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">12. By selling a pen for ₹289, a shopkeeper incurs a loss of 15%. At what price should he sell it to earn a profit of 35%?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>First case:<br>$\text{SP}_1 = ₹289$, $\text{Loss} = 15\%$<br>$$\text{SP}_1 = \text{CP} \times \left(1 - \frac{15}{100}\right) = \text{CP} \times \frac{85}{100} = \text{CP} \times \frac{17}{20}$$<br>$$\text{CP} = \frac{289 \times 20}{17} = 17 \times 20 = ₹340$$<br>Second case (Desired profit = 35%):<br>$$\text{SP}_2 = \text{CP} \times \left(1 + \frac{35}{100}\right) = 340 \times \frac{135}{100} = 34 \times 13.5 = ₹459$$<br>Therefore, he should sell the pen for <b>₹459</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">13. Salim makes a profit of 15% by selling a cycle at ₹4140. At what price should he sell it to make a profit of 18%?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>First case:<br>$\text{SP}_1 = ₹4140$, $\text{Profit} = 15\%$<br>$$\text{SP}_1 = \text{CP} \times \left(1 + \frac{15}{100}\right) = \text{CP} \times \frac{115}{100} = \text{CP} \times \frac{23}{20}$$<br>$$\text{CP} = \frac{4140 \times 20}{23} = 180 \times 20 = ₹3600$$<br>Second case (Desired profit = 18%):<br>$$\text{SP}_2 = \text{CP} \times \left(1 + \frac{18}{100}\right) = 3600 \times \frac{118}{100} = 36 \times 118 = ₹4248$$<br>Therefore, he should sell the cycle for <b>₹4248</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">14. Raman sold a toy at a loss of 20%. Had he sold it for ₹100 more, he would have made a profit of 30%. Find the cost price of the toy.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price of the toy be $₹x$.<br>Selling price at $20\%$ loss ($\text{SP}_1$):<br>$$\text{SP}_1 = x \times \left(1 - \frac{20}{100}\right) = 0.8x$$<br>Selling price at $30\%$ profit ($\text{SP}_2$):<br>$$\text{SP}_2 = x \times \left(1 + \frac{30}{100}\right) = 1.3x$$<br>According to the given condition:<br>$$\text{SP}_2 - \text{SP}_1 = 100$$<br>$$1.3x - 0.8x = 100$$<br>$$0.5x = 100$$<br>$$x = \frac{100}{0.5} = 200$$<br>Therefore, the <b>Cost Price of the toy is ₹200</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">15. A shopkeeper sold a watch at a profit of 12%. If he had sold it for ₹144 more, he would have made a profit of 18%. Find the cost price of the watch.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price of the watch be $₹x$.<br>Selling price at $12\%$ profit ($\text{SP}_1$):<br>$$\text{SP}_1 = x \times \left(1 + \frac{12}{100}\right) = 1.12x$$<br>Selling price at $18\%$ profit ($\text{SP}_2$):<br>$$\text{SP}_2 = x \times \left(1 + \frac{18}{100}\right) = 1.18x$$<br>According to the problem:<br>$$\text{SP}_2 - \text{SP}_1 = 144$$<br>$$1.18x - 1.12x = 144$$<br>$$0.06x = 144$$<br>$$x = \frac{144}{0.06} = \frac{14400}{6} = 2400$$<br>Therefore, the <b>Cost Price of the watch is ₹2400</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">16. A dealer sells a toy at a loss of 4%. If he had sold it for ₹180 more, he would have made a profit of 16%. Find the cost price of the toy.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price of the toy be $₹x$.<br>Selling price at $4\%$ loss ($\text{SP}_1$):<br>$$\text{SP}_1 = x \times \left(1 - \frac{4}{100}\right) = 0.96x$$<br>Selling price at $16\%$ profit ($\text{SP}_2$):<br>$$\text{SP}_2 = x \times \left(1 + \frac{16}{100}\right) = 1.16x$$<br>According to the given condition:<br>$$\text{SP}_2 - \text{SP}_1 = 180$$<br>$$1.16x - 0.96x = 180$$<br>$$0.20x = 180$$<br>$$x = \frac{180}{0.20} = \frac{1800}{2} = 900$$<br>Therefore, the <b>Cost Price of the toy is ₹900</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">17. A sells an article to B at a profit of 20%, and B sells it to C at a loss of 10%. If C pays ₹216 for the article, find the cost price for A.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price for A be $₹x$.<br>A sells to B at $20\%$ profit:<br>$$\text{SP for A} = \text{CP for B} = x \times \left(1 + \frac{20}{100}\right) = \frac{6}{5}x$$<br>B sells to C at $10\%$ loss:<br>$$\text{SP for B} = \text{CP for C} = \left(\frac{6}{5}x\right) \times \left(1 - \frac{10}{100}\right) = \frac{6}{5}x \times \frac{9}{10} = \frac{27}{25}x$$<br>Given that C pays ₹216:<br>$$\frac{27}{25}x = 216$$<br>$$x = \frac{216 \times 25}{27} = 8 \times 25 = 200$$<br>Therefore, the <b>Cost Price for A is ₹200</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">18. A sold an article to B at a loss of 20%, and B sold it to C at a profit of 20%. If A had sold the article for the price C paid, what would have been his loss or gain per cent?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the cost price for A be ₹100.<br>A sold to B at a loss of $20\%$:<br>$$\text{SP for A} = \text{CP for B} = 100 \times \left(1 - \frac{20}{100}\right) = ₹80$$<br>B sold to C at a profit of $20\%$:<br>$$\text{SP for B} = \text{CP for C} = 80 \times \left(1 + \frac{20}{100}\right) = 80 \times \frac{120}{100} = ₹96$$<br>If A had sold the article directly for the price C paid (₹96):<br>$$\text{CP for A} = ₹100, \quad \text{SP for A} = ₹96$$<br>Since SP < CP, there is a loss:<br>$$\text{Loss} = \text{CP} - \text{SP} = 100 - 96 = ₹4$$<br>$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\% = \left(\frac{4}{100} \times 100\right)\% = 4\%$$<br>Therefore, his <b>loss would have been 4%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">Exercise 4B</div>
+        </div>
+        <div class="q-block">
+            <div class="question">1. Find the discount and the discount percentage when:</div>
+            <div class="sub-q">(i) MP = ₹250 and SP = ₹210</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹250<br>Selling Price (SP) = ₹210<br>$$\text{Discount} = \text{MP} - \text{SP} = ₹250 - ₹210 = ₹40$$<br>$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$<br>$$= \left(\frac{40}{250} \times 100\right)\% = \frac{400}{25}\% = 16\%$$<br>Therefore, <b>Discount = ₹40</b> and <b>Discount Percentage = 16%</b>.</div>
+            <div class="sub-q">(ii) MP = ₹60 and SP = ₹40</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹60<br>Selling Price (SP) = ₹40<br>$$\text{Discount} = \text{MP} - \text{SP} = ₹60 - ₹40 = ₹20$$<br>$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$<br>$$= \left(\frac{20}{60} \times 100\right)\% = \frac{1}{3} \times 100\% = 33\frac{1}{3}\%$$<br>Therefore, <b>Discount = ₹20</b> and <b>Discount Percentage = $33\frac{1}{3}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">2. Find the discount and the selling price when:</div>
+            <div class="sub-q">(i) MP = ₹1750 and discount = 6%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹1750<br>Discount rate = $6\%$<br>$$\text{Discount} = 6\% \text{ of } ₹1750 = \frac{6}{100} \times 1750 = \frac{10500}{100} = ₹105$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 1750 - 105 = ₹1645$$<br>Therefore, <b>Discount = ₹105</b> and <b>Selling Price = ₹1645</b>.</div>
+            <div class="sub-q">(ii) MP = ₹2 46 000 and discount = $13\frac{1}{3}\%$</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹2,46,000<br>Discount rate = $13\frac{1}{3}\% = \frac{40}{3}\%$<br>$$\text{Discount} = \frac{\frac{40}{3}}{100} \times 246000 = \frac{40}{300} \times 246000 = \frac{2}{15} \times 246000$$<br>$$= 2 \times 16400 = ₹32,800$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 246000 - 32800 = ₹2,13,200$$<br>Therefore, <b>Discount = ₹32,800</b> and <b>Selling Price = ₹2,13,200</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">3. Priya paid ₹630 for a blanket with a marked price of ₹900. Find the discount and discount percentage.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹900<br>Selling Price (SP) = ₹630<br>$$\text{Discount} = \text{MP} - \text{SP} = ₹900 - ₹630 = ₹270$$<br>$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$<br>$$= \left(\frac{270}{900} \times 100\right)\% = \frac{270}{9}\% = 30\%$$<br>Therefore, <b>Discount = ₹270</b> and <b>Discount Percentage = 30%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">4. Jeevan paid ₹595 for a shirt after a discount of 15%. Find its marked price.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Selling Price (SP) = ₹595<br>Discount rate ($d$) = $15\%$<br>Formula:<br>$$\text{SP} = \text{MP} \times \left(1 - \frac{d}{100}\right)$$<br>$$595 = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100} = \text{MP} \times \frac{17}{20}$$<br>$$\text{MP} = \frac{595 \times 20}{17} = 35 \times 20 = ₹700$$<br>Therefore, the <b>Marked Price of the shirt is ₹700</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">5. The marked price of a book is ₹360. The dealer offers a discount of 10% and still makes a profit of 20%. Find its selling price and cost price.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹360<br>Discount allowed = $10\%$<br>$$\text{Selling Price (SP)} = \text{MP} \times \left(1 - \frac{10}{100}\right) = 360 \times \frac{90}{100} = ₹324$$<br>Profit percentage = $20\%$<br>$$\text{SP} = \text{CP} \times \left(1 + \frac{20}{100}\right) = \text{CP} \times \frac{120}{100} = \text{CP} \times \frac{6}{5}$$<br>$$324 = \text{CP} \times \frac{6}{5}$$<br>$$\text{CP} = \frac{324 \times 5}{6} = 54 \times 5 = ₹270$$<br>Therefore, <b>Selling Price = ₹324</b> and <b>Cost Price = ₹270</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:</div>
+            <div class="sub-q">(i) The marked price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹3600<br>Marked up by $15\%$ above CP:<br>$$\text{Marked Price (MP)} = \text{CP} + 15\% \text{ of CP} = 3600 + \left(\frac{15}{100} \times 3600\right) = 3600 + 540 = ₹4140$$<br>Therefore, the <b>Marked Price is ₹4140</b>.</div>
+            <div class="sub-q">(ii) The selling price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Discount rate = $5\%$ on MP<br>$$\text{Discount} = 5\% \text{ of } 4140 = \frac{5}{100} \times 4140 = ₹207$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 4140 - 207 = ₹3933$$<br>Therefore, the <b>Selling Price is ₹3933</b>.</div>
+            <div class="sub-q">(iii) The profit</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\text{Profit} = \text{SP} - \text{CP} = 3933 - 3600 = ₹333$$<br>Therefore, the <b>Profit is ₹333</b>.</div>
+            <div class="sub-q">(iv) The profit percentage</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{333}{3600} \times 100\right)\% = \frac{333}{36}\% = \frac{37}{4}\% = 9\frac{1}{4}\%$$<br>Therefore, the <b>Profit Percentage is $9\frac{1}{4}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:</div>
+            <div class="sub-q">(i) The marked price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹3400<br>Given that CP is $15\%$ below Marked Price (MP):<br>$$\text{CP} = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100} = \text{MP} \times \frac{17}{20}$$<br>$$3400 = \text{MP} \times \frac{17}{20}$$<br>$$\text{MP} = \frac{3400 \times 20}{17} = 200 \times 20 = ₹4000$$<br>Therefore, the <b>Marked Price is ₹4000</b>.</div>
+            <div class="sub-q">(ii) The selling price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Discount allowed = $10\%$ on MP<br>$$\text{Selling Price (SP)} = \text{MP} \times \left(1 - \frac{10}{100}\right) = 4000 \times \frac{90}{100} = ₹3600$$<br>Therefore, the <b>Selling Price is ₹3600</b>.</div>
+            <div class="sub-q">(iii) The profit</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\text{Profit} = \text{SP} - \text{CP} = 3600 - 3400 = ₹200$$<br>Therefore, the <b>Profit is ₹200</b>.</div>
+            <div class="sub-q">(iv) The profit percentage</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{200}{3400} \times 100\right)\% = \frac{200}{34}\% = \frac{100}{17}\% = 5\frac{15}{17}\%$$<br>Therefore, the <b>Profit Percentage is $5\frac{15}{17}\%$</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">8. A shopkeeper marks an article 20% above its cost price and allows a discount of 15%. Find his percentage of profit.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the Cost Price (CP) be ₹100.<br>Marked Price (MP) is $20\%$ above CP:<br>$$\text{MP} = 100 + 20 = ₹120$$<br>Discount allowed = $15\%$ on MP:<br>$$\text{Discount} = \frac{15}{100} \times 120 = ₹18$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 120 - 18 = ₹102$$<br>$$\text{Profit} = \text{SP} - \text{CP} = 102 - 100 = ₹2$$<br>$$\text{Profit \%} = \left(\frac{2}{100} \times 100\right)\% = 2\%$$<br>Therefore, his <b>percentage of profit is 2%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">9. After allowing a discount of 15% on the marked price of an article, a dealer still makes a profit of 19%. By what per cent is the marked price above the cost price?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the Cost Price (CP) be ₹100.<br>Profit made = $19\%$<br>$$\text{Selling Price (SP)} = 100 + 19 = ₹119$$<br>Discount allowed = $15\%$ on Marked Price (MP):<br>$$\text{SP} = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100}$$<br>$$119 = \text{MP} \times 0.85$$<br>$$\text{MP} = \frac{119}{0.85} = \frac{11900}{85} = ₹140$$<br>Increase above CP = $140 - 100 = 40$<br>$$\text{Percentage above CP} = \left(\frac{40}{100} \times 100\right)\% = 40\%$$<br>Therefore, the marked price is <b>40% above the cost price</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">10. By what per cent above the cost price should a dealer mark a pen so that after allowing a discount of 4% he gains 20%?</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the Cost Price (CP) be ₹100.<br>Gain required = $20\%$<br>$$\text{Selling Price (SP)} = 100 + 20 = ₹120$$<br>Discount allowed = $4\%$ on Marked Price (MP):<br>$$\text{SP} = \text{MP} \times \left(1 - \frac{4}{100}\right) = \text{MP} \times \frac{96}{100}$$<br>$$120 = \text{MP} \times 0.96$$<br>$$\text{MP} = \frac{120}{0.96} = \frac{12000}{96} = ₹125$$<br>Markup above CP = $125 - 100 = 25$<br>$$\text{Percentage above CP} = \left(\frac{25}{100} \times 100\right)\% = 25\%$$<br>Therefore, the dealer should mark the pen <b>25% above the cost price</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">11. A dealer marks a damaged article at 10% above the cost price and then allows a discount of 10%. Find his gain or loss per cent.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the Cost Price (CP) be ₹100.<br>Marked Price (MP) is $10\%$ above CP:<br>$$\text{MP} = 100 + 10 = ₹110$$<br>Discount allowed = $10\%$ on MP:<br>$$\text{Discount} = 10\% \text{ of } 110 = \frac{10}{100} \times 110 = ₹11$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 110 - 11 = ₹99$$<br>Since SP < CP, there is a loss:<br>$$\text{Loss} = \text{CP} - \text{SP} = 100 - 99 = ₹1$$<br>$$\text{Loss \%} = \left(\frac{1}{100} \times 100\right)\% = 1\%$$<br>Therefore, there is a <b>Loss of 1%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">12. A dealer allows a discount of 10% on the marked price of a book and still makes a profit of 10%. If the cost price of the book is ₹90, find:</div>
+            <div class="sub-q">(i) Its selling price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Cost Price (CP) = ₹90<br>Profit percentage = $10\%$<br>$$\text{Selling Price (SP)} = \text{CP} \times \left(1 + \frac{10}{100}\right) = 90 \times \frac{110}{100} = ₹99$$<br>Therefore, the <b>Selling Price is ₹99</b>.</div>
+            <div class="sub-q">(ii) Its marked price</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Discount allowed = $10\%$ on MP<br>$$\text{SP} = \text{MP} \times \left(1 - \frac{10}{100}\right) = \text{MP} \times \frac{90}{100} = 0.9\text{MP}$$<br>$$99 = 0.9\text{MP}$$<br>$$\text{MP} = \frac{99}{0.9} = ₹110$$<br>Therefore, the <b>Marked Price is ₹110</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">13. A trader allows two successive discounts of 50% and 50% on a shirt marked ₹2600. Find the selling price of the shirt.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹2600<br>First discount $d_1 = 50\%$:<br>$$\text{Price after 1st discount} = 2600 \times \left(1 - \frac{50}{100}\right) = 2600 \times \frac{1}{2} = ₹1300$$<br>Second discount $d_2 = 50\%$ on the reduced price:<br>$$\text{Final Selling Price} = 1300 \times \left(1 - \frac{50}{100}\right) = 1300 \times \frac{1}{2} = ₹650$$<br><i>Alternatively, using successive discount formula:</i><br>$$\text{SP} = \text{MP} \times \left(1 - \frac{d_1}{100}\right) \times \left(1 - \frac{d_2}{100}\right)$$<br>$$= 2600 \times \left(1 - \frac{50}{100}\right) \times \left(1 - \frac{50}{100}\right) = 2600 \times \frac{1}{2} \times \frac{1}{2} = ₹650$$<br>Therefore, the <b>Selling Price of the shirt is ₹650</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">14. Find a single discount equivalent to two successive discounts of 20% and 10%.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the Marked Price (MP) be ₹100.<br>Price after first discount of $20\%$:<br>$$100 - 20 = ₹80$$<br>Second discount of $10\%$ on ₹80:<br>$$\text{Second Discount} = \frac{10}{100} \times 80 = ₹8$$<br>$$\text{Final Price} = 80 - 8 = ₹72$$<br>$$\text{Total Single Discount} = \text{MP} - \text{Final Price} = 100 - 72 = ₹28$$<br>$$\text{Equivalent Single Discount \%} = \left(\frac{28}{100} \times 100\right)\% = 28\%$$<br><i>Alternatively, using equivalent discount formula:</i><br>$$d = \left(d_1 + d_2 - \frac{d_1 \times d_2}{100}\right)\% = \left(20 + 10 - \frac{20 \times 10}{100}\right)\% = (30 - 2)\% = 28\%$$<br>Therefore, the <b>single equivalent discount is 28%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">Exercise 4C</div>
+        </div>
+        <div class="q-block">
+            <div class="question">1. Find the final price of each of the following.</div>
+            <div class="sub-q">(i) A gold ring with marked price ₹13 000 and tax 12%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹13,000<br>Tax rate = $12\%$<br>$$\text{Tax} = 12\% \text{ of } 13000 = \frac{12}{100} \times 13000 = ₹1560$$<br>$$\text{Final Price} = \text{MP} + \text{Tax} = 13000 + 1560 = ₹14,560$$<br>Therefore, the <b>Final Price is ₹14,560</b>.</div>
+            <div class="sub-q">(ii) A pair of shoes with marked price ₹1200 and tax 5%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹1200<br>Tax rate = $5\%$<br>$$\text{Tax} = 5\% \text{ of } 1200 = \frac{5}{100} \times 1200 = ₹60$$<br>$$\text{Final Price} = \text{MP} + \text{Tax} = 1200 + 60 = ₹1260$$<br>Therefore, the <b>Final Price is ₹1260</b>.</div>
+            <div class="sub-q">(iii) A computer with marked price ₹22 000 and tax 12%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹22,000<br>Tax rate = $12\%$<br>$$\text{Tax} = 12\% \text{ of } 22000 = \frac{12}{100} \times 22000 = ₹2640$$<br>$$\text{Final Price} = \text{MP} + \text{Tax} = 22000 + 2640 = ₹24,640$$<br>Therefore, the <b>Final Price is ₹24,640</b>.</div>
+            <div class="sub-q">(iv) A car with marked price ₹3 42 000 and tax 18%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹3,42,000<br>Tax rate = $18\%$<br>$$\text{Tax} = 18\% \text{ of } 342000 = \frac{18}{100} \times 342000 = 18 \times 3420 = ₹61,560$$<br>$$\text{Final Price} = \text{MP} + \text{Tax} = 342000 + 61560 = ₹4,03,560$$<br>Therefore, the <b>Final Price is ₹4,03,560</b>.</div>
+            <div class="sub-q">(v) A luxury van with marked price ₹26 00 000 and tax 28%</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹26,00,000<br>Tax rate = $28\%$<br>$$\text{Tax} = 28\% \text{ of } 2600000 = \frac{28}{100} \times 2600000 = 28 \times 26000 = ₹7,28,000$$<br>$$\text{Final Price} = \text{MP} + \text{Tax} = 2600000 + 728000 = ₹33,28,000$$<br>Therefore, the <b>Final Price is ₹33,28,000</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">2. If 5% tax is included in the prices, find the price before tax of each of the following.</div>
+            <div class="sub-q">(i) A TV bought for ₹13 125</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the price before tax be $₹x$.<br>Tax included = $5\%$<br>$$\text{Price with tax} = x \times \left(1 + \frac{5}{100}\right) = \frac{105}{100}x = \frac{21}{20}x$$<br>$$\frac{21}{20}x = 13125$$<br>$$x = \frac{13125 \times 20}{21} = 625 \times 20 = ₹12,500$$<br>Therefore, the <b>Price before tax is ₹12,500</b>.</div>
+            <div class="sub-q">(ii) A pencil box bought for ₹84</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the price before tax be $₹x$.<br>$$\frac{21}{20}x = 84$$<br>$$x = \frac{84 \times 20}{21} = 4 \times 20 = ₹80$$<br>Therefore, the <b>Price before tax is ₹80</b>.</div>
+            <div class="sub-q">(iii) A bottle of shampoo purchased for ₹357</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the price before tax be $₹x$.<br>$$\frac{21}{20}x = 357$$<br>$$x = \frac{357 \times 20}{21} = 17 \times 20 = ₹340$$<br>Therefore, the <b>Price before tax is ₹340</b>.</div>
+            <div class="sub-q">(iv) A calculator purchased for ₹508.20</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the price before tax be $₹x$.<br>$$\frac{21}{20}x = 508.20$$<br>$$x = \frac{508.20 \times 20}{21} = 24.20 \times 20 = ₹484$$<br>Therefore, the <b>Price before tax is ₹484</b>.</div>
+            <div class="sub-q">(v) A watch bought for ₹1533</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Let the price before tax be $₹x$.<br>$$\frac{21}{20}x = 1533$$<br>$$x = \frac{1533 \times 20}{21} = 73 \times 20 = ₹1460$$<br>Therefore, the <b>Price before tax is ₹1460</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">3. The marked price of a shirt is ₹2400, and the actual selling price after tax is ₹2688. Find the tax and the rate of tax.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹2400<br>Selling price after tax = ₹2688<br>$$\text{Tax} = \text{Selling Price after tax} - \text{MP} = 2688 - 2400 = ₹288$$<br>$$\text{Rate of Tax} = \left(\frac{\text{Tax}}{\text{MP}} \times 100\right)\% = \left(\frac{288}{2400} \times 100\right)\% = \frac{288}{24}\% = 12\%$$<br>Therefore, <b>Tax = ₹288</b> and <b>Rate of Tax = 12%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">4. Meenu bought a pair of sandals for ₹2576, including tax. If its marked price was ₹2300, find the rate of tax.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹2300<br>Total price paid (including tax) = ₹2576<br>$$\text{Tax paid} = 2576 - 2300 = ₹276$$<br>$$\text{Rate of Tax} = \left(\frac{\text{Tax}}{\text{MP}} \times 100\right)\% = \left(\frac{276}{2300} \times 100\right)\% = \frac{276}{23}\% = 12\%$$<br>Therefore, the <b>Rate of Tax is 12%</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">5. Archana bought 10 g of gold for ₹32 376, including 14% tax. Find the rate of gold per 10 g.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Total amount paid for 10 g gold (including tax) = ₹32,376<br>Rate of tax = $14\%$<br>Let the rate of gold per 10 g before tax be $₹x$.<br>$$\text{Price with tax} = x \times \left(1 + \frac{14}{100}\right) = \frac{114}{100}x$$<br>$$\frac{114}{100}x = 32376$$<br>$$x = \frac{32376 \times 100}{114} = 284 \times 100 = ₹28,400$$<br>Therefore, the <b>rate of gold per 10 g is ₹28,400</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">6. The marked price of a mobile phone is ₹45 000. It is offered at a discount of 7%. If the rate of tax is 16% on the selling price, find the final amount.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹45,000<br>Discount rate = $7\%$ on MP<br>$$\text{Discount} = \frac{7}{100} \times 45000 = ₹3150$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 45000 - 3150 = ₹41,850$$<br>Rate of tax = $16\%$ on selling price:<br>$$\text{Tax} = 16\% \text{ of } 41850 = \frac{16}{100} \times 41850 = 16 \times 418.5 = ₹6696$$<br>$$\text{Final Amount to be paid} = \text{SP} + \text{Tax} = 41850 + 6696 = ₹48,546$$<br>Therefore, the <b>final amount to be paid is ₹48,546</b>.</div>
+        </div>
+        <div class="q-block">
+            <div class="question">7. At a sale, a dining table with marked price ₹43 000 is offered at 20% discount. If tax is charged at 13% of the selling price, find the amount one has to pay.</div>
+            <div class="solution"><span class="sol-label">Solution:</span><br>Marked Price (MP) = ₹43,000<br>Discount rate = $20\%$ on MP<br>$$\text{Discount} = \frac{20}{100} \times 43000 = ₹8600$$<br>$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 43000 - 8600 = ₹34,400$$<br>Rate of tax = $13\%$ on selling price:<br>$$\text{Tax} = 13\% \text{ of } 34400 = \frac{13}{100} \times 34400 = 13 \times 344 = ₹4472$$<br>$$\text{Amount to Pay} = \text{SP} + \text{Tax} = 34400 + 4472 = ₹38,872$$<br>Therefore, the <b>amount one has to pay is ₹38,872</b>.</div>
+        </div>
+    </div>
+    <div class="container teach-view" id="teach-view-ch_profit_loss" style="display: none;">
+        <button class="btn-close" onclick="exitTeachMode('ch_profit_loss')">X Exit Teach</button>
+        <div class="header">Teach Mode - Chapter 4: Profit and Loss</div>
+        <ul>
+            <li class="main-q-li">Exercise 4A</li>
+            <li class="main-q-li">1. Profit and profit percentage calculations.</li>
+            <li class="clickable-q" id="item-pres-347" onclick="startPresentation('pres-347', 'ch_profit_loss')">(i) Find the profit and the profit percentage when a toy is bought for ₹800 and sold for ₹848.</li>
+            <li class="clickable-q" id="item-pres-348" onclick="startPresentation('pres-348', 'ch_profit_loss')">(ii) A cellphone is bought for ₹6250 and sold for ₹6750. Find the profit and the profit percentage.</li>
+            <li class="clickable-q" id="item-pres-349" onclick="startPresentation('pres-349', 'ch_profit_loss')">(iii) A camera is bought for ₹5400 and sold for ₹5850. Find the profit per cent.</li>
+            <li class="main-q-li">2. Loss and loss percentage calculations.</li>
+            <li class="clickable-q" id="item-pres-350" onclick="startPresentation('pres-350', 'ch_profit_loss')">(i) An article costing ₹240 is sold for ₹210. Find the loss and the loss percentage.</li>
+            <li class="clickable-q" id="item-pres-351" onclick="startPresentation('pres-351', 'ch_profit_loss')">(ii) A computer costing ₹28 560 is sold for ₹24 276. Find the loss per cent.</li>
+            <li class="clickable-q" id="item-pres-352" onclick="startPresentation('pres-352', 'ch_profit_loss')">(iii) A book costing ₹320 is sold for ₹284. Find the loss and the loss per cent.</li>
+            <li class="main-q-li">3. Shanti bought lemons at 7 for ₹6 and sold them at 6 for ₹7.</li>
+            <li class="clickable-q" id="item-pres-353" onclick="startPresentation('pres-353', 'ch_profit_loss')">(i) Find her profit percentage.</li>
+            <li class="clickable-q" id="item-pres-354" onclick="startPresentation('pres-354', 'ch_profit_loss')">(ii) How many lemons would she have to sell to earn a profit of ₹65?</li>
+            <li class="main-q-li">4. If the selling price of 10 mangoes is equal to the cost price of 12 mangoes, find the profit percentage.</li>
+            <li class="clickable-q" id="item-pres-355" onclick="startPresentation('pres-355', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">5. If the selling price of 25 balls is equal to the cost price of 15 balls, find the profit or loss percentage.</li>
+            <li class="clickable-q" id="item-pres-356" onclick="startPresentation('pres-356', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">6. A trader bought some eggs at the rate of ₹36 per dozen and sold them at a profit of 40%. Find the selling price of an egg.</li>
+            <li class="clickable-q" id="item-pres-357" onclick="startPresentation('pres-357', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">7. A trader sold 40 erasers and earned a profit equal to the selling price of 12 erasers. Find his profit percentage.</li>
+            <li class="clickable-q" id="item-pres-358" onclick="startPresentation('pres-358', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">8. A dealer bought an air conditioner for ₹25 000. What was the selling price if he sold it at:</li>
+            <li class="clickable-q" id="item-pres-359" onclick="startPresentation('pres-359', 'ch_profit_loss')">(i) A profit of 15%</li>
+            <li class="clickable-q" id="item-pres-360" onclick="startPresentation('pres-360', 'ch_profit_loss')">(ii) A loss of 4%</li>
+            <li class="main-q-li">9. Cost price calculations from selling price.</li>
+            <li class="clickable-q" id="item-pres-361" onclick="startPresentation('pres-361', 'ch_profit_loss')">(i) A man sold an article for ₹540 and incurred a loss of 10%. Find the cost price of the article.</li>
+            <li class="clickable-q" id="item-pres-362" onclick="startPresentation('pres-362', 'ch_profit_loss')">(ii) A shopkeeper sold a dressing table for ₹7512.75 at a profit of $19\frac{1}{4}\%$. What was the cost price?</li>
+            <li class="main-q-li">10. A dealer sold two books for ₹700 each. On one of the books, he made a profit of 25% and on the other he incurred a loss of 20%. Find his profit or loss, and also determine the profit or loss percentage.</li>
+            <li class="clickable-q" id="item-pres-363" onclick="startPresentation('pres-363', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">11. A man bought two articles for ₹3500 and ₹2500. He sold the first article at a profit of 20% and sold the second at a loss of 4%. Find the profit or loss percentage on the total transaction.</li>
+            <li class="clickable-q" id="item-pres-364" onclick="startPresentation('pres-364', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">12. By selling a pen for ₹289, a shopkeeper incurs a loss of 15%. At what price should he sell it to earn a profit of 35%?</li>
+            <li class="clickable-q" id="item-pres-365" onclick="startPresentation('pres-365', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">13. Salim makes a profit of 15% by selling a cycle at ₹4140. At what price should he sell it to make a profit of 18%?</li>
+            <li class="clickable-q" id="item-pres-366" onclick="startPresentation('pres-366', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">14. Raman sold a toy at a loss of 20%. Had he sold it for ₹100 more, he would have made a profit of 30%. Find the cost price of the toy.</li>
+            <li class="clickable-q" id="item-pres-367" onclick="startPresentation('pres-367', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">15. A shopkeeper sold a watch at a profit of 12%. If he had sold it for ₹144 more, he would have made a profit of 18%. Find the cost price of the watch.</li>
+            <li class="clickable-q" id="item-pres-368" onclick="startPresentation('pres-368', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">16. A dealer sells a toy at a loss of 4%. If he had sold it for ₹180 more, he would have made a profit of 16%. Find the cost price of the toy.</li>
+            <li class="clickable-q" id="item-pres-369" onclick="startPresentation('pres-369', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">17. A sells an article to B at a profit of 20%, and B sells it to C at a loss of 10%. If C pays ₹216 for the article, find the cost price for A.</li>
+            <li class="clickable-q" id="item-pres-370" onclick="startPresentation('pres-370', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">18. A sold an article to B at a loss of 20%, and B sold it to C at a profit of 20%. If A had sold the article for the price C paid, what would have been his loss or gain per cent?</li>
+            <li class="clickable-q" id="item-pres-371" onclick="startPresentation('pres-371', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">Exercise 4B</li>
+            <li class="main-q-li">1. Find the discount and the discount percentage when:</li>
+            <li class="clickable-q" id="item-pres-372" onclick="startPresentation('pres-372', 'ch_profit_loss')">(i) MP = ₹250 and SP = ₹210</li>
+            <li class="clickable-q" id="item-pres-373" onclick="startPresentation('pres-373', 'ch_profit_loss')">(ii) MP = ₹60 and SP = ₹40</li>
+            <li class="main-q-li">2. Find the discount and the selling price when:</li>
+            <li class="clickable-q" id="item-pres-374" onclick="startPresentation('pres-374', 'ch_profit_loss')">(i) MP = ₹1750 and discount = 6%</li>
+            <li class="clickable-q" id="item-pres-375" onclick="startPresentation('pres-375', 'ch_profit_loss')">(ii) MP = ₹2 46 000 and discount = $13\frac{1}{3}\%$</li>
+            <li class="main-q-li">3. Priya paid ₹630 for a blanket with a marked price of ₹900. Find the discount and discount percentage.</li>
+            <li class="clickable-q" id="item-pres-376" onclick="startPresentation('pres-376', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">4. Jeevan paid ₹595 for a shirt after a discount of 15%. Find its marked price.</li>
+            <li class="clickable-q" id="item-pres-377" onclick="startPresentation('pres-377', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">5. The marked price of a book is ₹360. The dealer offers a discount of 10% and still makes a profit of 20%. Find its selling price and cost price.</li>
+            <li class="clickable-q" id="item-pres-378" onclick="startPresentation('pres-378', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:</li>
+            <li class="clickable-q" id="item-pres-379" onclick="startPresentation('pres-379', 'ch_profit_loss')">(i) The marked price</li>
+            <li class="clickable-q" id="item-pres-380" onclick="startPresentation('pres-380', 'ch_profit_loss')">(ii) The selling price</li>
+            <li class="clickable-q" id="item-pres-381" onclick="startPresentation('pres-381', 'ch_profit_loss')">(iii) The profit</li>
+            <li class="clickable-q" id="item-pres-382" onclick="startPresentation('pres-382', 'ch_profit_loss')">(iv) The profit percentage</li>
+            <li class="main-q-li">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:</li>
+            <li class="clickable-q" id="item-pres-383" onclick="startPresentation('pres-383', 'ch_profit_loss')">(i) The marked price</li>
+            <li class="clickable-q" id="item-pres-384" onclick="startPresentation('pres-384', 'ch_profit_loss')">(ii) The selling price</li>
+            <li class="clickable-q" id="item-pres-385" onclick="startPresentation('pres-385', 'ch_profit_loss')">(iii) The profit</li>
+            <li class="clickable-q" id="item-pres-386" onclick="startPresentation('pres-386', 'ch_profit_loss')">(iv) The profit percentage</li>
+            <li class="main-q-li">8. A shopkeeper marks an article 20% above its cost price and allows a discount of 15%. Find his percentage of profit.</li>
+            <li class="clickable-q" id="item-pres-387" onclick="startPresentation('pres-387', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">9. After allowing a discount of 15% on the marked price of an article, a dealer still makes a profit of 19%. By what per cent is the marked price above the cost price?</li>
+            <li class="clickable-q" id="item-pres-388" onclick="startPresentation('pres-388', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">10. By what per cent above the cost price should a dealer mark a pen so that after allowing a discount of 4% he gains 20%?</li>
+            <li class="clickable-q" id="item-pres-389" onclick="startPresentation('pres-389', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">11. A dealer marks a damaged article at 10% above the cost price and then allows a discount of 10%. Find his gain or loss per cent.</li>
+            <li class="clickable-q" id="item-pres-390" onclick="startPresentation('pres-390', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">12. A dealer allows a discount of 10% on the marked price of a book and still makes a profit of 10%. If the cost price of the book is ₹90, find:</li>
+            <li class="clickable-q" id="item-pres-391" onclick="startPresentation('pres-391', 'ch_profit_loss')">(i) Its selling price</li>
+            <li class="clickable-q" id="item-pres-392" onclick="startPresentation('pres-392', 'ch_profit_loss')">(ii) Its marked price</li>
+            <li class="main-q-li">13. A trader allows two successive discounts of 50% and 50% on a shirt marked ₹2600. Find the selling price of the shirt.</li>
+            <li class="clickable-q" id="item-pres-393" onclick="startPresentation('pres-393', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">14. Find a single discount equivalent to two successive discounts of 20% and 10%.</li>
+            <li class="clickable-q" id="item-pres-394" onclick="startPresentation('pres-394', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">Exercise 4C</li>
+            <li class="main-q-li">1. Find the final price of each of the following.</li>
+            <li class="clickable-q" id="item-pres-395" onclick="startPresentation('pres-395', 'ch_profit_loss')">(i) A gold ring with marked price ₹13 000 and tax 12%</li>
+            <li class="clickable-q" id="item-pres-396" onclick="startPresentation('pres-396', 'ch_profit_loss')">(ii) A pair of shoes with marked price ₹1200 and tax 5%</li>
+            <li class="clickable-q" id="item-pres-397" onclick="startPresentation('pres-397', 'ch_profit_loss')">(iii) A computer with marked price ₹22 000 and tax 12%</li>
+            <li class="clickable-q" id="item-pres-398" onclick="startPresentation('pres-398', 'ch_profit_loss')">(iv) A car with marked price ₹3 42 000 and tax 18%</li>
+            <li class="clickable-q" id="item-pres-399" onclick="startPresentation('pres-399', 'ch_profit_loss')">(v) A luxury van with marked price ₹26 00 000 and tax 28%</li>
+            <li class="main-q-li">2. If 5% tax is included in the prices, find the price before tax of each of the following.</li>
+            <li class="clickable-q" id="item-pres-400" onclick="startPresentation('pres-400', 'ch_profit_loss')">(i) A TV bought for ₹13 125</li>
+            <li class="clickable-q" id="item-pres-401" onclick="startPresentation('pres-401', 'ch_profit_loss')">(ii) A pencil box bought for ₹84</li>
+            <li class="clickable-q" id="item-pres-402" onclick="startPresentation('pres-402', 'ch_profit_loss')">(iii) A bottle of shampoo purchased for ₹357</li>
+            <li class="clickable-q" id="item-pres-403" onclick="startPresentation('pres-403', 'ch_profit_loss')">(iv) A calculator purchased for ₹508.20</li>
+            <li class="clickable-q" id="item-pres-404" onclick="startPresentation('pres-404', 'ch_profit_loss')">(v) A watch bought for ₹1533</li>
+            <li class="main-q-li">3. The marked price of a shirt is ₹2400, and the actual selling price after tax is ₹2688. Find the tax and the rate of tax.</li>
+            <li class="clickable-q" id="item-pres-405" onclick="startPresentation('pres-405', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">4. Meenu bought a pair of sandals for ₹2576, including tax. If its marked price was ₹2300, find the rate of tax.</li>
+            <li class="clickable-q" id="item-pres-406" onclick="startPresentation('pres-406', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">5. Archana bought 10 g of gold for ₹32 376, including 14% tax. Find the rate of gold per 10 g.</li>
+            <li class="clickable-q" id="item-pres-407" onclick="startPresentation('pres-407', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">6. The marked price of a mobile phone is ₹45 000. It is offered at a discount of 7%. If the rate of tax is 16% on the selling price, find the final amount.</li>
+            <li class="clickable-q" id="item-pres-408" onclick="startPresentation('pres-408', 'ch_profit_loss')">Solution</li>
+            <li class="main-q-li">7. At a sale, a dining table with marked price ₹43 000 is offered at 20% discount. If tax is charged at 13% of the selling price, find the amount one has to pay.</li>
+            <li class="clickable-q" id="item-pres-409" onclick="startPresentation('pres-409', 'ch_profit_loss')">Solution</li>
         </ul>
     </div>
 
@@ -4047,6 +4389,619 @@
             <div class="pres-step"><b>Graphical representation on the number line (open circle at -12, closed circle at -6):</b></div>
             <div class="pres-step"><svg width="380" height="50" viewBox="0 0 380 50" style="background:#ffffff;border:1px solid #ddd;border-radius:6px;display:block;margin:10px 0;padding:2px;"><line x1="12" y1="25" x2="368" y2="25" stroke="#333" stroke-width="2"/><polygon points="8,25 16,21 16,29" fill="#333"/><polygon points="372,25 364,21 364,29" fill="#333"/><line x1="35.0" y1="21" x2="35.0" y2="29" stroke="#777" stroke-width="1"/><text x="35.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-14</text><line x1="66.0" y1="21" x2="66.0" y2="29" stroke="#777" stroke-width="1"/><text x="66.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-13</text><line x1="97.0" y1="21" x2="97.0" y2="29" stroke="#777" stroke-width="1"/><text x="97.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-12</text><line x1="128.0" y1="21" x2="128.0" y2="29" stroke="#777" stroke-width="1"/><text x="128.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-11</text><line x1="159.0" y1="21" x2="159.0" y2="29" stroke="#777" stroke-width="1"/><text x="159.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-10</text><line x1="190.0" y1="21" x2="190.0" y2="29" stroke="#777" stroke-width="1"/><text x="190.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-9</text><line x1="221.0" y1="21" x2="221.0" y2="29" stroke="#777" stroke-width="1"/><text x="221.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-8</text><line x1="252.0" y1="21" x2="252.0" y2="29" stroke="#777" stroke-width="1"/><text x="252.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-7</text><line x1="283.0" y1="21" x2="283.0" y2="29" stroke="#777" stroke-width="1"/><text x="283.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-6</text><line x1="314.0" y1="21" x2="314.0" y2="29" stroke="#777" stroke-width="1"/><text x="314.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-5</text><line x1="345.0" y1="21" x2="345.0" y2="29" stroke="#777" stroke-width="1"/><text x="345.0" y="43" font-size="11" font-family="Georgia, serif" text-anchor="middle" fill="#333">-4</text><line x1="97.0" y1="25" x2="283.0" y2="25" stroke="#e74c3c" stroke-width="4"/><circle cx="97.0" cy="25" r="5" fill="#ffffff" stroke="#e74c3c" stroke-width="2"/><circle cx="283.0" cy="25" r="5" fill="#e74c3c" stroke="#e74c3c" stroke-width="2"/></svg></div>
         </div>
+        <div id="pres-347" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Profit and profit percentage calculations.<br>(i) Find the profit and the profit percentage when a toy is bought for ₹800 and sold for ₹848.</div>
+            <div class="pres-step">Cost Price (CP) = ₹800</div>
+            <div class="pres-step">Selling Price (SP) = ₹848</div>
+            <div class="pres-step">Since SP > CP, there is a profit.</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = ₹848 - ₹800 = ₹48$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{48}{800} \times 100\right)\% = \frac{48}{8}\% = 6\%$$</div>
+            <div class="pres-step">Therefore, <b>Profit = ₹48</b> and <b>Profit Percentage = 6%</b>.</div>
+        </div>
+        <div id="pres-348" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Profit and profit percentage calculations.<br>(ii) A cellphone is bought for ₹6250 and sold for ₹6750. Find the profit and the profit percentage.</div>
+            <div class="pres-step">Cost Price (CP) = ₹6250</div>
+            <div class="pres-step">Selling Price (SP) = ₹6750</div>
+            <div class="pres-step">Since SP > CP, there is a profit.</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = ₹6750 - ₹6250 = ₹500$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{500}{6250} \times 100\right)\% = \frac{50000}{6250}\% = 8\%$$</div>
+            <div class="pres-step">Therefore, <b>Profit = ₹500</b> and <b>Profit Percentage = 8%</b>.</div>
+        </div>
+        <div id="pres-349" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Profit and profit percentage calculations.<br>(iii) A camera is bought for ₹5400 and sold for ₹5850. Find the profit per cent.</div>
+            <div class="pres-step">Cost Price (CP) = ₹5400</div>
+            <div class="pres-step">Selling Price (SP) = ₹5850</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = ₹5850 - ₹5400 = ₹450$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{450}{5400} \times 100\right)\% = \frac{450}{54}\% = \frac{25}{3}\% = 8\frac{1}{3}\%$$</div>
+            <div class="pres-step">Therefore, <b>Profit Percentage = $8\frac{1}{3}\%$</b>.</div>
+        </div>
+        <div id="pres-350" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Loss and loss percentage calculations.<br>(i) An article costing ₹240 is sold for ₹210. Find the loss and the loss percentage.</div>
+            <div class="pres-step">Cost Price (CP) = ₹240</div>
+            <div class="pres-step">Selling Price (SP) = ₹210</div>
+            <div class="pres-step">Since CP > SP, there is a loss.</div>
+            <div class="pres-step">$$\text{Loss} = \text{CP} - \text{SP} = ₹240 - ₹210 = ₹30$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{30}{240} \times 100\right)\% = \frac{1}{8} \times 100\% = \frac{25}{2}\% = 12\frac{1}{2}\%$$</div>
+            <div class="pres-step">Therefore, <b>Loss = ₹30</b> and <b>Loss Percentage = $12\frac{1}{2}\%$</b>.</div>
+        </div>
+        <div id="pres-351" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Loss and loss percentage calculations.<br>(ii) A computer costing ₹28 560 is sold for ₹24 276. Find the loss per cent.</div>
+            <div class="pres-step">Cost Price (CP) = ₹28,560</div>
+            <div class="pres-step">Selling Price (SP) = ₹24,276</div>
+            <div class="pres-step">$$\text{Loss} = \text{CP} - \text{SP} = ₹28,560 - ₹24,276 = ₹4284$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{4284}{28560} \times 100\right)\% = \frac{42840}{2856}\% = 15\%$$</div>
+            <div class="pres-step">Therefore, <b>Loss Percentage = 15%</b>.</div>
+        </div>
+        <div id="pres-352" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Loss and loss percentage calculations.<br>(iii) A book costing ₹320 is sold for ₹284. Find the loss and the loss per cent.</div>
+            <div class="pres-step">Cost Price (CP) = ₹320</div>
+            <div class="pres-step">Selling Price (SP) = ₹284</div>
+            <div class="pres-step">$$\text{Loss} = \text{CP} - \text{SP} = ₹320 - ₹284 = ₹36$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{36}{320} \times 100\right)\% = \frac{360}{32}\% = \frac{45}{4}\% = 11\frac{1}{4}\%$$</div>
+            <div class="pres-step">Therefore, <b>Loss = ₹36</b> and <b>Loss Percentage = $11\frac{1}{4}\%$</b>.</div>
+        </div>
+        <div id="pres-353" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Shanti bought lemons at 7 for ₹6 and sold them at 6 for ₹7.<br>(i) Find her profit percentage.</div>
+            <div class="pres-step">Cost price of 7 lemons = ₹6</div>
+            <div class="pres-step">$$\text{CP of 1 lemon} = ₹\frac{6}{7}$$</div>
+            <div class="pres-step">Selling price of 6 lemons = ₹7</div>
+            <div class="pres-step">$$\text{SP of 1 lemon} = ₹\frac{7}{6}$$</div>
+            <div class="pres-step">Since $\text{SP} > \text{CP}$ $\left(\frac{7}{6} > \frac{6}{7}\right)$, there is a profit.</div>
+            <div class="pres-step">$$\text{Profit on 1 lemon} = \text{SP} - \text{CP} = \frac{7}{6} - \frac{6}{7} = \frac{49 - 36}{42} = ₹\frac{13}{42}$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{13}{42}}{\frac{6}{7}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{13}{42} \times \frac{7}{6} \times 100\right)\% = \left(\frac{13}{36} \times 100\right)\% = \frac{325}{9}\% = 36\frac{1}{9}\%$$</div>
+            <div class="pres-step">Therefore, her <b>Profit Percentage = $36\frac{1}{9}\%$</b>.</div>
+        </div>
+        <div id="pres-354" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Shanti bought lemons at 7 for ₹6 and sold them at 6 for ₹7.<br>(ii) How many lemons would she have to sell to earn a profit of ₹65?</div>
+            <div class="pres-step">Profit earned on selling 1 lemon = $₹\frac{13}{42}$</div>
+            <div class="pres-step">Total profit required = ₹65</div>
+            <div class="pres-step">$$\text{Number of lemons} = \frac{\text{Total Profit}}{\text{Profit on 1 lemon}} = \frac{65}{\frac{13}{42}}$$</div>
+            <div class="pres-step">$$= 65 \times \frac{42}{13} = 5 \times 42 = 210$$</div>
+            <div class="pres-step">Therefore, she would have to sell <b>210 lemons</b> to earn a profit of ₹65.</div>
+        </div>
+        <div id="pres-355" class="pres-container" style="display:none;">
+            <div class="pres-q">4. If the selling price of 10 mangoes is equal to the cost price of 12 mangoes, find the profit percentage.<br></div>
+            <div class="pres-step">Let the cost price (CP) of 1 mango be $₹x$.</div>
+            <div class="pres-step">Then, CP of 12 mangoes = $₹12x$</div>
+            <div class="pres-step">According to the question:</div>
+            <div class="pres-step">Selling price (SP) of 10 mangoes = CP of 12 mangoes = $₹12x$</div>
+            <div class="pres-step">$$\text{SP of 1 mango} = ₹\frac{12x}{10} = ₹\frac{6}{5}x = ₹1.2x$$</div>
+            <div class="pres-step">Since SP > CP, there is a profit.</div>
+            <div class="pres-step">$$\text{Profit on 1 mango} = \text{SP} - \text{CP} = \frac{6}{5}x - x = \frac{x}{5}$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{x}{5}}{x} \times 100\right)\% = \frac{1}{5} \times 100\% = 20\%$$</div>
+            <div class="pres-step">Therefore, the <b>Profit Percentage = 20%</b>.</div>
+        </div>
+        <div id="pres-356" class="pres-container" style="display:none;">
+            <div class="pres-q">5. If the selling price of 25 balls is equal to the cost price of 15 balls, find the profit or loss percentage.<br></div>
+            <div class="pres-step">Let the cost price (CP) of 1 ball be $₹x$.</div>
+            <div class="pres-step">Then, CP of 15 balls = $₹15x$</div>
+            <div class="pres-step">Given:</div>
+            <div class="pres-step">Selling price (SP) of 25 balls = CP of 15 balls = $₹15x$</div>
+            <div class="pres-step">$$\text{SP of 1 ball} = ₹\frac{15x}{25} = ₹\frac{3}{5}x = ₹0.6x$$</div>
+            <div class="pres-step">Since SP < CP $\left(\frac{3}{5}x < x\right)$, there is a loss.</div>
+            <div class="pres-step">$$\text{Loss on 1 ball} = \text{CP} - \text{SP} = x - \frac{3}{5}x = \frac{2}{5}x$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\% = \left(\frac{\frac{2}{5}x}{x} \times 100\right)\% = \frac{2}{5} \times 100\% = 40\%$$</div>
+            <div class="pres-step">Therefore, there is a <b>Loss of 40%</b>.</div>
+        </div>
+        <div id="pres-357" class="pres-container" style="display:none;">
+            <div class="pres-q">6. A trader bought some eggs at the rate of ₹36 per dozen and sold them at a profit of 40%. Find the selling price of an egg.<br></div>
+            <div class="pres-step">Cost price of 1 dozen (12 eggs) = ₹36</div>
+            <div class="pres-step">$$\text{CP of 1 egg} = ₹\frac{36}{12} = ₹3$$</div>
+            <div class="pres-step">Profit percentage = $40\%$</div>
+            <div class="pres-step">$$\text{Profit on 1 egg} = 40\% \text{ of } ₹3 = \frac{40}{100} \times 3 = ₹1.20$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP) of 1 egg} = \text{CP} + \text{Profit} = 3 + 1.20 = ₹4.20$$</div>
+            <div class="pres-step">Therefore, the <b>selling price of an egg is ₹4.20</b>.</div>
+        </div>
+        <div id="pres-358" class="pres-container" style="display:none;">
+            <div class="pres-q">7. A trader sold 40 erasers and earned a profit equal to the selling price of 12 erasers. Find his profit percentage.<br></div>
+            <div class="pres-step">Let the selling price (SP) of 1 eraser be $₹y$.</div>
+            <div class="pres-step">Then, SP of 40 erasers = $₹40y$</div>
+            <div class="pres-step">Profit earned = SP of 12 erasers = $₹12y$</div>
+            <div class="pres-step">We know that:</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP}$$</div>
+            <div class="pres-step">$$12y = 40y - \text{CP of 40 erasers}$$</div>
+            <div class="pres-step">$$\text{CP of 40 erasers} = 40y - 12y = ₹28y$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{12y}{28y} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \frac{3}{7} \times 100\% = \frac{300}{7}\% = 42\frac{6}{7}\%$$</div>
+            <div class="pres-step">Therefore, his <b>Profit Percentage = $42\frac{6}{7}\%$</b>.</div>
+        </div>
+        <div id="pres-359" class="pres-container" style="display:none;">
+            <div class="pres-q">8. A dealer bought an air conditioner for ₹25 000. What was the selling price if he sold it at:<br>(i) A profit of 15%</div>
+            <div class="pres-step">Cost Price (CP) = ₹25,000</div>
+            <div class="pres-step">Profit rate ($r$) = $15\%$</div>
+            <div class="pres-step">$$\text{SP} = \text{CP} \times \left(1 + \frac{r}{100}\right)$$</div>
+            <div class="pres-step">$$= 25000 \times \left(1 + \frac{15}{100}\right) = 25000 \times \frac{115}{100} = 250 \times 115 = ₹28,750$$</div>
+            <div class="pres-step">Therefore, the selling price at 15% profit is <b>₹28,750</b>.</div>
+        </div>
+        <div id="pres-360" class="pres-container" style="display:none;">
+            <div class="pres-q">8. A dealer bought an air conditioner for ₹25 000. What was the selling price if he sold it at:<br>(ii) A loss of 4%</div>
+            <div class="pres-step">Cost Price (CP) = ₹25,000</div>
+            <div class="pres-step">Loss rate ($r$) = $4\%$</div>
+            <div class="pres-step">$$\text{SP} = \text{CP} \times \left(1 - \frac{r}{100}\right)$$</div>
+            <div class="pres-step">$$= 25000 \times \left(1 - \frac{4}{100}\right) = 25000 \times \frac{96}{100} = 250 \times 96 = ₹24,000$$</div>
+            <div class="pres-step">Therefore, the selling price at 4% loss is <b>₹24,000</b>.</div>
+        </div>
+        <div id="pres-361" class="pres-container" style="display:none;">
+            <div class="pres-q">9. Cost price calculations from selling price.<br>(i) A man sold an article for ₹540 and incurred a loss of 10%. Find the cost price of the article.</div>
+            <div class="pres-step">Selling Price (SP) = ₹540</div>
+            <div class="pres-step">Loss percentage = $10\%$</div>
+            <div class="pres-step">Formula:</div>
+            <div class="pres-step">$$\text{SP} = \text{CP} \times \left(1 - \frac{\text{Loss \%}}{100}\right)$$</div>
+            <div class="pres-step">$$540 = \text{CP} \times \left(1 - \frac{10}{100}\right) = \text{CP} \times \frac{90}{100} = \text{CP} \times \frac{9}{10}$$</div>
+            <div class="pres-step">$$\text{CP} = 540 \times \frac{10}{9} = 60 \times 10 = ₹600$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price of the article is ₹600</b>.</div>
+        </div>
+        <div id="pres-362" class="pres-container" style="display:none;">
+            <div class="pres-q">9. Cost price calculations from selling price.<br>(ii) A shopkeeper sold a dressing table for ₹7512.75 at a profit of $19\frac{1}{4}\%$. What was the cost price?</div>
+            <div class="pres-step">Selling Price (SP) = ₹7512.75</div>
+            <div class="pres-step">Profit percentage = $19\frac{1}{4}\% = \frac{77}{4}\%$</div>
+            <div class="pres-step">Formula:</div>
+            <div class="pres-step">$$\text{SP} = \text{CP} \times \left(1 + \frac{\text{Profit \%}}{100}\right)$$</div>
+            <div class="pres-step">$$7512.75 = \text{CP} \times \left(1 + \frac{77}{400}\right) = \text{CP} \times \frac{477}{400}$$</div>
+            <div class="pres-step">$$\text{CP} = \frac{7512.75 \times 400}{477} = \frac{3005100}{477} = ₹6300$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price of the dressing table is ₹6300</b>.</div>
+        </div>
+        <div id="pres-363" class="pres-container" style="display:none;">
+            <div class="pres-q">10. A dealer sold two books for ₹700 each. On one of the books, he made a profit of 25% and on the other he incurred a loss of 20%. Find his profit or loss, and also determine the profit or loss percentage.<br></div>
+            <div class="pres-step"><b>For the first book:</b></div>
+            <div class="pres-step">$\text{SP}_1 = ₹700$, $\text{Profit} = 25\%$</div>
+            <div class="pres-step">$$\text{CP}_1 = \frac{\text{SP}_1}{1 + \frac{25}{100}} = \frac{700}{\frac{125}{100}} = \frac{700 \times 4}{5} = ₹560$$</div>
+            <div class="pres-step"><b>For the second book:</b></div>
+            <div class="pres-step">$\text{SP}_2 = ₹700$, $\text{Loss} = 20\%$</div>
+            <div class="pres-step">$$\text{CP}_2 = \frac{\text{SP}_2}{1 - \frac{20}{100}} = \frac{700}{\frac{80}{100}} = \frac{700 \times 5}{4} = ₹875$$</div>
+            <div class="pres-step"><b>Total Transaction:</b></div>
+            <div class="pres-step">$$\text{Total SP} = 700 + 700 = ₹1400$$</div>
+            <div class="pres-step">$$\text{Total CP} = 560 + 875 = ₹1435$$</div>
+            <div class="pres-step">Since $\text{Total CP} > \text{Total SP}$, there is an overall loss.</div>
+            <div class="pres-step">$$\text{Loss} = \text{Total CP} - \text{Total SP} = 1435 - 1400 = ₹35$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{Total CP}} \times 100\right)\% = \left(\frac{35}{1435} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \frac{1}{41} \times 100\% = \frac{100}{41}\% = 2\frac{18}{41}\%$$</div>
+            <div class="pres-step">Therefore, there is an overall <b>Loss of ₹35</b> and <b>Loss Percentage = $2\frac{18}{41}\%$</b>.</div>
+        </div>
+        <div id="pres-364" class="pres-container" style="display:none;">
+            <div class="pres-q">11. A man bought two articles for ₹3500 and ₹2500. He sold the first article at a profit of 20% and sold the second at a loss of 4%. Find the profit or loss percentage on the total transaction.<br></div>
+            <div class="pres-step"><b>For the first article:</b></div>
+            <div class="pres-step">$\text{CP}_1 = ₹3500$, $\text{Profit} = 20\%$</div>
+            <div class="pres-step">$$\text{Profit}_1 = 20\% \text{ of } 3500 = \frac{20}{100} \times 3500 = ₹700$$</div>
+            <div class="pres-step">$$\text{SP}_1 = 3500 + 700 = ₹4200$$</div>
+            <div class="pres-step"><b>For the second article:</b></div>
+            <div class="pres-step">$\text{CP}_2 = ₹2500$, $\text{Loss} = 4\%$</div>
+            <div class="pres-step">$$\text{Loss}_2 = 4\% \text{ of } 2500 = \frac{4}{100} \times 2500 = ₹100$$</div>
+            <div class="pres-step">$$\text{SP}_2 = 2500 - 100 = ₹2400$$</div>
+            <div class="pres-step"><b>Total Transaction:</b></div>
+            <div class="pres-step">$$\text{Total CP} = 3500 + 2500 = ₹6000$$</div>
+            <div class="pres-step">$$\text{Total SP} = 4200 + 2400 = ₹6600$$</div>
+            <div class="pres-step">Since $\text{Total SP} > \text{Total CP}$, there is a net profit:</div>
+            <div class="pres-step">$$\text{Net Profit} = \text{Total SP} - \text{Total CP} = 6600 - 6000 = ₹600$$</div>
+            <div class="pres-step">$$\text{Net Profit \%} = \left(\frac{\text{Net Profit}}{\text{Total CP}} \times 100\right)\% = \left(\frac{600}{6000} \times 100\right)\% = 10\%$$</div>
+            <div class="pres-step">Therefore, there is a <b>10% profit</b> on the total transaction.</div>
+        </div>
+        <div id="pres-365" class="pres-container" style="display:none;">
+            <div class="pres-q">12. By selling a pen for ₹289, a shopkeeper incurs a loss of 15%. At what price should he sell it to earn a profit of 35%?<br></div>
+            <div class="pres-step">First case:</div>
+            <div class="pres-step">$\text{SP}_1 = ₹289$, $\text{Loss} = 15\%$</div>
+            <div class="pres-step">$$\text{SP}_1 = \text{CP} \times \left(1 - \frac{15}{100}\right) = \text{CP} \times \frac{85}{100} = \text{CP} \times \frac{17}{20}$$</div>
+            <div class="pres-step">$$\text{CP} = \frac{289 \times 20}{17} = 17 \times 20 = ₹340$$</div>
+            <div class="pres-step">Second case (Desired profit = 35%):</div>
+            <div class="pres-step">$$\text{SP}_2 = \text{CP} \times \left(1 + \frac{35}{100}\right) = 340 \times \frac{135}{100} = 34 \times 13.5 = ₹459$$</div>
+            <div class="pres-step">Therefore, he should sell the pen for <b>₹459</b>.</div>
+        </div>
+        <div id="pres-366" class="pres-container" style="display:none;">
+            <div class="pres-q">13. Salim makes a profit of 15% by selling a cycle at ₹4140. At what price should he sell it to make a profit of 18%?<br></div>
+            <div class="pres-step">First case:</div>
+            <div class="pres-step">$\text{SP}_1 = ₹4140$, $\text{Profit} = 15\%$</div>
+            <div class="pres-step">$$\text{SP}_1 = \text{CP} \times \left(1 + \frac{15}{100}\right) = \text{CP} \times \frac{115}{100} = \text{CP} \times \frac{23}{20}$$</div>
+            <div class="pres-step">$$\text{CP} = \frac{4140 \times 20}{23} = 180 \times 20 = ₹3600$$</div>
+            <div class="pres-step">Second case (Desired profit = 18%):</div>
+            <div class="pres-step">$$\text{SP}_2 = \text{CP} \times \left(1 + \frac{18}{100}\right) = 3600 \times \frac{118}{100} = 36 \times 118 = ₹4248$$</div>
+            <div class="pres-step">Therefore, he should sell the cycle for <b>₹4248</b>.</div>
+        </div>
+        <div id="pres-367" class="pres-container" style="display:none;">
+            <div class="pres-q">14. Raman sold a toy at a loss of 20%. Had he sold it for ₹100 more, he would have made a profit of 30%. Find the cost price of the toy.<br></div>
+            <div class="pres-step">Let the cost price of the toy be $₹x$.</div>
+            <div class="pres-step">Selling price at $20\%$ loss ($\text{SP}_1$):</div>
+            <div class="pres-step">$$\text{SP}_1 = x \times \left(1 - \frac{20}{100}\right) = 0.8x$$</div>
+            <div class="pres-step">Selling price at $30\%$ profit ($\text{SP}_2$):</div>
+            <div class="pres-step">$$\text{SP}_2 = x \times \left(1 + \frac{30}{100}\right) = 1.3x$$</div>
+            <div class="pres-step">According to the given condition:</div>
+            <div class="pres-step">$$\text{SP}_2 - \text{SP}_1 = 100$$</div>
+            <div class="pres-step">$$1.3x - 0.8x = 100$$</div>
+            <div class="pres-step">$$0.5x = 100$$</div>
+            <div class="pres-step">$$x = \frac{100}{0.5} = 200$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price of the toy is ₹200</b>.</div>
+        </div>
+        <div id="pres-368" class="pres-container" style="display:none;">
+            <div class="pres-q">15. A shopkeeper sold a watch at a profit of 12%. If he had sold it for ₹144 more, he would have made a profit of 18%. Find the cost price of the watch.<br></div>
+            <div class="pres-step">Let the cost price of the watch be $₹x$.</div>
+            <div class="pres-step">Selling price at $12\%$ profit ($\text{SP}_1$):</div>
+            <div class="pres-step">$$\text{SP}_1 = x \times \left(1 + \frac{12}{100}\right) = 1.12x$$</div>
+            <div class="pres-step">Selling price at $18\%$ profit ($\text{SP}_2$):</div>
+            <div class="pres-step">$$\text{SP}_2 = x \times \left(1 + \frac{18}{100}\right) = 1.18x$$</div>
+            <div class="pres-step">According to the problem:</div>
+            <div class="pres-step">$$\text{SP}_2 - \text{SP}_1 = 144$$</div>
+            <div class="pres-step">$$1.18x - 1.12x = 144$$</div>
+            <div class="pres-step">$$0.06x = 144$$</div>
+            <div class="pres-step">$$x = \frac{144}{0.06} = \frac{14400}{6} = 2400$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price of the watch is ₹2400</b>.</div>
+        </div>
+        <div id="pres-369" class="pres-container" style="display:none;">
+            <div class="pres-q">16. A dealer sells a toy at a loss of 4%. If he had sold it for ₹180 more, he would have made a profit of 16%. Find the cost price of the toy.<br></div>
+            <div class="pres-step">Let the cost price of the toy be $₹x$.</div>
+            <div class="pres-step">Selling price at $4\%$ loss ($\text{SP}_1$):</div>
+            <div class="pres-step">$$\text{SP}_1 = x \times \left(1 - \frac{4}{100}\right) = 0.96x$$</div>
+            <div class="pres-step">Selling price at $16\%$ profit ($\text{SP}_2$):</div>
+            <div class="pres-step">$$\text{SP}_2 = x \times \left(1 + \frac{16}{100}\right) = 1.16x$$</div>
+            <div class="pres-step">According to the given condition:</div>
+            <div class="pres-step">$$\text{SP}_2 - \text{SP}_1 = 180$$</div>
+            <div class="pres-step">$$1.16x - 0.96x = 180$$</div>
+            <div class="pres-step">$$0.20x = 180$$</div>
+            <div class="pres-step">$$x = \frac{180}{0.20} = \frac{1800}{2} = 900$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price of the toy is ₹900</b>.</div>
+        </div>
+        <div id="pres-370" class="pres-container" style="display:none;">
+            <div class="pres-q">17. A sells an article to B at a profit of 20%, and B sells it to C at a loss of 10%. If C pays ₹216 for the article, find the cost price for A.<br></div>
+            <div class="pres-step">Let the cost price for A be $₹x$.</div>
+            <div class="pres-step">A sells to B at $20\%$ profit:</div>
+            <div class="pres-step">$$\text{SP for A} = \text{CP for B} = x \times \left(1 + \frac{20}{100}\right) = \frac{6}{5}x$$</div>
+            <div class="pres-step">B sells to C at $10\%$ loss:</div>
+            <div class="pres-step">$$\text{SP for B} = \text{CP for C} = \left(\frac{6}{5}x\right) \times \left(1 - \frac{10}{100}\right) = \frac{6}{5}x \times \frac{9}{10} = \frac{27}{25}x$$</div>
+            <div class="pres-step">Given that C pays ₹216:</div>
+            <div class="pres-step">$$\frac{27}{25}x = 216$$</div>
+            <div class="pres-step">$$x = \frac{216 \times 25}{27} = 8 \times 25 = 200$$</div>
+            <div class="pres-step">Therefore, the <b>Cost Price for A is ₹200</b>.</div>
+        </div>
+        <div id="pres-371" class="pres-container" style="display:none;">
+            <div class="pres-q">18. A sold an article to B at a loss of 20%, and B sold it to C at a profit of 20%. If A had sold the article for the price C paid, what would have been his loss or gain per cent?<br></div>
+            <div class="pres-step">Let the cost price for A be ₹100.</div>
+            <div class="pres-step">A sold to B at a loss of $20\%$:</div>
+            <div class="pres-step">$$\text{SP for A} = \text{CP for B} = 100 \times \left(1 - \frac{20}{100}\right) = ₹80$$</div>
+            <div class="pres-step">B sold to C at a profit of $20\%$:</div>
+            <div class="pres-step">$$\text{SP for B} = \text{CP for C} = 80 \times \left(1 + \frac{20}{100}\right) = 80 \times \frac{120}{100} = ₹96$$</div>
+            <div class="pres-step">If A had sold the article directly for the price C paid (₹96):</div>
+            <div class="pres-step">$$\text{CP for A} = ₹100, \quad \text{SP for A} = ₹96$$</div>
+            <div class="pres-step">Since SP < CP, there is a loss:</div>
+            <div class="pres-step">$$\text{Loss} = \text{CP} - \text{SP} = 100 - 96 = ₹4$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{\text{Loss}}{\text{CP}} \times 100\right)\% = \left(\frac{4}{100} \times 100\right)\% = 4\%$$</div>
+            <div class="pres-step">Therefore, his <b>loss would have been 4%</b>.</div>
+        </div>
+        <div id="pres-372" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the discount and the discount percentage when:<br>(i) MP = ₹250 and SP = ₹210</div>
+            <div class="pres-step">Marked Price (MP) = ₹250</div>
+            <div class="pres-step">Selling Price (SP) = ₹210</div>
+            <div class="pres-step">$$\text{Discount} = \text{MP} - \text{SP} = ₹250 - ₹210 = ₹40$$</div>
+            <div class="pres-step">$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{40}{250} \times 100\right)\% = \frac{400}{25}\% = 16\%$$</div>
+            <div class="pres-step">Therefore, <b>Discount = ₹40</b> and <b>Discount Percentage = 16%</b>.</div>
+        </div>
+        <div id="pres-373" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the discount and the discount percentage when:<br>(ii) MP = ₹60 and SP = ₹40</div>
+            <div class="pres-step">Marked Price (MP) = ₹60</div>
+            <div class="pres-step">Selling Price (SP) = ₹40</div>
+            <div class="pres-step">$$\text{Discount} = \text{MP} - \text{SP} = ₹60 - ₹40 = ₹20$$</div>
+            <div class="pres-step">$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{20}{60} \times 100\right)\% = \frac{1}{3} \times 100\% = 33\frac{1}{3}\%$$</div>
+            <div class="pres-step">Therefore, <b>Discount = ₹20</b> and <b>Discount Percentage = $33\frac{1}{3}\%$</b>.</div>
+        </div>
+        <div id="pres-374" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the discount and the selling price when:<br>(i) MP = ₹1750 and discount = 6%</div>
+            <div class="pres-step">Marked Price (MP) = ₹1750</div>
+            <div class="pres-step">Discount rate = $6\%$</div>
+            <div class="pres-step">$$\text{Discount} = 6\% \text{ of } ₹1750 = \frac{6}{100} \times 1750 = \frac{10500}{100} = ₹105$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 1750 - 105 = ₹1645$$</div>
+            <div class="pres-step">Therefore, <b>Discount = ₹105</b> and <b>Selling Price = ₹1645</b>.</div>
+        </div>
+        <div id="pres-375" class="pres-container" style="display:none;">
+            <div class="pres-q">2. Find the discount and the selling price when:<br>(ii) MP = ₹2 46 000 and discount = $13\frac{1}{3}\%$</div>
+            <div class="pres-step">Marked Price (MP) = ₹2,46,000</div>
+            <div class="pres-step">Discount rate = $13\frac{1}{3}\% = \frac{40}{3}\%$</div>
+            <div class="pres-step">$$\text{Discount} = \frac{\frac{40}{3}}{100} \times 246000 = \frac{40}{300} \times 246000 = \frac{2}{15} \times 246000$$</div>
+            <div class="pres-step">$$= 2 \times 16400 = ₹32,800$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 246000 - 32800 = ₹2,13,200$$</div>
+            <div class="pres-step">Therefore, <b>Discount = ₹32,800</b> and <b>Selling Price = ₹2,13,200</b>.</div>
+        </div>
+        <div id="pres-376" class="pres-container" style="display:none;">
+            <div class="pres-q">3. Priya paid ₹630 for a blanket with a marked price of ₹900. Find the discount and discount percentage.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹900</div>
+            <div class="pres-step">Selling Price (SP) = ₹630</div>
+            <div class="pres-step">$$\text{Discount} = \text{MP} - \text{SP} = ₹900 - ₹630 = ₹270$$</div>
+            <div class="pres-step">$$\text{Discount \%} = \left(\frac{\text{Discount}}{\text{MP}} \times 100\right)\%$$</div>
+            <div class="pres-step">$$= \left(\frac{270}{900} \times 100\right)\% = \frac{270}{9}\% = 30\%$$</div>
+            <div class="pres-step">Therefore, <b>Discount = ₹270</b> and <b>Discount Percentage = 30%</b>.</div>
+        </div>
+        <div id="pres-377" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Jeevan paid ₹595 for a shirt after a discount of 15%. Find its marked price.<br></div>
+            <div class="pres-step">Selling Price (SP) = ₹595</div>
+            <div class="pres-step">Discount rate ($d$) = $15\%$</div>
+            <div class="pres-step">Formula:</div>
+            <div class="pres-step">$$\text{SP} = \text{MP} \times \left(1 - \frac{d}{100}\right)$$</div>
+            <div class="pres-step">$$595 = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100} = \text{MP} \times \frac{17}{20}$$</div>
+            <div class="pres-step">$$\text{MP} = \frac{595 \times 20}{17} = 35 \times 20 = ₹700$$</div>
+            <div class="pres-step">Therefore, the <b>Marked Price of the shirt is ₹700</b>.</div>
+        </div>
+        <div id="pres-378" class="pres-container" style="display:none;">
+            <div class="pres-q">5. The marked price of a book is ₹360. The dealer offers a discount of 10% and still makes a profit of 20%. Find its selling price and cost price.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹360</div>
+            <div class="pres-step">Discount allowed = $10\%$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} \times \left(1 - \frac{10}{100}\right) = 360 \times \frac{90}{100} = ₹324$$</div>
+            <div class="pres-step">Profit percentage = $20\%$</div>
+            <div class="pres-step">$$\text{SP} = \text{CP} \times \left(1 + \frac{20}{100}\right) = \text{CP} \times \frac{120}{100} = \text{CP} \times \frac{6}{5}$$</div>
+            <div class="pres-step">$$324 = \text{CP} \times \frac{6}{5}$$</div>
+            <div class="pres-step">$$\text{CP} = \frac{324 \times 5}{6} = 54 \times 5 = ₹270$$</div>
+            <div class="pres-step">Therefore, <b>Selling Price = ₹324</b> and <b>Cost Price = ₹270</b>.</div>
+        </div>
+        <div id="pres-379" class="pres-container" style="display:none;">
+            <div class="pres-q">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:<br>(i) The marked price</div>
+            <div class="pres-step">Cost Price (CP) = ₹3600</div>
+            <div class="pres-step">Marked up by $15\%$ above CP:</div>
+            <div class="pres-step">$$\text{Marked Price (MP)} = \text{CP} + 15\% \text{ of CP} = 3600 + \left(\frac{15}{100} \times 3600\right) = 3600 + 540 = ₹4140$$</div>
+            <div class="pres-step">Therefore, the <b>Marked Price is ₹4140</b>.</div>
+        </div>
+        <div id="pres-380" class="pres-container" style="display:none;">
+            <div class="pres-q">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:<br>(ii) The selling price</div>
+            <div class="pres-step">Discount rate = $5\%$ on MP</div>
+            <div class="pres-step">$$\text{Discount} = 5\% \text{ of } 4140 = \frac{5}{100} \times 4140 = ₹207$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 4140 - 207 = ₹3933$$</div>
+            <div class="pres-step">Therefore, the <b>Selling Price is ₹3933</b>.</div>
+        </div>
+        <div id="pres-381" class="pres-container" style="display:none;">
+            <div class="pres-q">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:<br>(iii) The profit</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = 3933 - 3600 = ₹333$$</div>
+            <div class="pres-step">Therefore, the <b>Profit is ₹333</b>.</div>
+        </div>
+        <div id="pres-382" class="pres-container" style="display:none;">
+            <div class="pres-q">6. A dealer bought a bag for ₹3600 and marked it 15% above the cost price. If he allows a discount of 5%, find:<br>(iv) The profit percentage</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{333}{3600} \times 100\right)\% = \frac{333}{36}\% = \frac{37}{4}\% = 9\frac{1}{4}\%$$</div>
+            <div class="pres-step">Therefore, the <b>Profit Percentage is $9\frac{1}{4}\%$</b>.</div>
+        </div>
+        <div id="pres-383" class="pres-container" style="display:none;">
+            <div class="pres-q">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:<br>(i) The marked price</div>
+            <div class="pres-step">Cost Price (CP) = ₹3400</div>
+            <div class="pres-step">Given that CP is $15\%$ below Marked Price (MP):</div>
+            <div class="pres-step">$$\text{CP} = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100} = \text{MP} \times \frac{17}{20}$$</div>
+            <div class="pres-step">$$3400 = \text{MP} \times \frac{17}{20}$$</div>
+            <div class="pres-step">$$\text{MP} = \frac{3400 \times 20}{17} = 200 \times 20 = ₹4000$$</div>
+            <div class="pres-step">Therefore, the <b>Marked Price is ₹4000</b>.</div>
+        </div>
+        <div id="pres-384" class="pres-container" style="display:none;">
+            <div class="pres-q">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:<br>(ii) The selling price</div>
+            <div class="pres-step">Discount allowed = $10\%$ on MP</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} \times \left(1 - \frac{10}{100}\right) = 4000 \times \frac{90}{100} = ₹3600$$</div>
+            <div class="pres-step">Therefore, the <b>Selling Price is ₹3600</b>.</div>
+        </div>
+        <div id="pres-385" class="pres-container" style="display:none;">
+            <div class="pres-q">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:<br>(iii) The profit</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = 3600 - 3400 = ₹200$$</div>
+            <div class="pres-step">Therefore, the <b>Profit is ₹200</b>.</div>
+        </div>
+        <div id="pres-386" class="pres-container" style="display:none;">
+            <div class="pres-q">7. The cost price of a printer is ₹3400, which is 15% below the marked price. If the article is sold at a discount of 10%, find:<br>(iv) The profit percentage</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{\text{Profit}}{\text{CP}} \times 100\right)\% = \left(\frac{200}{3400} \times 100\right)\% = \frac{200}{34}\% = \frac{100}{17}\% = 5\frac{15}{17}\%$$</div>
+            <div class="pres-step">Therefore, the <b>Profit Percentage is $5\frac{15}{17}\%$</b>.</div>
+        </div>
+        <div id="pres-387" class="pres-container" style="display:none;">
+            <div class="pres-q">8. A shopkeeper marks an article 20% above its cost price and allows a discount of 15%. Find his percentage of profit.<br></div>
+            <div class="pres-step">Let the Cost Price (CP) be ₹100.</div>
+            <div class="pres-step">Marked Price (MP) is $20\%$ above CP:</div>
+            <div class="pres-step">$$\text{MP} = 100 + 20 = ₹120$$</div>
+            <div class="pres-step">Discount allowed = $15\%$ on MP:</div>
+            <div class="pres-step">$$\text{Discount} = \frac{15}{100} \times 120 = ₹18$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 120 - 18 = ₹102$$</div>
+            <div class="pres-step">$$\text{Profit} = \text{SP} - \text{CP} = 102 - 100 = ₹2$$</div>
+            <div class="pres-step">$$\text{Profit \%} = \left(\frac{2}{100} \times 100\right)\% = 2\%$$</div>
+            <div class="pres-step">Therefore, his <b>percentage of profit is 2%</b>.</div>
+        </div>
+        <div id="pres-388" class="pres-container" style="display:none;">
+            <div class="pres-q">9. After allowing a discount of 15% on the marked price of an article, a dealer still makes a profit of 19%. By what per cent is the marked price above the cost price?<br></div>
+            <div class="pres-step">Let the Cost Price (CP) be ₹100.</div>
+            <div class="pres-step">Profit made = $19\%$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = 100 + 19 = ₹119$$</div>
+            <div class="pres-step">Discount allowed = $15\%$ on Marked Price (MP):</div>
+            <div class="pres-step">$$\text{SP} = \text{MP} \times \left(1 - \frac{15}{100}\right) = \text{MP} \times \frac{85}{100}$$</div>
+            <div class="pres-step">$$119 = \text{MP} \times 0.85$$</div>
+            <div class="pres-step">$$\text{MP} = \frac{119}{0.85} = \frac{11900}{85} = ₹140$$</div>
+            <div class="pres-step">Increase above CP = $140 - 100 = 40$</div>
+            <div class="pres-step">$$\text{Percentage above CP} = \left(\frac{40}{100} \times 100\right)\% = 40\%$$</div>
+            <div class="pres-step">Therefore, the marked price is <b>40% above the cost price</b>.</div>
+        </div>
+        <div id="pres-389" class="pres-container" style="display:none;">
+            <div class="pres-q">10. By what per cent above the cost price should a dealer mark a pen so that after allowing a discount of 4% he gains 20%?<br></div>
+            <div class="pres-step">Let the Cost Price (CP) be ₹100.</div>
+            <div class="pres-step">Gain required = $20\%$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = 100 + 20 = ₹120$$</div>
+            <div class="pres-step">Discount allowed = $4\%$ on Marked Price (MP):</div>
+            <div class="pres-step">$$\text{SP} = \text{MP} \times \left(1 - \frac{4}{100}\right) = \text{MP} \times \frac{96}{100}$$</div>
+            <div class="pres-step">$$120 = \text{MP} \times 0.96$$</div>
+            <div class="pres-step">$$\text{MP} = \frac{120}{0.96} = \frac{12000}{96} = ₹125$$</div>
+            <div class="pres-step">Markup above CP = $125 - 100 = 25$</div>
+            <div class="pres-step">$$\text{Percentage above CP} = \left(\frac{25}{100} \times 100\right)\% = 25\%$$</div>
+            <div class="pres-step">Therefore, the dealer should mark the pen <b>25% above the cost price</b>.</div>
+        </div>
+        <div id="pres-390" class="pres-container" style="display:none;">
+            <div class="pres-q">11. A dealer marks a damaged article at 10% above the cost price and then allows a discount of 10%. Find his gain or loss per cent.<br></div>
+            <div class="pres-step">Let the Cost Price (CP) be ₹100.</div>
+            <div class="pres-step">Marked Price (MP) is $10\%$ above CP:</div>
+            <div class="pres-step">$$\text{MP} = 100 + 10 = ₹110$$</div>
+            <div class="pres-step">Discount allowed = $10\%$ on MP:</div>
+            <div class="pres-step">$$\text{Discount} = 10\% \text{ of } 110 = \frac{10}{100} \times 110 = ₹11$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 110 - 11 = ₹99$$</div>
+            <div class="pres-step">Since SP < CP, there is a loss:</div>
+            <div class="pres-step">$$\text{Loss} = \text{CP} - \text{SP} = 100 - 99 = ₹1$$</div>
+            <div class="pres-step">$$\text{Loss \%} = \left(\frac{1}{100} \times 100\right)\% = 1\%$$</div>
+            <div class="pres-step">Therefore, there is a <b>Loss of 1%</b>.</div>
+        </div>
+        <div id="pres-391" class="pres-container" style="display:none;">
+            <div class="pres-q">12. A dealer allows a discount of 10% on the marked price of a book and still makes a profit of 10%. If the cost price of the book is ₹90, find:<br>(i) Its selling price</div>
+            <div class="pres-step">Cost Price (CP) = ₹90</div>
+            <div class="pres-step">Profit percentage = $10\%$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{CP} \times \left(1 + \frac{10}{100}\right) = 90 \times \frac{110}{100} = ₹99$$</div>
+            <div class="pres-step">Therefore, the <b>Selling Price is ₹99</b>.</div>
+        </div>
+        <div id="pres-392" class="pres-container" style="display:none;">
+            <div class="pres-q">12. A dealer allows a discount of 10% on the marked price of a book and still makes a profit of 10%. If the cost price of the book is ₹90, find:<br>(ii) Its marked price</div>
+            <div class="pres-step">Discount allowed = $10\%$ on MP</div>
+            <div class="pres-step">$$\text{SP} = \text{MP} \times \left(1 - \frac{10}{100}\right) = \text{MP} \times \frac{90}{100} = 0.9\text{MP}$$</div>
+            <div class="pres-step">$$99 = 0.9\text{MP}$$</div>
+            <div class="pres-step">$$\text{MP} = \frac{99}{0.9} = ₹110$$</div>
+            <div class="pres-step">Therefore, the <b>Marked Price is ₹110</b>.</div>
+        </div>
+        <div id="pres-393" class="pres-container" style="display:none;">
+            <div class="pres-q">13. A trader allows two successive discounts of 50% and 50% on a shirt marked ₹2600. Find the selling price of the shirt.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹2600</div>
+            <div class="pres-step">First discount $d_1 = 50\%$:</div>
+            <div class="pres-step">$$\text{Price after 1st discount} = 2600 \times \left(1 - \frac{50}{100}\right) = 2600 \times \frac{1}{2} = ₹1300$$</div>
+            <div class="pres-step">Second discount $d_2 = 50\%$ on the reduced price:</div>
+            <div class="pres-step">$$\text{Final Selling Price} = 1300 \times \left(1 - \frac{50}{100}\right) = 1300 \times \frac{1}{2} = ₹650$$</div>
+            <div class="pres-step"><i>Alternatively, using successive discount formula:</i></div>
+            <div class="pres-step">$$\text{SP} = \text{MP} \times \left(1 - \frac{d_1}{100}\right) \times \left(1 - \frac{d_2}{100}\right)$$</div>
+            <div class="pres-step">$$= 2600 \times \left(1 - \frac{50}{100}\right) \times \left(1 - \frac{50}{100}\right) = 2600 \times \frac{1}{2} \times \frac{1}{2} = ₹650$$</div>
+            <div class="pres-step">Therefore, the <b>Selling Price of the shirt is ₹650</b>.</div>
+        </div>
+        <div id="pres-394" class="pres-container" style="display:none;">
+            <div class="pres-q">14. Find a single discount equivalent to two successive discounts of 20% and 10%.<br></div>
+            <div class="pres-step">Let the Marked Price (MP) be ₹100.</div>
+            <div class="pres-step">Price after first discount of $20\%$:</div>
+            <div class="pres-step">$$100 - 20 = ₹80$$</div>
+            <div class="pres-step">Second discount of $10\%$ on ₹80:</div>
+            <div class="pres-step">$$\text{Second Discount} = \frac{10}{100} \times 80 = ₹8$$</div>
+            <div class="pres-step">$$\text{Final Price} = 80 - 8 = ₹72$$</div>
+            <div class="pres-step">$$\text{Total Single Discount} = \text{MP} - \text{Final Price} = 100 - 72 = ₹28$$</div>
+            <div class="pres-step">$$\text{Equivalent Single Discount \%} = \left(\frac{28}{100} \times 100\right)\% = 28\%$$</div>
+            <div class="pres-step"><i>Alternatively, using equivalent discount formula:</i></div>
+            <div class="pres-step">$$d = \left(d_1 + d_2 - \frac{d_1 \times d_2}{100}\right)\% = \left(20 + 10 - \frac{20 \times 10}{100}\right)\% = (30 - 2)\% = 28\%$$</div>
+            <div class="pres-step">Therefore, the <b>single equivalent discount is 28%</b>.</div>
+        </div>
+        <div id="pres-395" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the final price of each of the following.<br>(i) A gold ring with marked price ₹13 000 and tax 12%</div>
+            <div class="pres-step">Marked Price (MP) = ₹13,000</div>
+            <div class="pres-step">Tax rate = $12\%$</div>
+            <div class="pres-step">$$\text{Tax} = 12\% \text{ of } 13000 = \frac{12}{100} \times 13000 = ₹1560$$</div>
+            <div class="pres-step">$$\text{Final Price} = \text{MP} + \text{Tax} = 13000 + 1560 = ₹14,560$$</div>
+            <div class="pres-step">Therefore, the <b>Final Price is ₹14,560</b>.</div>
+        </div>
+        <div id="pres-396" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the final price of each of the following.<br>(ii) A pair of shoes with marked price ₹1200 and tax 5%</div>
+            <div class="pres-step">Marked Price (MP) = ₹1200</div>
+            <div class="pres-step">Tax rate = $5\%$</div>
+            <div class="pres-step">$$\text{Tax} = 5\% \text{ of } 1200 = \frac{5}{100} \times 1200 = ₹60$$</div>
+            <div class="pres-step">$$\text{Final Price} = \text{MP} + \text{Tax} = 1200 + 60 = ₹1260$$</div>
+            <div class="pres-step">Therefore, the <b>Final Price is ₹1260</b>.</div>
+        </div>
+        <div id="pres-397" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the final price of each of the following.<br>(iii) A computer with marked price ₹22 000 and tax 12%</div>
+            <div class="pres-step">Marked Price (MP) = ₹22,000</div>
+            <div class="pres-step">Tax rate = $12\%$</div>
+            <div class="pres-step">$$\text{Tax} = 12\% \text{ of } 22000 = \frac{12}{100} \times 22000 = ₹2640$$</div>
+            <div class="pres-step">$$\text{Final Price} = \text{MP} + \text{Tax} = 22000 + 2640 = ₹24,640$$</div>
+            <div class="pres-step">Therefore, the <b>Final Price is ₹24,640</b>.</div>
+        </div>
+        <div id="pres-398" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the final price of each of the following.<br>(iv) A car with marked price ₹3 42 000 and tax 18%</div>
+            <div class="pres-step">Marked Price (MP) = ₹3,42,000</div>
+            <div class="pres-step">Tax rate = $18\%$</div>
+            <div class="pres-step">$$\text{Tax} = 18\% \text{ of } 342000 = \frac{18}{100} \times 342000 = 18 \times 3420 = ₹61,560$$</div>
+            <div class="pres-step">$$\text{Final Price} = \text{MP} + \text{Tax} = 342000 + 61560 = ₹4,03,560$$</div>
+            <div class="pres-step">Therefore, the <b>Final Price is ₹4,03,560</b>.</div>
+        </div>
+        <div id="pres-399" class="pres-container" style="display:none;">
+            <div class="pres-q">1. Find the final price of each of the following.<br>(v) A luxury van with marked price ₹26 00 000 and tax 28%</div>
+            <div class="pres-step">Marked Price (MP) = ₹26,00,000</div>
+            <div class="pres-step">Tax rate = $28\%$</div>
+            <div class="pres-step">$$\text{Tax} = 28\% \text{ of } 2600000 = \frac{28}{100} \times 2600000 = 28 \times 26000 = ₹7,28,000$$</div>
+            <div class="pres-step">$$\text{Final Price} = \text{MP} + \text{Tax} = 2600000 + 728000 = ₹33,28,000$$</div>
+            <div class="pres-step">Therefore, the <b>Final Price is ₹33,28,000</b>.</div>
+        </div>
+        <div id="pres-400" class="pres-container" style="display:none;">
+            <div class="pres-q">2. If 5% tax is included in the prices, find the price before tax of each of the following.<br>(i) A TV bought for ₹13 125</div>
+            <div class="pres-step">Let the price before tax be $₹x$.</div>
+            <div class="pres-step">Tax included = $5\%$</div>
+            <div class="pres-step">$$\text{Price with tax} = x \times \left(1 + \frac{5}{100}\right) = \frac{105}{100}x = \frac{21}{20}x$$</div>
+            <div class="pres-step">$$\frac{21}{20}x = 13125$$</div>
+            <div class="pres-step">$$x = \frac{13125 \times 20}{21} = 625 \times 20 = ₹12,500$$</div>
+            <div class="pres-step">Therefore, the <b>Price before tax is ₹12,500</b>.</div>
+        </div>
+        <div id="pres-401" class="pres-container" style="display:none;">
+            <div class="pres-q">2. If 5% tax is included in the prices, find the price before tax of each of the following.<br>(ii) A pencil box bought for ₹84</div>
+            <div class="pres-step">Let the price before tax be $₹x$.</div>
+            <div class="pres-step">$$\frac{21}{20}x = 84$$</div>
+            <div class="pres-step">$$x = \frac{84 \times 20}{21} = 4 \times 20 = ₹80$$</div>
+            <div class="pres-step">Therefore, the <b>Price before tax is ₹80</b>.</div>
+        </div>
+        <div id="pres-402" class="pres-container" style="display:none;">
+            <div class="pres-q">2. If 5% tax is included in the prices, find the price before tax of each of the following.<br>(iii) A bottle of shampoo purchased for ₹357</div>
+            <div class="pres-step">Let the price before tax be $₹x$.</div>
+            <div class="pres-step">$$\frac{21}{20}x = 357$$</div>
+            <div class="pres-step">$$x = \frac{357 \times 20}{21} = 17 \times 20 = ₹340$$</div>
+            <div class="pres-step">Therefore, the <b>Price before tax is ₹340</b>.</div>
+        </div>
+        <div id="pres-403" class="pres-container" style="display:none;">
+            <div class="pres-q">2. If 5% tax is included in the prices, find the price before tax of each of the following.<br>(iv) A calculator purchased for ₹508.20</div>
+            <div class="pres-step">Let the price before tax be $₹x$.</div>
+            <div class="pres-step">$$\frac{21}{20}x = 508.20$$</div>
+            <div class="pres-step">$$x = \frac{508.20 \times 20}{21} = 24.20 \times 20 = ₹484$$</div>
+            <div class="pres-step">Therefore, the <b>Price before tax is ₹484</b>.</div>
+        </div>
+        <div id="pres-404" class="pres-container" style="display:none;">
+            <div class="pres-q">2. If 5% tax is included in the prices, find the price before tax of each of the following.<br>(v) A watch bought for ₹1533</div>
+            <div class="pres-step">Let the price before tax be $₹x$.</div>
+            <div class="pres-step">$$\frac{21}{20}x = 1533$$</div>
+            <div class="pres-step">$$x = \frac{1533 \times 20}{21} = 73 \times 20 = ₹1460$$</div>
+            <div class="pres-step">Therefore, the <b>Price before tax is ₹1460</b>.</div>
+        </div>
+        <div id="pres-405" class="pres-container" style="display:none;">
+            <div class="pres-q">3. The marked price of a shirt is ₹2400, and the actual selling price after tax is ₹2688. Find the tax and the rate of tax.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹2400</div>
+            <div class="pres-step">Selling price after tax = ₹2688</div>
+            <div class="pres-step">$$\text{Tax} = \text{Selling Price after tax} - \text{MP} = 2688 - 2400 = ₹288$$</div>
+            <div class="pres-step">$$\text{Rate of Tax} = \left(\frac{\text{Tax}}{\text{MP}} \times 100\right)\% = \left(\frac{288}{2400} \times 100\right)\% = \frac{288}{24}\% = 12\%$$</div>
+            <div class="pres-step">Therefore, <b>Tax = ₹288</b> and <b>Rate of Tax = 12%</b>.</div>
+        </div>
+        <div id="pres-406" class="pres-container" style="display:none;">
+            <div class="pres-q">4. Meenu bought a pair of sandals for ₹2576, including tax. If its marked price was ₹2300, find the rate of tax.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹2300</div>
+            <div class="pres-step">Total price paid (including tax) = ₹2576</div>
+            <div class="pres-step">$$\text{Tax paid} = 2576 - 2300 = ₹276$$</div>
+            <div class="pres-step">$$\text{Rate of Tax} = \left(\frac{\text{Tax}}{\text{MP}} \times 100\right)\% = \left(\frac{276}{2300} \times 100\right)\% = \frac{276}{23}\% = 12\%$$</div>
+            <div class="pres-step">Therefore, the <b>Rate of Tax is 12%</b>.</div>
+        </div>
+        <div id="pres-407" class="pres-container" style="display:none;">
+            <div class="pres-q">5. Archana bought 10 g of gold for ₹32 376, including 14% tax. Find the rate of gold per 10 g.<br></div>
+            <div class="pres-step">Total amount paid for 10 g gold (including tax) = ₹32,376</div>
+            <div class="pres-step">Rate of tax = $14\%$</div>
+            <div class="pres-step">Let the rate of gold per 10 g before tax be $₹x$.</div>
+            <div class="pres-step">$$\text{Price with tax} = x \times \left(1 + \frac{14}{100}\right) = \frac{114}{100}x$$</div>
+            <div class="pres-step">$$\frac{114}{100}x = 32376$$</div>
+            <div class="pres-step">$$x = \frac{32376 \times 100}{114} = 284 \times 100 = ₹28,400$$</div>
+            <div class="pres-step">Therefore, the <b>rate of gold per 10 g is ₹28,400</b>.</div>
+        </div>
+        <div id="pres-408" class="pres-container" style="display:none;">
+            <div class="pres-q">6. The marked price of a mobile phone is ₹45 000. It is offered at a discount of 7%. If the rate of tax is 16% on the selling price, find the final amount.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹45,000</div>
+            <div class="pres-step">Discount rate = $7\%$ on MP</div>
+            <div class="pres-step">$$\text{Discount} = \frac{7}{100} \times 45000 = ₹3150$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 45000 - 3150 = ₹41,850$$</div>
+            <div class="pres-step">Rate of tax = $16\%$ on selling price:</div>
+            <div class="pres-step">$$\text{Tax} = 16\% \text{ of } 41850 = \frac{16}{100} \times 41850 = 16 \times 418.5 = ₹6696$$</div>
+            <div class="pres-step">$$\text{Final Amount to be paid} = \text{SP} + \text{Tax} = 41850 + 6696 = ₹48,546$$</div>
+            <div class="pres-step">Therefore, the <b>final amount to be paid is ₹48,546</b>.</div>
+        </div>
+        <div id="pres-409" class="pres-container" style="display:none;">
+            <div class="pres-q">7. At a sale, a dining table with marked price ₹43 000 is offered at 20% discount. If tax is charged at 13% of the selling price, find the amount one has to pay.<br></div>
+            <div class="pres-step">Marked Price (MP) = ₹43,000</div>
+            <div class="pres-step">Discount rate = $20\%$ on MP</div>
+            <div class="pres-step">$$\text{Discount} = \frac{20}{100} \times 43000 = ₹8600$$</div>
+            <div class="pres-step">$$\text{Selling Price (SP)} = \text{MP} - \text{Discount} = 43000 - 8600 = ₹34,400$$</div>
+            <div class="pres-step">Rate of tax = $13\%$ on selling price:</div>
+            <div class="pres-step">$$\text{Tax} = 13\% \text{ of } 34400 = \frac{13}{100} \times 34400 = 13 \times 344 = ₹4472$$</div>
+            <div class="pres-step">$$\text{Amount to Pay} = \text{SP} + \text{Tax} = 34400 + 4472 = ₹38,872$$</div>
+            <div class="pres-step">Therefore, the <b>amount one has to pay is ₹38,872</b>.</div>
+        </div>
 
         <!-- Bottom question navigation bar -->
         <div class="pres-nav-bar" id="pres-nav-bar">
@@ -4110,7 +5065,7 @@
 
 
     <script>
-        const chapterPresMap = {"ch1": ["pres-0", "pres-1", "pres-2", "pres-3", "pres-4", "pres-5", "pres-6", "pres-7", "pres-8", "pres-9", "pres-10", "pres-11", "pres-12", "pres-13", "pres-14", "pres-15", "pres-16", "pres-17", "pres-18", "pres-19", "pres-20", "pres-21", "pres-22", "pres-23", "pres-24", "pres-25", "pres-26", "pres-27", "pres-28", "pres-29", "pres-30", "pres-31", "pres-32", "pres-33", "pres-34", "pres-35", "pres-36", "pres-37", "pres-38", "pres-39", "pres-40", "pres-41", "pres-42", "pres-43", "pres-44", "pres-45", "pres-46", "pres-47", "pres-48", "pres-49", "pres-50", "pres-51", "pres-52", "pres-53", "pres-54", "pres-55", "pres-56", "pres-57", "pres-58", "pres-59", "pres-60", "pres-61", "pres-62", "pres-63", "pres-64", "pres-65", "pres-66", "pres-67", "pres-68", "pres-69", "pres-70", "pres-71", "pres-72", "pres-73", "pres-74", "pres-75", "pres-76", "pres-77", "pres-78", "pres-79", "pres-80", "pres-81", "pres-82", "pres-83", "pres-84", "pres-85", "pres-86", "pres-87", "pres-88", "pres-89", "pres-90", "pres-91", "pres-92", "pres-93", "pres-94", "pres-95", "pres-96", "pres-97", "pres-98", "pres-99", "pres-100", "pres-101", "pres-102", "pres-103", "pres-104", "pres-105", "pres-106", "pres-107", "pres-108", "pres-109", "pres-110", "pres-111", "pres-112", "pres-113", "pres-114", "pres-115", "pres-116", "pres-117", "pres-118", "pres-119", "pres-120", "pres-121", "pres-122", "pres-123", "pres-124", "pres-125", "pres-126", "pres-127", "pres-128", "pres-129", "pres-130", "pres-131", "pres-132", "pres-133", "pres-134", "pres-135", "pres-136", "pres-137"], "ch3": ["pres-138", "pres-139", "pres-140", "pres-141", "pres-142", "pres-143", "pres-144", "pres-145", "pres-146", "pres-147", "pres-148", "pres-149", "pres-150", "pres-151", "pres-152", "pres-153", "pres-154", "pres-155", "pres-156", "pres-157", "pres-158", "pres-159", "pres-160", "pres-161", "pres-162", "pres-163", "pres-164", "pres-165", "pres-166", "pres-167", "pres-168", "pres-169", "pres-170", "pres-171", "pres-172", "pres-173", "pres-174", "pres-175", "pres-176", "pres-177", "pres-178", "pres-179", "pres-180", "pres-181", "pres-182", "pres-183", "pres-184", "pres-185", "pres-186", "pres-187", "pres-188", "pres-189", "pres-190", "pres-191", "pres-192", "pres-193", "pres-194", "pres-195", "pres-196", "pres-197", "pres-198", "pres-199", "pres-200", "pres-201", "pres-202", "pres-203", "pres-204", "pres-205", "pres-206", "pres-207", "pres-208", "pres-209", "pres-210", "pres-211", "pres-212", "pres-213", "pres-214", "pres-215", "pres-216", "pres-217", "pres-218", "pres-219", "pres-220", "pres-221"], "ch4": ["pres-222", "pres-223", "pres-224", "pres-225", "pres-226", "pres-227", "pres-228", "pres-229", "pres-230", "pres-231", "pres-232", "pres-233", "pres-234", "pres-235", "pres-236", "pres-237", "pres-238", "pres-239", "pres-240", "pres-241", "pres-242", "pres-243", "pres-244", "pres-245", "pres-246", "pres-247", "pres-248", "pres-249", "pres-250", "pres-251", "pres-252", "pres-253", "pres-254", "pres-255", "pres-256", "pres-257", "pres-258", "pres-259", "pres-260", "pres-261", "pres-262", "pres-263", "pres-264", "pres-265", "pres-266", "pres-267", "pres-268", "pres-269", "pres-270", "pres-271", "pres-272", "pres-273", "pres-274", "pres-275", "pres-276", "pres-277", "pres-278", "pres-279", "pres-280", "pres-281", "pres-282", "pres-283", "pres-284", "pres-285", "pres-286", "pres-287", "pres-288"], "ch5": ["pres-289", "pres-290", "pres-291", "pres-292", "pres-293", "pres-294", "pres-295", "pres-296", "pres-297", "pres-298", "pres-299", "pres-300", "pres-301", "pres-302", "pres-303", "pres-304", "pres-305", "pres-306", "pres-307", "pres-308", "pres-309", "pres-310", "pres-311", "pres-312", "pres-313", "pres-314", "pres-315", "pres-316", "pres-317", "pres-318", "pres-319", "pres-320", "pres-321", "pres-322", "pres-323", "pres-324", "pres-325", "pres-326", "pres-327", "pres-328", "pres-329", "pres-330", "pres-331", "pres-332", "pres-333", "pres-334", "pres-335", "pres-336", "pres-337", "pres-338", "pres-339", "pres-340", "pres-341", "pres-342", "pres-343", "pres-344", "pres-345", "pres-346"]};
+        const chapterPresMap = {"ch1": ["pres-0", "pres-1", "pres-2", "pres-3", "pres-4", "pres-5", "pres-6", "pres-7", "pres-8", "pres-9", "pres-10", "pres-11", "pres-12", "pres-13", "pres-14", "pres-15", "pres-16", "pres-17", "pres-18", "pres-19", "pres-20", "pres-21", "pres-22", "pres-23", "pres-24", "pres-25", "pres-26", "pres-27", "pres-28", "pres-29", "pres-30", "pres-31", "pres-32", "pres-33", "pres-34", "pres-35", "pres-36", "pres-37", "pres-38", "pres-39", "pres-40", "pres-41", "pres-42", "pres-43", "pres-44", "pres-45", "pres-46", "pres-47", "pres-48", "pres-49", "pres-50", "pres-51", "pres-52", "pres-53", "pres-54", "pres-55", "pres-56", "pres-57", "pres-58", "pres-59", "pres-60", "pres-61", "pres-62", "pres-63", "pres-64", "pres-65", "pres-66", "pres-67", "pres-68", "pres-69", "pres-70", "pres-71", "pres-72", "pres-73", "pres-74", "pres-75", "pres-76", "pres-77", "pres-78", "pres-79", "pres-80", "pres-81", "pres-82", "pres-83", "pres-84", "pres-85", "pres-86", "pres-87", "pres-88", "pres-89", "pres-90", "pres-91", "pres-92", "pres-93", "pres-94", "pres-95", "pres-96", "pres-97", "pres-98", "pres-99", "pres-100", "pres-101", "pres-102", "pres-103", "pres-104", "pres-105", "pres-106", "pres-107", "pres-108", "pres-109", "pres-110", "pres-111", "pres-112", "pres-113", "pres-114", "pres-115", "pres-116", "pres-117", "pres-118", "pres-119", "pres-120", "pres-121", "pres-122", "pres-123", "pres-124", "pres-125", "pres-126", "pres-127", "pres-128", "pres-129", "pres-130", "pres-131", "pres-132", "pres-133", "pres-134", "pres-135", "pres-136", "pres-137"], "ch3": ["pres-138", "pres-139", "pres-140", "pres-141", "pres-142", "pres-143", "pres-144", "pres-145", "pres-146", "pres-147", "pres-148", "pres-149", "pres-150", "pres-151", "pres-152", "pres-153", "pres-154", "pres-155", "pres-156", "pres-157", "pres-158", "pres-159", "pres-160", "pres-161", "pres-162", "pres-163", "pres-164", "pres-165", "pres-166", "pres-167", "pres-168", "pres-169", "pres-170", "pres-171", "pres-172", "pres-173", "pres-174", "pres-175", "pres-176", "pres-177", "pres-178", "pres-179", "pres-180", "pres-181", "pres-182", "pres-183", "pres-184", "pres-185", "pres-186", "pres-187", "pres-188", "pres-189", "pres-190", "pres-191", "pres-192", "pres-193", "pres-194", "pres-195", "pres-196", "pres-197", "pres-198", "pres-199", "pres-200", "pres-201", "pres-202", "pres-203", "pres-204", "pres-205", "pres-206", "pres-207", "pres-208", "pres-209", "pres-210", "pres-211", "pres-212", "pres-213", "pres-214", "pres-215", "pres-216", "pres-217", "pres-218", "pres-219", "pres-220", "pres-221"], "ch4": ["pres-222", "pres-223", "pres-224", "pres-225", "pres-226", "pres-227", "pres-228", "pres-229", "pres-230", "pres-231", "pres-232", "pres-233", "pres-234", "pres-235", "pres-236", "pres-237", "pres-238", "pres-239", "pres-240", "pres-241", "pres-242", "pres-243", "pres-244", "pres-245", "pres-246", "pres-247", "pres-248", "pres-249", "pres-250", "pres-251", "pres-252", "pres-253", "pres-254", "pres-255", "pres-256", "pres-257", "pres-258", "pres-259", "pres-260", "pres-261", "pres-262", "pres-263", "pres-264", "pres-265", "pres-266", "pres-267", "pres-268", "pres-269", "pres-270", "pres-271", "pres-272", "pres-273", "pres-274", "pres-275", "pres-276", "pres-277", "pres-278", "pres-279", "pres-280", "pres-281", "pres-282", "pres-283", "pres-284", "pres-285", "pres-286", "pres-287", "pres-288"], "ch5": ["pres-289", "pres-290", "pres-291", "pres-292", "pres-293", "pres-294", "pres-295", "pres-296", "pres-297", "pres-298", "pres-299", "pres-300", "pres-301", "pres-302", "pres-303", "pres-304", "pres-305", "pres-306", "pres-307", "pres-308", "pres-309", "pres-310", "pres-311", "pres-312", "pres-313", "pres-314", "pres-315", "pres-316", "pres-317", "pres-318", "pres-319", "pres-320", "pres-321", "pres-322", "pres-323", "pres-324", "pres-325", "pres-326", "pres-327", "pres-328", "pres-329", "pres-330", "pres-331", "pres-332", "pres-333", "pres-334", "pres-335", "pres-336", "pres-337", "pres-338", "pres-339", "pres-340", "pres-341", "pres-342", "pres-343", "pres-344", "pres-345", "pres-346"], "ch_profit_loss": ["pres-347", "pres-348", "pres-349", "pres-350", "pres-351", "pres-352", "pres-353", "pres-354", "pres-355", "pres-356", "pres-357", "pres-358", "pres-359", "pres-360", "pres-361", "pres-362", "pres-363", "pres-364", "pres-365", "pres-366", "pres-367", "pres-368", "pres-369", "pres-370", "pres-371", "pres-372", "pres-373", "pres-374", "pres-375", "pres-376", "pres-377", "pres-378", "pres-379", "pres-380", "pres-381", "pres-382", "pres-383", "pres-384", "pres-385", "pres-386", "pres-387", "pres-388", "pres-389", "pres-390", "pres-391", "pres-392", "pres-393", "pres-394", "pres-395", "pres-396", "pres-397", "pres-398", "pres-399", "pres-400", "pres-401", "pres-402", "pres-403", "pres-404", "pres-405", "pres-406", "pres-407", "pres-408", "pres-409"]};
         
         let currentSteps = [];
         let currentStepIndex = -1;
